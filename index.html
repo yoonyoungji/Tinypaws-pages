@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyPaws</title>
+  <meta name="description" content="TinyPaws support and privacy pages for the macOS desktop companion app.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f1e7;
+      --surface: rgba(255, 252, 247, 0.94);
+      --surface-strong: #fffaf4;
+      --text: #2d241e;
+      --muted: #6f5d50;
+      --line: rgba(94, 67, 49, 0.14);
+      --accent: #bf6b46;
+      --accent-strong: #8f4227;
+      --shadow: 0 20px 50px rgba(74, 44, 26, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "SF Pro Text", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 219, 179, 0.9), transparent 34%),
+        radial-gradient(circle at top right, rgba(255, 193, 143, 0.42), transparent 28%),
+        linear-gradient(180deg, #fffaf4 0%, var(--bg) 100%);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent-strong); }
+
+    .wrap {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 64px;
+    }
+
+    .hero,
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      padding: 38px 34px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent-strong);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.03;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      max-width: 46rem;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 0;
+    }
+
+    .lang {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff9f5;
+    }
+
+    .btn.secondary {
+      background: var(--surface-strong);
+      color: var(--accent-strong);
+      border-color: rgba(143, 66, 39, 0.2);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 28px;
+    }
+
+    .card.full {
+      grid-column: 1 / -1;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .page-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .page-link {
+      display: block;
+      padding: 18px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page-link strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent-strong);
+    }
+
+    footer {
+      padding-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 20px, 1040px);
+        padding: 20px 0 32px;
+      }
+
+      .hero,
+      .card {
+        border-radius: 22px;
+      }
+
+      .hero {
+        padding: 28px 20px;
+      }
+
+      .card {
+        padding: 22px 20px;
+      }
+
+      .grid,
+      .page-links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">TinyPaws</p>
+      <h1>A tiny desktop companion for your Mac.</h1>
+      <p class="lead">
+        TinyPaws is a lightweight macOS desktop companion app with animated pets, simple customization,
+        and a cozy always-on-desktop presence.
+      </p>
+      <div class="lang">
+        <p class="lead">
+          TinyPaws는 Mac 화면 위에서 함께 머무는 작은 데스크톱 펫 앱입니다.
+          앱 심사와 사용자 안내에 필요한 지원 정보와 개인정보처리방침을 이 페이지에서 확인할 수 있습니다.
+        </p>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="./support.html">Support Page</a>
+        <a class="btn secondary" href="./privacy.html">Privacy Policy</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>About TinyPaws</h2>
+        <ul>
+          <li>Animated desktop pet for macOS</li>
+          <li>Character, size, opacity, and walk speed controls</li>
+          <li>Drag to reposition on your desktop</li>
+          <li>Menu bar companion with optional keyboard-reactive behavior</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Contact</h2>
+        <p class="muted">Developer: youngji Yoon</p>
+        <p><a href="mailto:dbsdudwl94@gmail.com">dbsdudwl94@gmail.com</a></p>
+        <p class="muted">Typical response time: within 3 business days</p>
+      </article>
+
+      <article class="card full">
+        <h2>Pages</h2>
+        <div class="page-links">
+          <a class="page-link" href="./support.html">
+            <strong>Support</strong>
+            Help, FAQs, compatibility, and contact details for TinyPaws users.
+          </a>
+          <a class="page-link" href="./privacy.html">
+            <strong>Privacy Policy</strong>
+            What TinyPaws stores locally, how permissions are used, and what data is not collected.
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      TinyPaws official support and privacy information
+    </footer>
+  </main>
+</body>
+</html>

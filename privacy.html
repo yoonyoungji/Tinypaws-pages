@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyPaws Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for TinyPaws, a macOS desktop companion app.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5eee7;
+      --card: rgba(255, 252, 248, 0.94);
+      --text: #2d241e;
+      --muted: #6b5b50;
+      --line: rgba(87, 62, 46, 0.14);
+      --accent: #b56140;
+      --accent-strong: #8d3f26;
+      --shadow: 0 18px 48px rgba(70, 43, 28, 0.11);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "SF Pro Text", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 221, 193, 0.85), transparent 34%),
+        radial-gradient(circle at top right, rgba(250, 199, 160, 0.45), transparent 30%),
+        linear-gradient(180deg, #fffaf5 0%, var(--bg) 100%);
+      line-height: 1.68;
+    }
+
+    .wrap {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .hero,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero {
+      padding: 36px 32px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      padding: 28px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent-strong);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, p { margin-top: 0; }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.06;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .lead,
+    .muted {
+      color: var(--muted);
+    }
+
+    .lead {
+      max-width: 44rem;
+      font-size: 1.05rem;
+      margin-bottom: 0;
+    }
+
+    .lang {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(181, 97, 64, 0.12);
+      color: var(--accent-strong);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    a { color: var(--accent-strong); }
+
+    footer {
+      padding-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 20px, 960px);
+        padding: 20px 0 32px;
+      }
+
+      .hero,
+      .card {
+        border-radius: 20px;
+      }
+
+      .hero {
+        padding: 28px 20px;
+      }
+
+      .card {
+        padding: 22px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">TinyPaws Privacy Policy</p>
+      <h1>Privacy Policy for TinyPaws</h1>
+      <p class="lead">
+        This Privacy Policy explains what information TinyPaws uses, what is stored on your device,
+        and what is not collected by the app.
+      </p>
+      <div class="lang">
+        <p class="lead">
+          이 개인정보처리방침은 TinyPaws가 어떤 정보를 사용하는지, 어떤 정보가 기기에 저장되는지,
+          그리고 어떤 정보는 수집하지 않는지를 설명합니다.
+        </p>
+      </div>
+      <nav class="nav" aria-label="Page links">
+        <a href="./index.html">Home</a>
+        <a href="./support.html">Support Page</a>
+      </nav>
+    </section>
+
+    <section class="stack">
+      <article class="card">
+        <p class="muted">Effective date: June 5, 2026</p>
+        <p class="muted">Contact: <a href="mailto:dbsdudwl94@gmail.com">dbsdudwl94@gmail.com</a></p>
+      </article>
+
+      <article class="card">
+        <h2>1. Information TinyPaws stores locally</h2>
+        <p>
+          TinyPaws stores a small set of app preferences on your Mac so the app can restore your settings the next
+          time you open it.
+        </p>
+        <ul>
+          <li>Selected character</li>
+          <li>Selected size</li>
+          <li>Selected opacity</li>
+          <li>Selected walk speed</li>
+        </ul>
+        <p class="muted">
+          These preferences are stored locally on your device using standard macOS app storage and are not sent to us.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>2. Permissions</h2>
+        <p>
+          TinyPaws may request or guide you to macOS Accessibility and Input Monitoring settings so the desktop
+          character can react to keyboard input while other apps are active.
+        </p>
+        <p class="muted">
+          Permission checks are used only to determine whether keyboard-reactive features can work. TinyPaws does not
+          use these permissions to build a user profile, track browsing, or send your keystrokes to a server.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>3. Diagnostic logs</h2>
+        <p>
+          TinyPaws may write simple diagnostic messages to a local temporary log file on your Mac for app status and
+          permission troubleshooting.
+        </p>
+        <p class="muted">
+          These logs stay on your device unless you choose to share them with support.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>4. Data TinyPaws does not collect</h2>
+        <ul>
+          <li>No account registration information</li>
+          <li>No payment information</li>
+          <li>No analytics profile tied to your identity</li>
+          <li>No cloud sync data</li>
+          <li>No browsing history collection</li>
+          <li>No personal data transmission to the developer as part of normal app use</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>5. Third-party services</h2>
+        <p>
+          TinyPaws does not require an online account or a hosted backend service to provide its core desktop companion
+          features.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>6. Your choices</h2>
+        <ul>
+          <li>You can decline Accessibility or Input Monitoring permissions.</li>
+          <li>You can remove the app at any time.</li>
+          <li>You can contact support if you have questions about how the app works.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>7. Changes to this policy</h2>
+        <p>
+          This Privacy Policy may be updated if TinyPaws adds new features or data practices. Material updates will be
+          reflected on this page with a revised effective date.
+        </p>
+      </article>
+    </section>
+
+    <footer>
+      TinyPaws Privacy Policy
+    </footer>
+  </main>
+</body>
+</html>

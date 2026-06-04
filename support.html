@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyPaws Support</title>
+  <meta name="description" content="Support page for TinyPaws, a macOS desktop companion app.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7efe4;
+      --card: rgba(255, 252, 247, 0.92);
+      --text: #2d241e;
+      --muted: #6c5c50;
+      --line: rgba(85, 61, 45, 0.14);
+      --accent: #c96f4a;
+      --accent-strong: #9e4c2d;
+      --shadow: 0 18px 50px rgba(74, 44, 26, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "SF Pro Text", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 214, 170, 0.9), transparent 34%),
+        radial-gradient(circle at top right, rgba(255, 191, 133, 0.5), transparent 28%),
+        linear-gradient(180deg, #fff9f2 0%, var(--bg) 100%);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .hero,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero {
+      padding: 36px 32px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent-strong);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      max-width: 42rem;
+      font-size: 1.06rem;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(201, 111, 74, 0.12);
+      color: var(--accent-strong);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 28px;
+    }
+
+    .card.full {
+      grid-column: 1 / -1;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    a { color: var(--accent-strong); }
+
+    .contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: rgba(201, 111, 74, 0.12);
+      color: var(--accent-strong);
+      font-weight: 700;
+    }
+
+    .muted { color: var(--muted); }
+
+    .lang {
+      padding-top: 12px;
+      margin-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item + .faq-item {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    footer {
+      padding-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 20px, 960px);
+        padding: 20px 0 32px;
+      }
+
+      .hero,
+      .card {
+        border-radius: 20px;
+      }
+
+      .hero {
+        padding: 28px 20px;
+      }
+
+      .card {
+        padding: 22px 20px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">TinyPaws Support</p>
+      <h1>Your tiny Mac companion, with help when you need it.</h1>
+      <p class="lead">
+        TinyPaws is a lightweight macOS desktop companion app that adds a small animated pet to your screen.
+        If you need help, have a question, or want to report a bug, please use the support contact below.
+      </p>
+      <div class="lang">
+        <p class="lead">
+          TinyPaws는 Mac 화면 위에 작은 애니메이션 펫을 띄워주는 가벼운 데스크톱 컴패니언 앱입니다.
+          사용 중 도움이 필요하거나 오류 제보, 문의사항이 있으면 아래 지원 연락처로 보내주세요.
+        </p>
+      </div>
+      <nav class="nav" aria-label="Page links">
+        <a href="./index.html">Home</a>
+        <a href="./privacy.html">Privacy Policy</a>
+      </nav>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Contact</h2>
+        <p>Support email</p>
+        <p>
+          <a class="contact" href="mailto:dbsdudwl94@gmail.com">dbsdudwl94@gmail.com</a>
+        </p>
+        <p class="muted">Developer: youngji Yoon</p>
+        <p class="muted">Typical response time: within 3 business days</p>
+      </article>
+
+      <article class="card">
+        <h2>App Overview</h2>
+        <ul>
+          <li>Animated desktop pet for macOS</li>
+          <li>Character selection and size adjustment</li>
+          <li>Transparency controls for different workspaces</li>
+          <li>Drag to reposition on the desktop</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Permissions</h2>
+        <p class="muted">
+          TinyPaws may guide you to macOS Accessibility or Input Monitoring settings so the character can react to
+          keyboard input while other apps are active.
+        </p>
+        <p class="muted">
+          The app is still usable without these permissions, but some keyboard-reactive behavior may be limited.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Compatibility</h2>
+        <ul>
+          <li>Platform: macOS</li>
+          <li>Minimum version: macOS 13.0 or later</li>
+          <li>App type: menu bar desktop companion</li>
+        </ul>
+      </article>
+
+      <article class="card full">
+        <h2>FAQ</h2>
+
+        <div class="faq-item">
+          <h3>The character is not responding to keyboard input.</h3>
+          <p class="muted">
+            Check whether Accessibility or Input Monitoring permission has been granted in macOS System Settings.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>The character is covering part of my screen.</h3>
+          <p class="muted">
+            Drag the character to another position, or adjust the size and transparency from the menu bar controls.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>I want to report a bug or request a feature.</h3>
+          <p class="muted">
+            Send your macOS version, the TinyPaws version, and a short description of the issue to the support email.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can I send questions in Korean?</h3>
+          <p class="muted">
+            Yes. Korean support is available. If you include your macOS version, TinyPaws version, and reproduction
+            steps, it will help us review the issue faster.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      TinyPaws Support Page
+    </footer>
+  </main>
+</body>
+</html>
