@@ -256,14 +256,14 @@
     <section class="hero">
       <div class="hero-top">
         <p class="eyebrow" data-i18n="eyebrow"></p>
-        <div class="switcher" aria-label="Language switcher">
-          <button type="button" data-set-language="ko">한국어</button>
-          <button type="button" data-set-language="en">English</button>
+        <div class="switcher" data-aria-label-key="switcherAriaLabel">
+          <button type="button" data-set-language="ko" data-i18n="switchKorean"></button>
+          <button type="button" data-set-language="en" data-i18n="switchEnglish"></button>
         </div>
       </div>
       <h1 data-i18n="heroTitle"></h1>
       <p class="lead" data-i18n="heroLead"></p>
-      <nav class="nav" aria-label="Page links">
+      <nav class="nav" data-aria-label-key="navAriaLabel">
         <a href="./index.html" data-i18n="homeLink"></a>
         <a href="./support.html" data-i18n="supportLink"></a>
       </nav>
@@ -387,6 +387,10 @@
         section7Title: "7. Changes to this policy",
         section7Body: "This Privacy Policy may be updated if TinyPaws adds new features or data practices. Material updates will be reflected on this page with a revised effective date.",
         footerText: "TinyPaws Privacy Policy",
+        switcherAriaLabel: "Language switcher",
+        navAriaLabel: "Page links",
+        switchKorean: "Korean",
+        switchEnglish: "English",
         modalTitle: "Choose your language",
         modalBody: "Pick the language you want to use on the TinyPaws site. You can change it again anytime from the top-right button.",
         modalKorean: "한국어로 보기",
@@ -431,6 +435,10 @@
         section7Title: "7. 방침 변경",
         section7Body: "TinyPaws에 새로운 기능이나 데이터 처리 방식이 추가되면 이 개인정보처리방침이 업데이트될 수 있습니다. 중요한 변경 사항은 수정된 시행일과 함께 이 페이지에 반영됩니다.",
         footerText: "TinyPaws 개인정보처리방침",
+        switcherAriaLabel: "언어 전환",
+        navAriaLabel: "페이지 링크",
+        switchKorean: "한국어",
+        switchEnglish: "영문",
         modalTitle: "사용할 언어를 선택해 주세요",
         modalBody: "TinyPaws 사이트에서 사용할 언어를 선택해 주세요. 오른쪽 위 버튼에서 언제든 다시 바꿀 수 있습니다.",
         modalKorean: "한국어로 시작하기",
@@ -440,6 +448,7 @@
 
     const elements = document.querySelectorAll("[data-i18n]");
     const switchButtons = document.querySelectorAll("[data-set-language]");
+    const ariaLabelElements = document.querySelectorAll("[data-aria-label-key]");
     const modal = document.getElementById("languageModal");
     const descriptionMeta = document.querySelector('meta[name="description"]');
 
@@ -450,6 +459,11 @@
       elements.forEach((element) => {
         const key = element.dataset.i18n;
         element.textContent = copy[key];
+      });
+
+      ariaLabelElements.forEach((element) => {
+        const key = element.dataset.ariaLabelKey;
+        element.setAttribute("aria-label", copy[key]);
       });
 
       document.documentElement.lang = lang;
