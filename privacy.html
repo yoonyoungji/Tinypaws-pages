@@ -16,9 +16,18 @@
       --accent: #b56140;
       --accent-strong: #8d3f26;
       --shadow: 0 18px 48px rgba(70, 43, 28, 0.11);
+      --overlay: rgba(45, 36, 30, 0.42);
     }
 
     * { box-sizing: border-box; }
+
+    html {
+      visibility: hidden;
+    }
+
+    html.ready {
+      visibility: visible;
+    }
 
     body {
       margin: 0;
@@ -38,7 +47,8 @@
     }
 
     .hero,
-    .card {
+    .card,
+    .language-sheet {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 24px;
@@ -55,8 +65,16 @@
       padding: 28px;
     }
 
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
     .eyebrow {
-      margin: 0 0 8px;
+      margin: 0;
       color: var(--accent-strong);
       font-size: 0.92rem;
       font-weight: 700;
@@ -88,12 +106,6 @@
       margin-bottom: 0;
     }
 
-    .lang {
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-    }
-
     .nav {
       display: flex;
       gap: 12px;
@@ -101,13 +113,59 @@
       margin-top: 20px;
     }
 
-    .nav a {
+    .nav a,
+    .switcher button,
+    .language-button {
       padding: 10px 14px;
       border-radius: 999px;
       background: rgba(181, 97, 64, 0.12);
       color: var(--accent-strong);
       text-decoration: none;
       font-weight: 700;
+      border: 1px solid transparent;
+      font: inherit;
+      cursor: pointer;
+      transition: transform 140ms ease, background-color 140ms ease, border-color 140ms ease;
+    }
+
+    .nav a:hover,
+    .switcher button:hover,
+    .language-button:hover {
+      transform: translateY(-1px);
+    }
+
+    .switcher {
+      display: inline-flex;
+      gap: 8px;
+      padding: 8px;
+      background: rgba(255, 250, 245, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+
+    .switcher button {
+      min-height: 38px;
+      padding: 0 14px;
+      background: var(--card);
+      border-color: rgba(141, 63, 38, 0.18);
+    }
+
+    .switcher button.active,
+    .language-button.primary {
+      background: var(--accent);
+      color: #fff9f5;
+      border-color: transparent;
+    }
+
+    .language-button.secondary {
+      background: var(--card);
+      border-color: rgba(141, 63, 38, 0.18);
+    }
+
+    .language-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .stack {
@@ -133,6 +191,34 @@
       font-size: 0.95rem;
     }
 
+    .language-modal[hidden] {
+      display: none;
+    }
+
+    .language-modal {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: var(--overlay);
+      z-index: 20;
+    }
+
+    .language-sheet {
+      width: min(100%, 460px);
+      padding: 28px;
+    }
+
+    .language-sheet h2 {
+      margin-bottom: 8px;
+    }
+
+    .language-sheet p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
     @media (max-width: 760px) {
       .wrap {
         width: min(100% - 20px, 960px);
@@ -140,7 +226,8 @@
       }
 
       .hero,
-      .card {
+      .card,
+      .language-sheet {
         border-radius: 20px;
       }
 
@@ -148,8 +235,18 @@
         padding: 28px 20px;
       }
 
-      .card {
+      .card,
+      .language-sheet {
         padding: 22px 20px;
+      }
+
+      .hero-top {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .language-actions {
+        flex-direction: column;
       }
     }
   </style>
@@ -157,111 +254,234 @@
 <body>
   <main class="wrap">
     <section class="hero">
-      <p class="eyebrow">TinyPaws Privacy Policy</p>
-      <h1>Privacy Policy for TinyPaws</h1>
-      <p class="lead">
-        This Privacy Policy explains what information TinyPaws uses, what is stored on your device,
-        and what is not collected by the app.
-      </p>
-      <div class="lang">
-        <p class="lead">
-          이 개인정보처리방침은 TinyPaws가 어떤 정보를 사용하는지, 어떤 정보가 기기에 저장되는지,
-          그리고 어떤 정보는 수집하지 않는지를 설명합니다.
-        </p>
+      <div class="hero-top">
+        <p class="eyebrow" data-i18n="eyebrow"></p>
+        <div class="switcher" aria-label="Language switcher">
+          <button type="button" data-set-language="ko">한국어</button>
+          <button type="button" data-set-language="en">English</button>
+        </div>
       </div>
+      <h1 data-i18n="heroTitle"></h1>
+      <p class="lead" data-i18n="heroLead"></p>
       <nav class="nav" aria-label="Page links">
-        <a href="./index.html">Home</a>
-        <a href="./support.html">Support Page</a>
+        <a href="./index.html" data-i18n="homeLink"></a>
+        <a href="./support.html" data-i18n="supportLink"></a>
       </nav>
     </section>
 
     <section class="stack">
       <article class="card">
-        <p class="muted">Effective date: June 5, 2026</p>
-        <p class="muted">Contact: <a href="mailto:dbsdudwl94@gmail.com">dbsdudwl94@gmail.com</a></p>
+        <p class="muted" data-i18n="effectiveDate"></p>
+        <p class="muted"><span data-i18n="contactLabel"></span> <a href="mailto:dbsdudwl94@gmail.com">dbsdudwl94@gmail.com</a></p>
       </article>
 
       <article class="card">
-        <h2>1. Information TinyPaws stores locally</h2>
-        <p>
-          TinyPaws stores a small set of app preferences on your Mac so the app can restore your settings the next
-          time you open it.
-        </p>
+        <h2 data-i18n="section1Title"></h2>
+        <p data-i18n="section1Body"></p>
         <ul>
-          <li>Selected character</li>
-          <li>Selected size</li>
-          <li>Selected opacity</li>
-          <li>Selected walk speed</li>
+          <li data-i18n="section1Item1"></li>
+          <li data-i18n="section1Item2"></li>
+          <li data-i18n="section1Item3"></li>
+          <li data-i18n="section1Item4"></li>
         </ul>
-        <p class="muted">
-          These preferences are stored locally on your device using standard macOS app storage and are not sent to us.
-        </p>
+        <p class="muted" data-i18n="section1Note"></p>
       </article>
 
       <article class="card">
-        <h2>2. Permissions</h2>
-        <p>
-          TinyPaws may request or guide you to macOS Accessibility and Input Monitoring settings so the desktop
-          character can react to keyboard input while other apps are active.
-        </p>
-        <p class="muted">
-          Permission checks are used only to determine whether keyboard-reactive features can work. TinyPaws does not
-          use these permissions to build a user profile, track browsing, or send your keystrokes to a server.
-        </p>
+        <h2 data-i18n="section2Title"></h2>
+        <p data-i18n="section2Body"></p>
+        <p class="muted" data-i18n="section2Note"></p>
       </article>
 
       <article class="card">
-        <h2>3. Diagnostic logs</h2>
-        <p>
-          TinyPaws may write simple diagnostic messages to a local temporary log file on your Mac for app status and
-          permission troubleshooting.
-        </p>
-        <p class="muted">
-          These logs stay on your device unless you choose to share them with support.
-        </p>
+        <h2 data-i18n="section3Title"></h2>
+        <p data-i18n="section3Body"></p>
+        <p class="muted" data-i18n="section3Note"></p>
       </article>
 
       <article class="card">
-        <h2>4. Data TinyPaws does not collect</h2>
+        <h2 data-i18n="section4Title"></h2>
         <ul>
-          <li>No account registration information</li>
-          <li>No payment information</li>
-          <li>No analytics profile tied to your identity</li>
-          <li>No cloud sync data</li>
-          <li>No browsing history collection</li>
-          <li>No personal data transmission to the developer as part of normal app use</li>
+          <li data-i18n="section4Item1"></li>
+          <li data-i18n="section4Item2"></li>
+          <li data-i18n="section4Item3"></li>
+          <li data-i18n="section4Item4"></li>
+          <li data-i18n="section4Item5"></li>
+          <li data-i18n="section4Item6"></li>
         </ul>
       </article>
 
       <article class="card">
-        <h2>5. Third-party services</h2>
-        <p>
-          TinyPaws does not require an online account or a hosted backend service to provide its core desktop companion
-          features.
-        </p>
+        <h2 data-i18n="section5Title"></h2>
+        <p data-i18n="section5Body"></p>
       </article>
 
       <article class="card">
-        <h2>6. Your choices</h2>
+        <h2 data-i18n="section6Title"></h2>
         <ul>
-          <li>You can decline Accessibility or Input Monitoring permissions.</li>
-          <li>You can remove the app at any time.</li>
-          <li>You can contact support if you have questions about how the app works.</li>
+          <li data-i18n="section6Item1"></li>
+          <li data-i18n="section6Item2"></li>
+          <li data-i18n="section6Item3"></li>
         </ul>
       </article>
 
       <article class="card">
-        <h2>7. Changes to this policy</h2>
-        <p>
-          This Privacy Policy may be updated if TinyPaws adds new features or data practices. Material updates will be
-          reflected on this page with a revised effective date.
-        </p>
+        <h2 data-i18n="section7Title"></h2>
+        <p data-i18n="section7Body"></p>
       </article>
     </section>
 
-    <footer>
-      TinyPaws Privacy Policy
-    </footer>
+    <footer data-i18n="footerText"></footer>
   </main>
+
+  <div class="language-modal" id="languageModal" hidden>
+    <div class="language-sheet" role="dialog" aria-modal="true" aria-labelledby="languageModalTitle">
+      <h2 id="languageModalTitle" data-i18n="modalTitle"></h2>
+      <p data-i18n="modalBody"></p>
+      <div class="language-actions">
+        <button type="button" class="language-button primary" data-set-language="ko" data-i18n="modalKorean"></button>
+        <button type="button" class="language-button secondary" data-set-language="en" data-i18n="modalEnglish"></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const storageKey = "tinypaws-language";
+    const translations = {
+      en: {
+        pageTitle: "TinyPaws Privacy Policy",
+        metaDescription: "Privacy Policy for TinyPaws, a macOS desktop companion app.",
+        eyebrow: "TinyPaws Privacy Policy",
+        heroTitle: "Privacy Policy for TinyPaws",
+        heroLead: "This Privacy Policy explains what information TinyPaws uses, what is stored on your device, and what is not collected by the app.",
+        homeLink: "Home",
+        supportLink: "Support Page",
+        effectiveDate: "Effective date: June 5, 2026",
+        contactLabel: "Contact:",
+        section1Title: "1. Information TinyPaws stores locally",
+        section1Body: "TinyPaws stores a small set of app preferences on your Mac so the app can restore your settings the next time you open it.",
+        section1Item1: "Selected character",
+        section1Item2: "Selected size",
+        section1Item3: "Selected opacity",
+        section1Item4: "Selected walk speed",
+        section1Note: "These preferences are stored locally on your device using standard macOS app storage and are not sent to us.",
+        section2Title: "2. Permissions",
+        section2Body: "TinyPaws may request or guide you to macOS Accessibility and Input Monitoring settings so the desktop character can react to keyboard input while other apps are active.",
+        section2Note: "Permission checks are used only to determine whether keyboard-reactive features can work. TinyPaws does not use these permissions to build a user profile, track browsing, or send your keystrokes to a server.",
+        section3Title: "3. Diagnostic logs",
+        section3Body: "TinyPaws may write simple diagnostic messages to a local temporary log file on your Mac for app status and permission troubleshooting.",
+        section3Note: "These logs stay on your device unless you choose to share them with support.",
+        section4Title: "4. Data TinyPaws does not collect",
+        section4Item1: "No account registration information",
+        section4Item2: "No payment information",
+        section4Item3: "No analytics profile tied to your identity",
+        section4Item4: "No cloud sync data",
+        section4Item5: "No browsing history collection",
+        section4Item6: "No personal data transmission to the developer as part of normal app use",
+        section5Title: "5. Third-party services",
+        section5Body: "TinyPaws does not require an online account or a hosted backend service to provide its core desktop companion features.",
+        section6Title: "6. Your choices",
+        section6Item1: "You can decline Accessibility or Input Monitoring permissions.",
+        section6Item2: "You can remove the app at any time.",
+        section6Item3: "You can contact support if you have questions about how the app works.",
+        section7Title: "7. Changes to this policy",
+        section7Body: "This Privacy Policy may be updated if TinyPaws adds new features or data practices. Material updates will be reflected on this page with a revised effective date.",
+        footerText: "TinyPaws Privacy Policy",
+        modalTitle: "Choose your language",
+        modalBody: "Pick the language you want to use on the TinyPaws site. You can change it again anytime from the top-right button.",
+        modalKorean: "한국어로 보기",
+        modalEnglish: "Continue in English"
+      },
+      ko: {
+        pageTitle: "TinyPaws 개인정보처리방침",
+        metaDescription: "TinyPaws macOS 데스크톱 컴패니언 앱 개인정보처리방침입니다.",
+        eyebrow: "TinyPaws 개인정보처리방침",
+        heroTitle: "TinyPaws 개인정보처리방침",
+        heroLead: "이 개인정보처리방침은 TinyPaws가 어떤 정보를 사용하는지, 어떤 정보가 기기에 저장되는지, 그리고 앱이 수집하지 않는 정보가 무엇인지 설명합니다.",
+        homeLink: "홈",
+        supportLink: "지원 페이지",
+        effectiveDate: "시행일: 2026년 6월 5일",
+        contactLabel: "문의:",
+        section1Title: "1. TinyPaws가 기기에 저장하는 정보",
+        section1Body: "TinyPaws는 사용자가 다음에 앱을 열었을 때 설정을 복원할 수 있도록 Mac에 소량의 앱 설정 정보를 저장합니다.",
+        section1Item1: "선택한 캐릭터",
+        section1Item2: "선택한 크기",
+        section1Item3: "선택한 투명도",
+        section1Item4: "선택한 이동 속도",
+        section1Note: "이 설정 정보는 표준 macOS 앱 저장소를 통해 사용자 기기에만 저장되며 개발자에게 전송되지 않습니다.",
+        section2Title: "2. 권한",
+        section2Body: "TinyPaws는 다른 앱이 활성화된 상태에서도 데스크톱 캐릭터가 키보드 입력에 반응할 수 있도록 macOS 손쉬운 사용 및 입력 모니터링 설정을 요청하거나 안내할 수 있습니다.",
+        section2Note: "이 권한 확인은 키보드 반응 기능이 동작 가능한지 판단하기 위한 용도로만 사용됩니다. TinyPaws는 이 권한을 사용자 프로필 생성, 브라우징 추적, 키 입력 전송에 사용하지 않습니다.",
+        section3Title: "3. 진단 로그",
+        section3Body: "TinyPaws는 앱 상태 확인과 권한 문제 점검을 위해 Mac의 임시 로그 파일에 간단한 진단 메시지를 기록할 수 있습니다.",
+        section3Note: "이 로그는 사용자가 직접 지원팀에 공유하지 않는 한 기기 밖으로 전송되지 않습니다.",
+        section4Title: "4. TinyPaws가 수집하지 않는 정보",
+        section4Item1: "계정 가입 정보",
+        section4Item2: "결제 정보",
+        section4Item3: "사용자 신원과 연결된 분석 프로필",
+        section4Item4: "클라우드 동기화 데이터",
+        section4Item5: "브라우징 기록 수집",
+        section4Item6: "일반적인 앱 사용 과정에서 개발자에게 전송되는 개인정보",
+        section5Title: "5. 제3자 서비스",
+        section5Body: "TinyPaws는 핵심 데스크톱 컴패니언 기능을 제공하기 위해 온라인 계정이나 호스팅된 백엔드 서비스를 요구하지 않습니다.",
+        section6Title: "6. 사용자의 선택",
+        section6Item1: "손쉬운 사용 또는 입력 모니터링 권한을 허용하지 않을 수 있습니다.",
+        section6Item2: "언제든 앱을 삭제할 수 있습니다.",
+        section6Item3: "앱 동작 방식에 대한 문의는 지원 메일로 보낼 수 있습니다.",
+        section7Title: "7. 방침 변경",
+        section7Body: "TinyPaws에 새로운 기능이나 데이터 처리 방식이 추가되면 이 개인정보처리방침이 업데이트될 수 있습니다. 중요한 변경 사항은 수정된 시행일과 함께 이 페이지에 반영됩니다.",
+        footerText: "TinyPaws 개인정보처리방침",
+        modalTitle: "사용할 언어를 선택해 주세요",
+        modalBody: "TinyPaws 사이트에서 사용할 언어를 선택해 주세요. 오른쪽 위 버튼에서 언제든 다시 바꿀 수 있습니다.",
+        modalKorean: "한국어로 시작하기",
+        modalEnglish: "영문으로 보기"
+      }
+    };
+
+    const elements = document.querySelectorAll("[data-i18n]");
+    const switchButtons = document.querySelectorAll("[data-set-language]");
+    const modal = document.getElementById("languageModal");
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+
+    function applyLanguage(language) {
+      const lang = translations[language] ? language : "en";
+      const copy = translations[lang];
+
+      elements.forEach((element) => {
+        const key = element.dataset.i18n;
+        element.textContent = copy[key];
+      });
+
+      document.documentElement.lang = lang;
+      document.title = copy.pageTitle;
+      descriptionMeta.setAttribute("content", copy.metaDescription);
+      document.documentElement.dataset.language = lang;
+
+      switchButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.setLanguage === lang);
+      });
+    }
+
+    function chooseLanguage(language) {
+      localStorage.setItem(storageKey, language);
+      applyLanguage(language);
+      modal.hidden = true;
+    }
+
+    switchButtons.forEach((button) => {
+      button.addEventListener("click", () => chooseLanguage(button.dataset.setLanguage));
+    });
+
+    const storedLanguage = localStorage.getItem(storageKey);
+
+    if (storedLanguage) {
+      applyLanguage(storedLanguage);
+    } else {
+      applyLanguage("ko");
+      modal.hidden = false;
+    }
+
+    document.documentElement.classList.add("ready");
+  </script>
 </body>
 </html>

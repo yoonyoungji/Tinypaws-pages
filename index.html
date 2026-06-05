@@ -17,9 +17,18 @@
       --accent: #bf6b46;
       --accent-strong: #8f4227;
       --shadow: 0 20px 50px rgba(74, 44, 26, 0.12);
+      --overlay: rgba(45, 36, 30, 0.42);
     }
 
     * { box-sizing: border-box; }
+
+    html {
+      visibility: hidden;
+    }
+
+    html.ready {
+      visibility: visible;
+    }
 
     body {
       margin: 0;
@@ -41,7 +50,8 @@
     }
 
     .hero,
-    .card {
+    .card,
+    .language-sheet {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 28px;
@@ -54,8 +64,16 @@
       margin-bottom: 20px;
     }
 
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
     .eyebrow {
-      margin: 0 0 8px;
+      margin: 0;
       color: var(--accent-strong);
       font-size: 0.92rem;
       font-weight: 700;
@@ -83,20 +101,21 @@
       margin-bottom: 0;
     }
 
-    .lang {
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-    }
-
-    .actions {
+    .actions,
+    .language-switcher,
+    .language-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+    }
+
+    .actions {
       margin-top: 22px;
     }
 
-    .btn {
+    .btn,
+    .language-button,
+    .switcher button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -106,17 +125,49 @@
       text-decoration: none;
       font-weight: 700;
       border: 1px solid transparent;
+      font: inherit;
+      cursor: pointer;
+      transition: transform 140ms ease, background-color 140ms ease, border-color 140ms ease;
     }
 
-    .btn.primary {
+    .btn:hover,
+    .language-button:hover,
+    .switcher button:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn.primary,
+    .language-button.primary {
       background: var(--accent);
       color: #fff9f5;
     }
 
-    .btn.secondary {
+    .btn.secondary,
+    .language-button.secondary,
+    .switcher button {
       background: var(--surface-strong);
       color: var(--accent-strong);
       border-color: rgba(143, 66, 39, 0.2);
+    }
+
+    .switcher {
+      display: inline-flex;
+      gap: 8px;
+      padding: 8px;
+      background: rgba(255, 250, 244, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+
+    .switcher button {
+      min-height: 38px;
+      padding: 0 14px;
+    }
+
+    .switcher button.active {
+      background: var(--accent);
+      color: #fff9f5;
+      border-color: transparent;
     }
 
     .grid {
@@ -174,6 +225,34 @@
       font-size: 0.95rem;
     }
 
+    .language-modal[hidden] {
+      display: none;
+    }
+
+    .language-modal {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: var(--overlay);
+      z-index: 20;
+    }
+
+    .language-sheet {
+      width: min(100%, 460px);
+      padding: 28px;
+    }
+
+    .language-sheet h2 {
+      margin-bottom: 8px;
+    }
+
+    .language-sheet p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
     @media (max-width: 760px) {
       .wrap {
         width: min(100% - 20px, 1040px);
@@ -181,7 +260,8 @@
       }
 
       .hero,
-      .card {
+      .card,
+      .language-sheet {
         border-radius: 22px;
       }
 
@@ -189,13 +269,23 @@
         padding: 28px 20px;
       }
 
-      .card {
+      .card,
+      .language-sheet {
         padding: 22px 20px;
+      }
+
+      .hero-top {
+        flex-direction: column;
+        align-items: stretch;
       }
 
       .grid,
       .page-links {
         grid-template-columns: 1fr;
+      }
+
+      .language-actions {
+        flex-direction: column;
       }
     }
   </style>
@@ -203,60 +293,169 @@
 <body>
   <main class="wrap">
     <section class="hero">
-      <p class="eyebrow">TinyPaws</p>
-      <h1>A tiny desktop companion for your Mac.</h1>
-      <p class="lead">
-        TinyPaws is a lightweight macOS desktop companion app with animated pets, simple customization,
-        and a cozy always-on-desktop presence.
-      </p>
-      <div class="lang">
-        <p class="lead">
-          TinyPaws는 Mac 화면 위에서 함께 머무는 작은 데스크톱 펫 앱입니다.
-          앱 심사와 사용자 안내에 필요한 지원 정보와 개인정보처리방침을 이 페이지에서 확인할 수 있습니다.
-        </p>
+      <div class="hero-top">
+        <p class="eyebrow">TinyPaws</p>
+        <div class="switcher language-switcher" aria-label="Language switcher">
+          <button type="button" data-set-language="ko">한국어</button>
+          <button type="button" data-set-language="en">English</button>
+        </div>
       </div>
+      <h1 data-i18n="heroTitle"></h1>
+      <p class="lead" data-i18n="heroLead"></p>
       <div class="actions">
-        <a class="btn primary" href="./support.html">Support Page</a>
-        <a class="btn secondary" href="./privacy.html">Privacy Policy</a>
+        <a class="btn primary" href="./support.html" data-i18n="supportButton"></a>
+        <a class="btn secondary" href="./privacy.html" data-i18n="privacyButton"></a>
       </div>
     </section>
 
     <section class="grid">
       <article class="card">
-        <h2>About TinyPaws</h2>
+        <h2 data-i18n="aboutTitle"></h2>
         <ul>
-          <li>Animated desktop pet for macOS</li>
-          <li>Character, size, opacity, and walk speed controls</li>
-          <li>Drag to reposition on your desktop</li>
-          <li>Menu bar companion with optional keyboard-reactive behavior</li>
+          <li data-i18n="aboutItem1"></li>
+          <li data-i18n="aboutItem2"></li>
+          <li data-i18n="aboutItem3"></li>
+          <li data-i18n="aboutItem4"></li>
         </ul>
       </article>
 
       <article class="card">
-        <h2>Contact</h2>
-        <p class="muted">Developer: youngji Yoon</p>
+        <h2 data-i18n="contactTitle"></h2>
+        <p class="muted" data-i18n="developerLabel"></p>
         <p><a href="mailto:dbsdudwl94@gmail.com">dbsdudwl94@gmail.com</a></p>
-        <p class="muted">Typical response time: within 3 business days</p>
+        <p class="muted" data-i18n="responseTime"></p>
       </article>
 
       <article class="card full">
-        <h2>Pages</h2>
+        <h2 data-i18n="pagesTitle"></h2>
         <div class="page-links">
           <a class="page-link" href="./support.html">
-            <strong>Support</strong>
-            Help, FAQs, compatibility, and contact details for TinyPaws users.
+            <strong data-i18n="supportCardTitle"></strong>
+            <span data-i18n="supportCardBody"></span>
           </a>
           <a class="page-link" href="./privacy.html">
-            <strong>Privacy Policy</strong>
-            What TinyPaws stores locally, how permissions are used, and what data is not collected.
+            <strong data-i18n="privacyCardTitle"></strong>
+            <span data-i18n="privacyCardBody"></span>
           </a>
         </div>
       </article>
     </section>
 
-    <footer>
-      TinyPaws official support and privacy information
-    </footer>
+    <footer data-i18n="footerText"></footer>
   </main>
+
+  <div class="language-modal" id="languageModal" hidden>
+    <div class="language-sheet" role="dialog" aria-modal="true" aria-labelledby="languageModalTitle">
+      <h2 id="languageModalTitle" data-i18n="modalTitle"></h2>
+      <p data-i18n="modalBody"></p>
+      <div class="language-actions">
+        <button type="button" class="language-button primary" data-set-language="ko" data-i18n="modalKorean"></button>
+        <button type="button" class="language-button secondary" data-set-language="en" data-i18n="modalEnglish"></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const storageKey = "tinypaws-language";
+    const translations = {
+      en: {
+        pageTitle: "TinyPaws",
+        metaDescription: "TinyPaws support and privacy pages for the macOS desktop companion app.",
+        heroTitle: "A tiny desktop companion for your Mac.",
+        heroLead: "TinyPaws is a lightweight macOS desktop companion app with animated pets, simple customization, and a cozy always-on-desktop presence.",
+        supportButton: "Support Page",
+        privacyButton: "Privacy Policy",
+        aboutTitle: "About TinyPaws",
+        aboutItem1: "Animated desktop pet for macOS",
+        aboutItem2: "Character, size, opacity, and walk speed controls",
+        aboutItem3: "Drag to reposition on your desktop",
+        aboutItem4: "Menu bar companion with optional keyboard-reactive behavior",
+        contactTitle: "Contact",
+        developerLabel: "Developer: youngji Yoon",
+        responseTime: "Typical response time: within 3 business days",
+        pagesTitle: "Pages",
+        supportCardTitle: "Support",
+        supportCardBody: "Help, FAQs, compatibility, and contact details for TinyPaws users.",
+        privacyCardTitle: "Privacy Policy",
+        privacyCardBody: "What TinyPaws stores locally, how permissions are used, and what data is not collected.",
+        footerText: "TinyPaws official support and privacy information",
+        modalTitle: "Choose your language",
+        modalBody: "Pick the language you want to use on the TinyPaws site. You can change it again anytime from the top-right button.",
+        modalKorean: "한국어로 보기",
+        modalEnglish: "Continue in English"
+      },
+      ko: {
+        pageTitle: "TinyPaws",
+        metaDescription: "TinyPaws macOS 데스크톱 컴패니언 앱의 지원 및 개인정보처리방침 페이지입니다.",
+        heroTitle: "Mac 위에 함께 머무는 작은 데스크톱 친구.",
+        heroLead: "TinyPaws는 애니메이션 펫, 간단한 꾸미기 기능, 그리고 늘 화면 위에 함께 있는 아늑한 분위기를 제공하는 가벼운 macOS 데스크톱 컴패니언 앱입니다.",
+        supportButton: "지원 페이지",
+        privacyButton: "개인정보처리방침",
+        aboutTitle: "TinyPaws 소개",
+        aboutItem1: "macOS용 애니메이션 데스크톱 펫",
+        aboutItem2: "캐릭터, 크기, 투명도, 이동 속도 조절",
+        aboutItem3: "드래그해서 원하는 위치로 이동",
+        aboutItem4: "선택적으로 키보드 반응 기능을 지원하는 메뉴 막대 컴패니언",
+        contactTitle: "문의",
+        developerLabel: "개발자: youngji Yoon",
+        responseTime: "보통 3영업일 이내에 답변드립니다.",
+        pagesTitle: "안내 페이지",
+        supportCardTitle: "지원",
+        supportCardBody: "TinyPaws 사용자용 도움말, 자주 묻는 질문, 호환성, 연락처를 확인할 수 있습니다.",
+        privacyCardTitle: "개인정보처리방침",
+        privacyCardBody: "TinyPaws가 기기에 저장하는 정보, 권한 사용 방식, 수집하지 않는 데이터를 안내합니다.",
+        footerText: "TinyPaws 공식 지원 및 개인정보 안내",
+        modalTitle: "사용할 언어를 선택해 주세요",
+        modalBody: "TinyPaws 사이트에서 사용할 언어를 선택해 주세요. 오른쪽 위 버튼에서 언제든 다시 바꿀 수 있습니다.",
+        modalKorean: "한국어로 시작하기",
+        modalEnglish: "영문으로 보기"
+      }
+    };
+
+    const elements = document.querySelectorAll("[data-i18n]");
+    const switchButtons = document.querySelectorAll("[data-set-language]");
+    const modal = document.getElementById("languageModal");
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+
+    function applyLanguage(language) {
+      const lang = translations[language] ? language : "en";
+      const copy = translations[lang];
+
+      elements.forEach((element) => {
+        const key = element.dataset.i18n;
+        element.textContent = copy[key];
+      });
+
+      document.documentElement.lang = lang;
+      document.title = copy.pageTitle;
+      descriptionMeta.setAttribute("content", copy.metaDescription);
+      document.documentElement.dataset.language = lang;
+
+      switchButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.setLanguage === lang);
+      });
+    }
+
+    function chooseLanguage(language) {
+      localStorage.setItem(storageKey, language);
+      applyLanguage(language);
+      modal.hidden = true;
+    }
+
+    switchButtons.forEach((button) => {
+      button.addEventListener("click", () => chooseLanguage(button.dataset.setLanguage));
+    });
+
+    const storedLanguage = localStorage.getItem(storageKey);
+
+    if (storedLanguage) {
+      applyLanguage(storedLanguage);
+    } else {
+      applyLanguage("ko");
+      modal.hidden = false;
+    }
+
+    document.documentElement.classList.add("ready");
+  </script>
 </body>
 </html>
