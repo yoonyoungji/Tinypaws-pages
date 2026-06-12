@@ -180,7 +180,7 @@
       margin-bottom: 6px;
     }
 
-    ul {
+    ul, ol {
       margin: 0;
       padding-left: 18px;
     }
@@ -208,6 +208,119 @@
       margin-top: 18px;
       padding-top: 18px;
       border-top: 1px solid var(--line);
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .guide-step {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 249, 242, 0.82);
+    }
+
+    .step-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff9f5;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .mock-shot {
+      border: 1px solid rgba(158, 76, 45, 0.14);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fffdf9 0%, #f7efe5 100%);
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(74, 44, 26, 0.08);
+      margin-top: 14px;
+    }
+
+    .mock-shot-bar {
+      height: 34px;
+      background: rgba(210, 190, 172, 0.35);
+      border-bottom: 1px solid rgba(158, 76, 45, 0.12);
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      gap: 8px;
+    }
+
+    .mock-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(158, 76, 45, 0.28);
+    }
+
+    .mock-shot-body {
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .mock-label {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .mock-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(158, 76, 45, 0.1);
+    }
+
+    .mock-row.active {
+      background: rgba(201, 111, 74, 0.12);
+      border-color: rgba(201, 111, 74, 0.22);
+    }
+
+    .toggle {
+      width: 42px;
+      height: 24px;
+      border-radius: 999px;
+      background: rgba(158, 76, 45, 0.18);
+      position: relative;
+      flex: none;
+    }
+
+    .toggle::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    .toggle.on {
+      background: rgba(76, 175, 80, 0.78);
+    }
+
+    .toggle.on::after {
+      left: 21px;
     }
 
     footer {
@@ -271,7 +384,8 @@
         align-items: stretch;
       }
 
-      .grid {
+      .grid,
+      .guide-grid {
         grid-template-columns: 1fr;
       }
 
@@ -333,6 +447,88 @@
           <li data-i18n="compatibilityItem2"></li>
           <li data-i18n="compatibilityItem3"></li>
         </ul>
+      </article>
+
+      <article class="card full">
+        <h2 data-i18n="guideTitle"></h2>
+        <p class="muted" data-i18n="guideIntro"></p>
+        <div class="guide-grid">
+          <section class="guide-step">
+            <div class="step-chip" data-i18n="guideStep1Chip"></div>
+            <h3 data-i18n="guideStep1Title"></h3>
+            <p class="muted" data-i18n="guideStep1Body"></p>
+            <div class="mock-shot" aria-hidden="true">
+              <div class="mock-shot-bar">
+                <span class="mock-dot"></span>
+                <span class="mock-dot"></span>
+                <span class="mock-dot"></span>
+              </div>
+              <div class="mock-shot-body">
+                <div class="mock-label" data-i18n="mockSettingsLabel"></div>
+                <div class="mock-row active"><span data-i18n="mockPrivacyRow"></span><span>›</span></div>
+                <div class="mock-row"><span data-i18n="mockGeneralRow"></span><span>›</span></div>
+                <div class="mock-row"><span data-i18n="mockNotificationsRow"></span><span>›</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="guide-step">
+            <div class="step-chip" data-i18n="guideStep2Chip"></div>
+            <h3 data-i18n="guideStep2Title"></h3>
+            <p class="muted" data-i18n="guideStep2Body"></p>
+            <div class="mock-shot" aria-hidden="true">
+              <div class="mock-shot-bar">
+                <span class="mock-dot"></span>
+                <span class="mock-dot"></span>
+                <span class="mock-dot"></span>
+              </div>
+              <div class="mock-shot-body">
+                <div class="mock-label" data-i18n="mockPrivacySectionLabel"></div>
+                <div class="mock-row active"><span data-i18n="mockAccessibilityRow"></span><span>✓</span></div>
+                <div class="mock-row"><span data-i18n="mockInputMonitoringRow"></span><span>›</span></div>
+                <div class="mock-row"><span data-i18n="mockFilesRow"></span><span>›</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="guide-step">
+            <div class="step-chip" data-i18n="guideStep3Chip"></div>
+            <h3 data-i18n="guideStep3Title"></h3>
+            <p class="muted" data-i18n="guideStep3Body"></p>
+            <div class="mock-shot" aria-hidden="true">
+              <div class="mock-shot-bar">
+                <span class="mock-dot"></span>
+                <span class="mock-dot"></span>
+                <span class="mock-dot"></span>
+              </div>
+              <div class="mock-shot-body">
+                <div class="mock-label" data-i18n="mockAccessibilityLabel"></div>
+                <div class="mock-row active"><span>TinyPaws</span><span class="toggle on"></span></div>
+                <div class="mock-row"><span data-i18n="mockFinderLabel"></span><span class="toggle"></span></div>
+                <div class="mock-row"><span data-i18n="mockBrowserLabel"></span><span class="toggle"></span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="guide-step">
+            <div class="step-chip" data-i18n="guideStep4Chip"></div>
+            <h3 data-i18n="guideStep4Title"></h3>
+            <p class="muted" data-i18n="guideStep4Body"></p>
+            <div class="mock-shot" aria-hidden="true">
+              <div class="mock-shot-bar">
+                <span class="mock-dot"></span>
+                <span class="mock-dot"></span>
+                <span class="mock-dot"></span>
+              </div>
+              <div class="mock-shot-body">
+                <div class="mock-label" data-i18n="mockInputLabel"></div>
+                <div class="mock-row active"><span>TinyPaws</span><span class="toggle on"></span></div>
+                <div class="mock-row"><span data-i18n="mockTerminalLabel"></span><span class="toggle"></span></div>
+                <div class="mock-row"><span data-i18n="mockRestartLabel"></span><span>↻</span></div>
+              </div>
+            </div>
+          </section>
+        </div>
       </article>
 
       <article class="card full">
@@ -401,6 +597,34 @@
         compatibilityItem1: "Platform: macOS",
         compatibilityItem2: "Minimum version: macOS 13.0 or later",
         compatibilityItem3: "App type: menu bar desktop companion",
+        guideTitle: "Permission Setup Guide",
+        guideIntro: "If TinyPaws does not react to keyboard input or movement keys while other apps are active, check the permissions below in macOS System Settings.",
+        guideStep1Chip: "Step 1",
+        guideStep1Title: "Open System Settings",
+        guideStep1Body: "Open macOS System Settings, then go to Privacy & Security.",
+        guideStep2Chip: "Step 2",
+        guideStep2Title: "Open the required permission section",
+        guideStep2Body: "Review Accessibility first. If keyboard reaction is still limited, also check Input Monitoring.",
+        guideStep3Chip: "Step 3",
+        guideStep3Title: "Enable Accessibility for TinyPaws",
+        guideStep3Body: "Turn on TinyPaws in Accessibility so it can interact more naturally with desktop behavior.",
+        guideStep4Chip: "Step 4",
+        guideStep4Title: "Enable Input Monitoring if needed",
+        guideStep4Body: "If the app still does not react while another app is focused, enable TinyPaws in Input Monitoring and relaunch the app.",
+        mockSettingsLabel: "System Settings",
+        mockPrivacyRow: "Privacy & Security",
+        mockGeneralRow: "General",
+        mockNotificationsRow: "Notifications",
+        mockPrivacySectionLabel: "Privacy",
+        mockAccessibilityRow: "Accessibility",
+        mockInputMonitoringRow: "Input Monitoring",
+        mockFilesRow: "Files and Folders",
+        mockAccessibilityLabel: "Accessibility Apps",
+        mockFinderLabel: "Finder",
+        mockBrowserLabel: "Google Chrome",
+        mockInputLabel: "Input Monitoring",
+        mockTerminalLabel: "Terminal",
+        mockRestartLabel: "Relaunch TinyPaws",
         faqTitle: "FAQ",
         faq1Title: "The character is not responding to keyboard input.",
         faq1Body: "Check whether Accessibility or Input Monitoring permission has been granted in macOS System Settings.",
@@ -444,6 +668,34 @@
         compatibilityItem1: "플랫폼: macOS",
         compatibilityItem2: "최소 지원 버전: macOS 13.0 이상",
         compatibilityItem3: "앱 유형: 메뉴 막대 데스크톱 컴패니언",
+        guideTitle: "권한 설정 가이드",
+        guideIntro: "TinyPaws가 다른 앱 위에서 키보드 입력에 반응하지 않거나 움직임이 제한된다면, 아래 순서대로 macOS 시스템 설정을 확인해 주세요.",
+        guideStep1Chip: "1단계",
+        guideStep1Title: "시스템 설정 열기",
+        guideStep1Body: "macOS의 시스템 설정을 연 뒤, 개인정보 보호 및 보안으로 이동합니다.",
+        guideStep2Chip: "2단계",
+        guideStep2Title: "필요한 권한 메뉴 열기",
+        guideStep2Body: "먼저 손쉬운 사용을 확인하고, 키보드 반응이 계속 제한되면 입력 모니터링도 함께 확인해 주세요.",
+        guideStep3Chip: "3단계",
+        guideStep3Title: "손쉬운 사용에서 TinyPaws 허용",
+        guideStep3Body: "손쉬운 사용 목록에서 TinyPaws를 켜면 데스크톱 상호작용이 더 자연스럽게 동작합니다.",
+        guideStep4Chip: "4단계",
+        guideStep4Title: "필요 시 입력 모니터링 허용",
+        guideStep4Body: "다른 앱이 활성화된 상태에서 반응하지 않으면 입력 모니터링에서 TinyPaws를 켜고 앱을 다시 실행해 주세요.",
+        mockSettingsLabel: "시스템 설정",
+        mockPrivacyRow: "개인정보 보호 및 보안",
+        mockGeneralRow: "일반",
+        mockNotificationsRow: "알림",
+        mockPrivacySectionLabel: "개인정보",
+        mockAccessibilityRow: "손쉬운 사용",
+        mockInputMonitoringRow: "입력 모니터링",
+        mockFilesRow: "파일 및 폴더",
+        mockAccessibilityLabel: "손쉬운 사용 앱",
+        mockFinderLabel: "Finder",
+        mockBrowserLabel: "Google Chrome",
+        mockInputLabel: "입력 모니터링",
+        mockTerminalLabel: "터미널",
+        mockRestartLabel: "TinyPaws 다시 실행",
         faqTitle: "자주 묻는 질문",
         faq1Title: "캐릭터가 키보드 입력에 반응하지 않아요.",
         faq1Body: "macOS 시스템 설정에서 손쉬운 사용 또는 입력 모니터링 권한이 허용되어 있는지 확인해 주세요.",
