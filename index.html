@@ -64,6 +64,13 @@
       margin-bottom: 20px;
     }
 
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 24px;
+      align-items: center;
+    }
+
     .hero-top {
       display: flex;
       align-items: flex-start;
@@ -204,6 +211,81 @@
       color: var(--text);
     }
 
+    .hero-art {
+      position: relative;
+      min-height: 360px;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top left, rgba(255, 225, 199, 0.95), transparent 45%),
+        radial-gradient(circle at bottom right, rgba(255, 207, 158, 0.9), transparent 40%),
+        linear-gradient(180deg, rgba(255, 252, 247, 0.96) 0%, rgba(251, 241, 228, 0.98) 100%);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .hero-art::before,
+    .hero-art::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(191, 107, 70, 0.1);
+    }
+
+    .hero-art::before {
+      width: 180px;
+      height: 180px;
+      top: -40px;
+      right: -20px;
+    }
+
+    .hero-art::after {
+      width: 140px;
+      height: 140px;
+      left: -28px;
+      bottom: -28px;
+    }
+
+    .pet-badge {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 122px;
+      height: 122px;
+      border-radius: 32px;
+      background: rgba(255, 252, 247, 0.92);
+      border: 1px solid rgba(143, 66, 39, 0.14);
+      box-shadow: 0 16px 34px rgba(74, 44, 26, 0.12);
+      padding: 14px;
+    }
+
+    .pet-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .pet-badge.one { top: 34px; left: 30px; transform: rotate(-6deg); }
+    .pet-badge.two { top: 62px; right: 42px; transform: rotate(7deg); }
+    .pet-badge.three { bottom: 86px; left: 86px; transform: rotate(4deg); }
+    .pet-badge.four { bottom: 34px; right: 56px; transform: rotate(-5deg); }
+
+    .speech-chip {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: rgba(255, 250, 244, 0.95);
+      border: 1px solid rgba(143, 66, 39, 0.16);
+      color: var(--accent-strong);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      box-shadow: 0 10px 24px rgba(74, 44, 26, 0.08);
+      white-space: nowrap;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -216,6 +298,42 @@
 
     .card.full {
       grid-column: 1 / -1;
+    }
+
+    .character-showcase {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .character-card {
+      padding: 20px 18px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      text-align: center;
+    }
+
+    .character-card img {
+      width: 100%;
+      max-width: 124px;
+      height: 124px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .character-name {
+      font-weight: 800;
+      color: var(--accent-strong);
+      margin-bottom: 4px;
+    }
+
+    .character-note {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin: 0;
     }
 
     ul {
@@ -302,6 +420,8 @@
     }
 
     @media (max-width: 860px) {
+      .hero-layout,
+      .character-showcase,
       .hero-meta {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -333,10 +453,21 @@
         align-items: stretch;
       }
 
+      .hero-layout,
       .grid,
       .page-links,
-      .hero-meta {
+      .hero-meta,
+      .character-showcase {
         grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 320px;
+      }
+
+      .pet-badge {
+        width: 104px;
+        height: 104px;
       }
 
       .language-actions {
@@ -348,42 +479,80 @@
 <body>
   <main class="wrap">
     <section class="hero">
-      <div class="hero-top">
-        <p class="eyebrow">TinyPaws</p>
-        <div class="switcher language-switcher" data-aria-label-key="switcherAriaLabel">
-          <button type="button" data-set-language="ko" data-i18n="switchKorean"></button>
-          <button type="button" data-set-language="en" data-i18n="switchEnglish"></button>
+      <div class="hero-layout">
+        <div>
+          <div class="hero-top">
+            <p class="eyebrow">TinyPaws</p>
+            <div class="switcher language-switcher" data-aria-label-key="switcherAriaLabel">
+              <button type="button" data-set-language="ko" data-i18n="switchKorean"></button>
+              <button type="button" data-set-language="en" data-i18n="switchEnglish"></button>
+            </div>
+          </div>
+          <h1 data-i18n="heroTitle"></h1>
+          <p class="lead" data-i18n="heroLead"></p>
+          <div class="actions">
+            <a class="btn primary" href="./downloads/TinyPaws.dmg" data-i18n="downloadButton"></a>
+            <a class="btn secondary" href="./release-notes/1.0.html" data-i18n="releaseNotesButton"></a>
+            <a class="btn secondary" href="./support.html" data-i18n="supportButton"></a>
+            <a class="btn secondary" href="./privacy.html" data-i18n="privacyButton"></a>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-block">
+              <span class="meta-label" data-i18n="metaVersionLabel"></span>
+              <span class="meta-value" data-i18n="metaVersionValue"></span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label" data-i18n="metaPlatformLabel"></span>
+              <span class="meta-value" data-i18n="metaPlatformValue"></span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label" data-i18n="metaUpdatesLabel"></span>
+              <span class="meta-value" data-i18n="metaUpdatesValue"></span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label" data-i18n="metaFeedLabel"></span>
+              <span class="meta-value"><code>appcast.xml</code></span>
+            </div>
+          </div>
         </div>
-      </div>
-      <h1 data-i18n="heroTitle"></h1>
-      <p class="lead" data-i18n="heroLead"></p>
-      <div class="actions">
-        <a class="btn primary" href="./downloads/TinyPaws.dmg" data-i18n="downloadButton"></a>
-        <a class="btn secondary" href="./release-notes/1.0.html" data-i18n="releaseNotesButton"></a>
-        <a class="btn secondary" href="./support.html" data-i18n="supportButton"></a>
-        <a class="btn secondary" href="./privacy.html" data-i18n="privacyButton"></a>
-      </div>
-      <div class="hero-meta">
-        <div class="meta-block">
-          <span class="meta-label" data-i18n="metaVersionLabel"></span>
-          <span class="meta-value" data-i18n="metaVersionValue"></span>
-        </div>
-        <div class="meta-block">
-          <span class="meta-label" data-i18n="metaPlatformLabel"></span>
-          <span class="meta-value" data-i18n="metaPlatformValue"></span>
-        </div>
-        <div class="meta-block">
-          <span class="meta-label" data-i18n="metaUpdatesLabel"></span>
-          <span class="meta-value" data-i18n="metaUpdatesValue"></span>
-        </div>
-        <div class="meta-block">
-          <span class="meta-label" data-i18n="metaFeedLabel"></span>
-          <span class="meta-value"><code>appcast.xml</code></span>
+        <div class="hero-art" aria-hidden="true">
+          <div class="pet-badge one"><img src="./characters/cat.png" alt=""></div>
+          <div class="pet-badge two"><img src="./characters/capybara.png" alt=""></div>
+          <div class="pet-badge three"><img src="./characters/poodle.png" alt=""></div>
+          <div class="pet-badge four"><img src="./characters/hamster.png" alt=""></div>
+          <div class="speech-chip" data-i18n="heroArtLabel"></div>
         </div>
       </div>
     </section>
 
     <section class="grid">
+      <article class="card full">
+        <h2 data-i18n="charactersTitle"></h2>
+        <p class="muted" data-i18n="charactersBody"></p>
+        <div class="character-showcase">
+          <div class="character-card">
+            <img src="./characters/cat.png" alt="Cat character">
+            <div class="character-name" data-i18n="characterCatName"></div>
+            <p class="character-note" data-i18n="characterCatNote"></p>
+          </div>
+          <div class="character-card">
+            <img src="./characters/capybara.png" alt="Capybara character">
+            <div class="character-name" data-i18n="characterCapybaraName"></div>
+            <p class="character-note" data-i18n="characterCapybaraNote"></p>
+          </div>
+          <div class="character-card">
+            <img src="./characters/poodle.png" alt="Poodle character">
+            <div class="character-name" data-i18n="characterPoodleName"></div>
+            <p class="character-note" data-i18n="characterPoodleNote"></p>
+          </div>
+          <div class="character-card">
+            <img src="./characters/hamster.png" alt="Hamster character">
+            <div class="character-name" data-i18n="characterHamsterName"></div>
+            <p class="character-note" data-i18n="characterHamsterNote"></p>
+          </div>
+        </div>
+      </article>
+
       <article class="card">
         <h2 data-i18n="downloadTitle"></h2>
         <p class="muted" data-i18n="downloadBody"></p>
@@ -465,6 +634,7 @@
         metaDescription: "TinyPaws direct download, release notes, and support pages for the macOS desktop companion app.",
         heroTitle: "A tiny desktop companion for your Mac.",
         heroLead: "Download TinyPaws directly for macOS, read release notes, and get future updates through Sparkle-powered in-app updates.",
+        heroArtLabel: "tiny friends on your desktop",
         downloadButton: "Download for macOS",
         releaseNotesButton: "Release Notes",
         supportButton: "Support",
@@ -476,6 +646,16 @@
         metaUpdatesLabel: "Updates",
         metaUpdatesValue: "Automatic via Sparkle",
         metaFeedLabel: "Update Feed",
+        charactersTitle: "Meet the TinyPaws Crew",
+        charactersBody: "The direct-download build includes a cozy cast of desktop companions, each with its own silhouette and personality.",
+        characterCatName: "Cat",
+        characterCatNote: "A classic tiny troublemaker with quick little steps.",
+        characterCapybaraName: "Capybara",
+        characterCapybaraNote: "Calm, chunky, and perfect for slow desk days.",
+        characterPoodleName: "Poodle",
+        characterPoodleNote: "A fluffy walker that makes the desktop feel lively.",
+        characterHamsterName: "Hamster",
+        characterHamsterNote: "Small, bright, and made for cheerful motion.",
         downloadTitle: "Direct Download",
         downloadBody: "TinyPaws is distributed outside the Mac App Store. Download the DMG, move TinyPaws into Applications, and keep future versions up to date from inside the app.",
         downloadPrimary: "Download DMG",
@@ -516,6 +696,7 @@
         metaDescription: "TinyPaws macOS 데스크톱 컴패니언 앱의 직접 다운로드, 릴리스 노트, 지원 페이지입니다.",
         heroTitle: "Mac 위에 함께 머무는 작은 데스크톱 친구.",
         heroLead: "TinyPaws를 macOS용으로 직접 다운로드하고, 릴리스 노트를 확인하고, Sparkle 기반 앱 내 업데이트를 통해 다음 버전도 받아보세요.",
+        heroArtLabel: "작은 친구들이 화면 위에 함께해요",
         downloadButton: "macOS용 다운로드",
         releaseNotesButton: "릴리스 노트",
         supportButton: "지원",
@@ -527,6 +708,16 @@
         metaUpdatesLabel: "업데이트",
         metaUpdatesValue: "Sparkle 자동 업데이트",
         metaFeedLabel: "업데이트 피드",
+        charactersTitle: "TinyPaws 캐릭터들",
+        charactersBody: "직접 다운로드 버전에는 각기 다른 분위기의 데스크톱 친구들이 함께 들어 있습니다.",
+        characterCatName: "고양이",
+        characterCatNote: "작고 재빠른 움직임이 매력인 기본 캐릭터입니다.",
+        characterCapybaraName: "카피바라",
+        characterCapybaraNote: "차분하고 둥글둥글한 분위기로 책상 위를 함께해요.",
+        characterPoodleName: "푸들",
+        characterPoodleNote: "복슬복슬한 실루엣으로 화면에 생동감을 더합니다.",
+        characterHamsterName: "햄스터",
+        characterHamsterNote: "작고 발랄한 느낌이 잘 살아 있는 캐릭터입니다.",
         downloadTitle: "직접 다운로드",
         downloadBody: "TinyPaws는 Mac App Store 밖에서 배포됩니다. DMG를 내려받아 Applications로 옮겨 설치하고, 이후 버전은 앱 안에서 업데이트할 수 있습니다.",
         downloadPrimary: "DMG 다운로드",
