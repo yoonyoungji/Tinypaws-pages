@@ -336,6 +336,45 @@
       margin: 0;
     }
 
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .media-card {
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: var(--surface-strong);
+    }
+
+    .media-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #f5ece1;
+    }
+
+    .media-copy {
+      padding: 16px 18px 18px;
+    }
+
+    .media-title {
+      font-weight: 800;
+      color: var(--accent-strong);
+      margin-bottom: 6px;
+    }
+
+    .media-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
     ul {
       margin: 0;
       padding-left: 18px;
@@ -422,7 +461,8 @@
     @media (max-width: 860px) {
       .hero-layout,
       .character-showcase,
-      .hero-meta {
+      .hero-meta,
+      .media-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -457,7 +497,8 @@
       .grid,
       .page-links,
       .hero-meta,
-      .character-showcase {
+      .character-showcase,
+      .media-grid {
         grid-template-columns: 1fr;
       }
 
@@ -549,6 +590,41 @@
             <img src="./characters/hamster.png" alt="Hamster character">
             <div class="character-name" data-i18n="characterHamsterName"></div>
             <p class="character-note" data-i18n="characterHamsterNote"></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card full">
+        <h2 data-i18n="mediaTitle"></h2>
+        <p class="muted" data-i18n="mediaBody"></p>
+        <div class="media-grid">
+          <div class="media-card">
+            <img src="./media/main.png" alt="TinyPaws main view">
+            <div class="media-copy">
+              <div class="media-title" data-i18n="mediaCard1Title"></div>
+              <p class="media-note" data-i18n="mediaCard1Body"></p>
+            </div>
+          </div>
+          <div class="media-card">
+            <img src="./media/characters.png" alt="TinyPaws character selection">
+            <div class="media-copy">
+              <div class="media-title" data-i18n="mediaCard2Title"></div>
+              <p class="media-note" data-i18n="mediaCard2Body"></p>
+            </div>
+          </div>
+          <div class="media-card">
+            <img src="./media/customize.png" alt="TinyPaws customization controls">
+            <div class="media-copy">
+              <div class="media-title" data-i18n="mediaCard3Title"></div>
+              <p class="media-note" data-i18n="mediaCard3Body"></p>
+            </div>
+          </div>
+          <div class="media-card">
+            <img src="./media/animation.png" alt="TinyPaws animation preview">
+            <div class="media-copy">
+              <div class="media-title" data-i18n="mediaCard4Title"></div>
+              <p class="media-note" data-i18n="mediaCard4Body"></p>
+            </div>
           </div>
         </div>
       </article>
@@ -656,6 +732,16 @@
         characterPoodleNote: "A fluffy walker that makes the desktop feel lively.",
         characterHamsterName: "Hamster",
         characterHamsterNote: "Small, bright, and made for cheerful motion.",
+        mediaTitle: "See TinyPaws in Action",
+        mediaBody: "A quick look at the desktop pet, character selection, customization controls, and motion style before you download.",
+        mediaCard1Title: "Desktop companion view",
+        mediaCard1Body: "The pet stays visible on your desktop without feeling heavy or noisy.",
+        mediaCard2Title: "Character variety",
+        mediaCard2Body: "Switch between different pet styles depending on your mood.",
+        mediaCard3Title: "Simple customization",
+        mediaCard3Body: "Adjust size, opacity, and other lightweight settings from the menu bar.",
+        mediaCard4Title: "Animated movement",
+        mediaCard4Body: "Walking, reacting, and idle motion help the pet feel alive on screen.",
         downloadTitle: "Direct Download",
         downloadBody: "TinyPaws is distributed outside the Mac App Store. Download the DMG, move TinyPaws into Applications, and keep future versions up to date from inside the app.",
         downloadPrimary: "Download DMG",
@@ -718,6 +804,16 @@
         characterPoodleNote: "복슬복슬한 실루엣으로 화면에 생동감을 더합니다.",
         characterHamsterName: "햄스터",
         characterHamsterNote: "작고 발랄한 느낌이 잘 살아 있는 캐릭터입니다.",
+        mediaTitle: "동작 화면 미리보기",
+        mediaBody: "다운로드 전에 TinyPaws의 메인 화면, 캐릭터 선택, 커스터마이징, 애니메이션 느낌을 한 번에 볼 수 있습니다.",
+        mediaCard1Title: "메인 데스크톱 화면",
+        mediaCard1Body: "작업을 방해하지 않으면서도 화면 위에 자연스럽게 머무르는 모습을 보여줍니다.",
+        mediaCard2Title: "캐릭터 선택",
+        mediaCard2Body: "기분에 따라 다양한 펫 캐릭터로 바꿔 사용할 수 있습니다.",
+        mediaCard3Title: "간단한 꾸미기",
+        mediaCard3Body: "메뉴 막대에서 크기, 투명도 등 가벼운 설정을 빠르게 조절할 수 있습니다.",
+        mediaCard4Title: "애니메이션 움직임",
+        mediaCard4Body: "걷기, 반응, 대기 동작으로 화면 위에서 살아 있는 느낌을 더합니다.",
         downloadTitle: "직접 다운로드",
         downloadBody: "TinyPaws는 Mac App Store 밖에서 배포됩니다. DMG를 내려받아 Applications로 옮겨 설치하고, 이후 버전은 앱 안에서 업데이트할 수 있습니다.",
         downloadPrimary: "DMG 다운로드",
