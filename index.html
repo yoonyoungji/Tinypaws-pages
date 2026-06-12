@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TinyPaws</title>
-  <meta name="description" content="TinyPaws support and privacy pages for the macOS desktop companion app.">
+  <meta name="description" content="TinyPaws direct download, release notes, and support pages for the macOS desktop companion app.">
   <style>
     :root {
       color-scheme: light;
@@ -44,7 +44,7 @@
     a { color: var(--accent-strong); }
 
     .wrap {
-      width: min(1040px, calc(100% - 32px));
+      width: min(1080px, calc(100% - 32px));
       margin: 0 auto;
       padding: 44px 0 64px;
     }
@@ -87,6 +87,7 @@
       font-size: clamp(2.2rem, 5vw, 4rem);
       line-height: 1.03;
       margin-bottom: 14px;
+      max-width: 12ch;
     }
 
     h2 {
@@ -103,7 +104,8 @@
 
     .actions,
     .language-switcher,
-    .language-actions {
+    .language-actions,
+    .cta-row {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -115,7 +117,8 @@
 
     .btn,
     .language-button,
-    .switcher button {
+    .switcher button,
+    .pill {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -132,7 +135,8 @@
 
     .btn:hover,
     .language-button:hover,
-    .switcher button:hover {
+    .switcher button:hover,
+    .pill:hover {
       transform: translateY(-1px);
     }
 
@@ -144,7 +148,8 @@
 
     .btn.secondary,
     .language-button.secondary,
-    .switcher button {
+    .switcher button,
+    .pill {
       background: var(--surface-strong);
       color: var(--accent-strong);
       border-color: rgba(143, 66, 39, 0.2);
@@ -168,6 +173,35 @@
       background: var(--accent);
       color: #fff9f5;
       border-color: transparent;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .meta-block {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 250, 244, 0.82);
+    }
+
+    .meta-label {
+      display: block;
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .meta-value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
     }
 
     .grid {
@@ -195,6 +229,12 @@
 
     .muted { color: var(--muted); }
 
+    .inline-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
     .page-links {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -216,6 +256,14 @@
       display: block;
       margin-bottom: 6px;
       color: var(--accent-strong);
+    }
+
+    code {
+      font-family: "SFMono-Regular", "SF Mono", ui-monospace, monospace;
+      font-size: 0.92em;
+      background: rgba(143, 66, 39, 0.08);
+      padding: 2px 6px;
+      border-radius: 8px;
     }
 
     footer {
@@ -253,9 +301,15 @@
       margin-bottom: 20px;
     }
 
+    @media (max-width: 860px) {
+      .hero-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 760px) {
       .wrap {
-        width: min(100% - 20px, 1040px);
+        width: min(100% - 20px, 1080px);
         padding: 20px 0 32px;
       }
 
@@ -280,7 +334,8 @@
       }
 
       .grid,
-      .page-links {
+      .page-links,
+      .hero-meta {
         grid-template-columns: 1fr;
       }
 
@@ -303,12 +358,42 @@
       <h1 data-i18n="heroTitle"></h1>
       <p class="lead" data-i18n="heroLead"></p>
       <div class="actions">
-        <a class="btn primary" href="./support.html" data-i18n="supportButton"></a>
+        <a class="btn primary" href="./downloads/TinyPaws.dmg" data-i18n="downloadButton"></a>
+        <a class="btn secondary" href="./release-notes/1.0.html" data-i18n="releaseNotesButton"></a>
+        <a class="btn secondary" href="./support.html" data-i18n="supportButton"></a>
         <a class="btn secondary" href="./privacy.html" data-i18n="privacyButton"></a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-block">
+          <span class="meta-label" data-i18n="metaVersionLabel"></span>
+          <span class="meta-value" data-i18n="metaVersionValue"></span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-label" data-i18n="metaPlatformLabel"></span>
+          <span class="meta-value" data-i18n="metaPlatformValue"></span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-label" data-i18n="metaUpdatesLabel"></span>
+          <span class="meta-value" data-i18n="metaUpdatesValue"></span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-label" data-i18n="metaFeedLabel"></span>
+          <span class="meta-value"><code>appcast.xml</code></span>
+        </div>
       </div>
     </section>
 
     <section class="grid">
+      <article class="card">
+        <h2 data-i18n="downloadTitle"></h2>
+        <p class="muted" data-i18n="downloadBody"></p>
+        <div class="cta-row">
+          <a class="pill" href="./downloads/TinyPaws.dmg" data-i18n="downloadPrimary"></a>
+          <a class="pill" href="./appcast.xml" data-i18n="downloadSecondary"></a>
+        </div>
+        <p class="inline-note" data-i18n="downloadNote"></p>
+      </article>
+
       <article class="card">
         <h2 data-i18n="aboutTitle"></h2>
         <ul>
@@ -316,6 +401,15 @@
           <li data-i18n="aboutItem2"></li>
           <li data-i18n="aboutItem3"></li>
           <li data-i18n="aboutItem4"></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 data-i18n="updatesTitle"></h2>
+        <ul>
+          <li data-i18n="updatesItem1"></li>
+          <li data-i18n="updatesItem2"></li>
+          <li data-i18n="updatesItem3"></li>
         </ul>
       </article>
 
@@ -336,6 +430,14 @@
           <a class="page-link" href="./privacy.html">
             <strong data-i18n="privacyCardTitle"></strong>
             <span data-i18n="privacyCardBody"></span>
+          </a>
+          <a class="page-link" href="./release-notes/1.0.html">
+            <strong data-i18n="releaseCardTitle"></strong>
+            <span data-i18n="releaseCardBody"></span>
+          </a>
+          <a class="page-link" href="./appcast.xml">
+            <strong data-i18n="appcastCardTitle"></strong>
+            <span data-i18n="appcastCardBody"></span>
           </a>
         </div>
       </article>
@@ -360,25 +462,47 @@
     const translations = {
       en: {
         pageTitle: "TinyPaws",
-        metaDescription: "TinyPaws support and privacy pages for the macOS desktop companion app.",
+        metaDescription: "TinyPaws direct download, release notes, and support pages for the macOS desktop companion app.",
         heroTitle: "A tiny desktop companion for your Mac.",
-        heroLead: "TinyPaws is a lightweight macOS desktop companion app with animated pets, simple customization, and a cozy always-on-desktop presence.",
-        supportButton: "Support Page",
-        privacyButton: "Privacy Policy",
+        heroLead: "Download TinyPaws directly for macOS, read release notes, and get future updates through Sparkle-powered in-app updates.",
+        downloadButton: "Download for macOS",
+        releaseNotesButton: "Release Notes",
+        supportButton: "Support",
+        privacyButton: "Privacy",
+        metaVersionLabel: "Latest Version",
+        metaVersionValue: "1.0",
+        metaPlatformLabel: "Platform",
+        metaPlatformValue: "macOS 13.0+",
+        metaUpdatesLabel: "Updates",
+        metaUpdatesValue: "Automatic via Sparkle",
+        metaFeedLabel: "Update Feed",
+        downloadTitle: "Direct Download",
+        downloadBody: "TinyPaws is distributed outside the Mac App Store. Download the DMG, move TinyPaws into Applications, and keep future versions up to date from inside the app.",
+        downloadPrimary: "Download DMG",
+        downloadSecondary: "Open appcast.xml",
+        downloadNote: "Before launch, upload your signed and notarized release archive to ./downloads/TinyPaws.dmg.",
         aboutTitle: "About TinyPaws",
         aboutItem1: "Animated desktop pet for macOS",
         aboutItem2: "Character, size, opacity, and walk speed controls",
         aboutItem3: "Drag to reposition on your desktop",
-        aboutItem4: "Menu bar companion with optional keyboard-reactive behavior",
+        aboutItem4: "Menu bar companion with direct-download distribution",
+        updatesTitle: "How Updates Work",
+        updatesItem1: "The direct-download build checks for updates with Sparkle.",
+        updatesItem2: "Each release is signed, notarized, and published with release notes.",
+        updatesItem3: "The appcast feed is hosted on this site for in-app update delivery.",
         contactTitle: "Contact",
         developerLabel: "Developer: youngji Yoon",
         responseTime: "Typical response time: within 3 business days",
-        pagesTitle: "Pages",
+        pagesTitle: "Pages & Files",
         supportCardTitle: "Support",
         supportCardBody: "Help, FAQs, compatibility, and contact details for TinyPaws users.",
         privacyCardTitle: "Privacy Policy",
         privacyCardBody: "What TinyPaws stores locally, how permissions are used, and what data is not collected.",
-        footerText: "TinyPaws official support and privacy information",
+        releaseCardTitle: "Release Notes",
+        releaseCardBody: "Version history and major changes for direct-download builds.",
+        appcastCardTitle: "Appcast Feed",
+        appcastCardBody: "Sparkle update feed used by the app for automatic update checks.",
+        footerText: "TinyPaws official direct download, release notes, and support information",
         switcherAriaLabel: "Language switcher",
         switchKorean: "Korean",
         switchEnglish: "English",
@@ -389,25 +513,47 @@
       },
       ko: {
         pageTitle: "TinyPaws",
-        metaDescription: "TinyPaws macOS 데스크톱 컴패니언 앱의 지원 및 개인정보처리방침 페이지입니다.",
+        metaDescription: "TinyPaws macOS 데스크톱 컴패니언 앱의 직접 다운로드, 릴리스 노트, 지원 페이지입니다.",
         heroTitle: "Mac 위에 함께 머무는 작은 데스크톱 친구.",
-        heroLead: "TinyPaws는 애니메이션 펫, 간단한 꾸미기 기능, 그리고 늘 화면 위에 함께 있는 아늑한 분위기를 제공하는 가벼운 macOS 데스크톱 컴패니언 앱입니다.",
-        supportButton: "지원 페이지",
-        privacyButton: "개인정보처리방침",
+        heroLead: "TinyPaws를 macOS용으로 직접 다운로드하고, 릴리스 노트를 확인하고, Sparkle 기반 앱 내 업데이트를 통해 다음 버전도 받아보세요.",
+        downloadButton: "macOS용 다운로드",
+        releaseNotesButton: "릴리스 노트",
+        supportButton: "지원",
+        privacyButton: "개인정보",
+        metaVersionLabel: "최신 버전",
+        metaVersionValue: "1.0",
+        metaPlatformLabel: "지원 환경",
+        metaPlatformValue: "macOS 13.0+",
+        metaUpdatesLabel: "업데이트",
+        metaUpdatesValue: "Sparkle 자동 업데이트",
+        metaFeedLabel: "업데이트 피드",
+        downloadTitle: "직접 다운로드",
+        downloadBody: "TinyPaws는 Mac App Store 밖에서 배포됩니다. DMG를 내려받아 Applications로 옮겨 설치하고, 이후 버전은 앱 안에서 업데이트할 수 있습니다.",
+        downloadPrimary: "DMG 다운로드",
+        downloadSecondary: "appcast.xml 열기",
+        downloadNote: "출시 전에 서명 및 notarization이 끝난 파일을 ./downloads/TinyPaws.dmg 경로에 업로드해 주세요.",
         aboutTitle: "TinyPaws 소개",
         aboutItem1: "macOS용 애니메이션 데스크톱 펫",
         aboutItem2: "캐릭터, 크기, 투명도, 이동 속도 조절",
         aboutItem3: "드래그해서 원하는 위치로 이동",
-        aboutItem4: "선택적으로 키보드 반응 기능을 지원하는 메뉴 막대 컴패니언",
+        aboutItem4: "직접 배포 방식에 맞춘 메뉴 막대 컴패니언",
+        updatesTitle: "업데이트 방식",
+        updatesItem1: "직접 다운로드 빌드는 Sparkle로 업데이트를 확인합니다.",
+        updatesItem2: "각 릴리스는 서명, notarization, 릴리스 노트와 함께 배포됩니다.",
+        updatesItem3: "앱 내 업데이트를 위해 appcast 피드를 이 사이트에서 제공합니다.",
         contactTitle: "문의",
         developerLabel: "개발자: youngji Yoon",
         responseTime: "보통 3영업일 이내에 답변드립니다.",
-        pagesTitle: "안내 페이지",
+        pagesTitle: "페이지 및 파일",
         supportCardTitle: "지원",
         supportCardBody: "TinyPaws 사용자용 도움말, 자주 묻는 질문, 호환성, 연락처를 확인할 수 있습니다.",
         privacyCardTitle: "개인정보처리방침",
         privacyCardBody: "TinyPaws가 기기에 저장하는 정보, 권한 사용 방식, 수집하지 않는 데이터를 안내합니다.",
-        footerText: "TinyPaws 공식 지원 및 개인정보 안내",
+        releaseCardTitle: "릴리스 노트",
+        releaseCardBody: "직접 다운로드 버전의 변경 내역과 주요 업데이트를 확인할 수 있습니다.",
+        appcastCardTitle: "Appcast 피드",
+        appcastCardBody: "앱이 자동 업데이트를 확인할 때 사용하는 Sparkle 피드입니다.",
+        footerText: "TinyPaws 공식 다운로드, 릴리스 노트, 지원 안내",
         switcherAriaLabel: "언어 전환",
         switchKorean: "한국어",
         switchEnglish: "영문",
