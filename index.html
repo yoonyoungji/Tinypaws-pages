@@ -415,6 +415,29 @@
       color: var(--accent-strong);
     }
 
+    .support-card {
+      background:
+        radial-gradient(circle at top right, rgba(255, 212, 170, 0.42), transparent 35%),
+        linear-gradient(180deg, rgba(255, 250, 244, 0.98) 0%, rgba(250, 238, 223, 0.96) 100%);
+    }
+
+    .support-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(191, 107, 70, 0.12);
+      color: var(--accent-strong);
+      font-size: 0.92rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .support-card .cta-row {
+      margin-top: 18px;
+    }
+
     code {
       font-family: "SFMono-Regular", "SF Mono", ui-monospace, monospace;
       font-size: 0.92em;
@@ -665,6 +688,17 @@
         <p class="muted" data-i18n="responseTime"></p>
       </article>
 
+      <article class="card support-card">
+        <div class="support-kicker" data-i18n="coffeeKicker"></div>
+        <h2 data-i18n="coffeeTitle"></h2>
+        <p class="muted" data-i18n="coffeeBody"></p>
+        <div class="cta-row">
+          <a class="pill" href="mailto:dbsdudwl94@gmail.com?subject=Buy%20a%20Coffee%20for%20TinyPaws&body=Hi%20youngji%2C%20I%27d%20like%20to%20support%20TinyPaws%20with%20a%20coffee." data-i18n="coffeePrimary"></a>
+          <a class="pill" href="./support.html" data-i18n="coffeeSecondary"></a>
+        </div>
+        <p class="inline-note" data-i18n="coffeeNote"></p>
+      </article>
+
       <article class="card full">
         <h2 data-i18n="pagesTitle"></h2>
         <div class="page-links">
@@ -759,6 +793,12 @@
         contactTitle: "Contact",
         developerLabel: "Developer: youngji Yoon",
         responseTime: "Typical response time: within 3 business days",
+        coffeeKicker: "☕ Support TinyPaws",
+        coffeeTitle: "Buy the developer a coffee",
+        coffeeBody: "If TinyPaws made your desktop a little happier, you can send a small note of support. Later, this same spot can be swapped to a Buy Me a Coffee or Ko-fi link without redesigning the page.",
+        coffeePrimary: "Send a coffee note",
+        coffeeSecondary: "See support options",
+        coffeeNote: "This button currently opens an email to the developer. Replace it later with your real support or donation link whenever you are ready.",
         pagesTitle: "Pages & Files",
         supportCardTitle: "Support",
         supportCardBody: "Help, FAQs, compatibility, and contact details for TinyPaws users.",
@@ -831,6 +871,12 @@
         contactTitle: "문의",
         developerLabel: "개발자: youngji Yoon",
         responseTime: "보통 3영업일 이내에 답변드립니다.",
+        coffeeKicker: "☕ TinyPaws 응원하기",
+        coffeeTitle: "개발자에게 커피 사주기",
+        coffeeBody: "TinyPaws가 데스크톱을 조금 더 즐겁게 만들어줬다면, 작은 응원 메시지를 보낼 수 있어요. 나중에 원하면 이 자리를 Buy Me a Coffee나 Ko-fi 링크로 바로 바꿀 수 있게 구성해뒀습니다.",
+        coffeePrimary: "커피 응원 보내기",
+        coffeeSecondary: "지원 페이지 보기",
+        coffeeNote: "지금은 개발자 메일로 연결됩니다. 실제 후원 링크가 준비되면 같은 자리에서 바로 교체할 수 있습니다.",
         pagesTitle: "페이지 및 파일",
         supportCardTitle: "지원",
         supportCardBody: "TinyPaws 사용자용 도움말, 자주 묻는 질문, 호환성, 연락처를 확인할 수 있습니다.",
