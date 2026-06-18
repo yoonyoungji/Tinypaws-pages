@@ -860,8 +860,8 @@
           </div>
         </div>
         <div class="cta-row">
-          <button type="button" class="pill primary-support" data-open-support-modal data-i18n="coffeePrimary"></button>
-          <button type="button" class="pill" data-open-support-modal data-i18n="coffeeSecondary"></button>
+          <button type="button" class="pill primary-support" data-open-support-modal="toss" data-i18n="coffeePrimary"></button>
+          <button type="button" class="pill" data-open-support-modal="kakaopay" data-i18n="coffeeSecondary"></button>
         </div>
         <p class="inline-note" data-i18n="coffeeNote"></p>
       </article>
@@ -908,7 +908,7 @@
       <h2 id="supportModalTitle" data-i18n="supportModalTitle"></h2>
       <p data-i18n="supportModalBody"></p>
         <div class="support-options">
-          <div class="support-option">
+          <div class="support-option" data-support-option="toss">
             <strong data-i18n="supportOption1Title"></strong>
             <span data-i18n="supportOption1Body"></span>
             <div class="support-qr">
@@ -916,7 +916,7 @@
             </div>
             <span data-i18n="supportOption1Link"></span>
           </div>
-          <div class="support-option">
+          <div class="support-option" data-support-option="kakaopay">
             <strong data-i18n="supportOption2Title"></strong>
             <span data-i18n="supportOption2Body"></span>
             <div class="support-qr">
@@ -1129,6 +1129,7 @@
     const modal = document.getElementById("languageModal");
     const supportModal = document.getElementById("supportModal");
     const supportOpenButtons = document.querySelectorAll("[data-open-support-modal]");
+    const supportOptions = document.querySelectorAll("[data-support-option]");
     const descriptionMeta = document.querySelector('meta[name="description"]');
 
     function applyLanguage(language) {
@@ -1165,7 +1166,10 @@
       button.addEventListener("click", () => chooseLanguage(button.dataset.setLanguage));
     });
 
-    function openSupportModal() {
+    function openSupportModal(target) {
+      supportOptions.forEach((option) => {
+        option.hidden = option.dataset.supportOption !== target;
+      });
       supportModal.hidden = false;
     }
 
@@ -1174,7 +1178,7 @@
     }
 
     supportOpenButtons.forEach((button) => {
-      button.addEventListener("click", openSupportModal);
+      button.addEventListener("click", () => openSupportModal(button.dataset.openSupportModal));
     });
 
     supportModal.addEventListener("click", (event) => {
