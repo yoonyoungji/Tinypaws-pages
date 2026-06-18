@@ -587,6 +587,20 @@
       display: block;
     }
 
+    .support-option .support-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      color: var(--accent-strong);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .support-option .support-link:hover {
+      text-decoration: underline;
+    }
+
     .support-option code {
       display: inline-block;
       margin-top: 6px;
@@ -905,8 +919,11 @@
           <div class="support-option">
             <strong data-i18n="supportOption2Title"></strong>
             <span data-i18n="supportOption2Body"></span>
-            <div class="support-qr" data-i18n="supportOption2Qr"></div>
+            <div class="support-qr">
+              <img src="./support-assets/kakaopay-qr.jpeg" alt="KakaoPay support QR">
+            </div>
             <span data-i18n="supportOption2Link"></span>
+            <a class="support-link" href="https://qr.kakaopay.com/Ej8FZ01vl" target="_blank" rel="noreferrer" data-i18n="supportOption2Action"></a>
           </div>
         </div>
       <p class="inline-note" data-i18n="supportModalNote"></p>
@@ -981,17 +998,17 @@
         coffeePoint3Body: "Keep the app healthy and maintained.",
         coffeePrimary: "Cheer with Toss",
         coffeeSecondary: "Cheer with KakaoPay",
-        coffeeNote: "For now, this is a cozy placeholder setup. Later you can drop in your real Toss link, KakaoPay link, or a QR guide without changing the layout.",
+        coffeeNote: "Pick whichever feels easiest. Tiny support helps TinyPaws keep tiptoeing around your desktop.",
         supportModalTitle: "Pick a tiny support path",
-        supportModalBody: "Choose the easiest way to send a small cheer. Right now this popup works like a cute guide, and later each button can point to your real Toss link, KakaoPay link, or payment help page.",
+        supportModalBody: "Choose the easiest way to send a small cheer. On desktop, scan the QR with your phone. On mobile, the KakaoPay link is the quickest path.",
         supportOption1Title: "Toss",
         supportOption1Body: "Best for Korean users who want the fastest support flow.",
         supportOption1Link: "Scan this QR with Toss on your phone to send a small cheer.",
         supportOption2Title: "KakaoPay",
         supportOption2Body: "Good for mobile-first users who already use Kakao services.",
-        supportOption2Qr: "KakaoPay QR goes here later",
-        supportOption2Link: "Replace this with your real KakaoPay link or a QR image.",
-        supportModalNote: "When your real links or QR images are ready, you can replace the placeholder area without changing the layout.",
+        supportOption2Link: "Scan this QR, or jump straight into the KakaoPay support link.",
+        supportOption2Action: "Open KakaoPay link",
+        supportModalNote: "If you are on desktop, scan the QR with your phone. If you are already on mobile, the KakaoPay link is the easiest route.",
         pagesTitle: "Pages & Files",
         supportCardTitle: "Support",
         supportCardBody: "Help, FAQs, compatibility, and contact details for TinyPaws users.",
@@ -1075,17 +1092,17 @@
         coffeePoint3Body: "앱을 계속 안정적으로 유지하는 데 보탬이 됩니다.",
         coffeePrimary: "토스로 응원하기",
         coffeeSecondary: "카카오페이로 응원하기",
-        coffeeNote: "지금은 자리를 먼저 잡아둔 상태예요. 실제 토스 링크, 카카오페이 링크, 또는 QR 안내가 준비되면 버튼 연결만 바꾸면 됩니다.",
+        coffeeNote: "가장 편한 쪽으로 가볍게 응원해 주세요. 작은 응원이 TinyPaws 친구들을 계속 움직이게 해줘요.",
         supportModalTitle: "어떤 방식으로 응원할까요?",
-        supportModalBody: "가장 편한 후원 방법을 골라 주세요. 지금은 귀여운 안내 모달처럼 동작하고, 나중에는 실제 토스 링크나 카카오페이 링크, 후원 안내 페이지로 바로 연결되게 바꿀 수 있습니다.",
+        supportModalBody: "가장 편한 방법을 골라 주세요. 데스크톱에서는 QR을 스캔하고, 모바일에서는 카카오페이 링크로 바로 열 수 있어요.",
         supportOption1Title: "토스",
         supportOption1Body: "한국 사용자에게 가장 빠르고 익숙한 후원 흐름입니다.",
         supportOption1Link: "휴대폰에서 토스로 이 QR을 스캔하면 바로 작게 응원할 수 있어요.",
         supportOption2Title: "카카오페이",
         supportOption2Body: "모바일 중심 사용자에게 자연스럽고 접근성이 좋습니다.",
-        supportOption2Qr: "나중에 카카오페이 QR 이미지를 여기에 넣어 주세요",
-        supportOption2Link: "실제 카카오페이 링크 또는 QR 이미지로 교체하면 됩니다.",
-        supportModalNote: "실제 링크나 QR 이미지가 준비되면 이 자리의 placeholder만 교체하면 됩니다.",
+        supportOption2Link: "이 QR을 스캔하거나 카카오페이 링크를 열어서 바로 응원할 수 있어요.",
+        supportOption2Action: "카카오페이 링크 열기",
+        supportModalNote: "데스크톱에서는 휴대폰으로 QR을 스캔하고, 모바일에서는 카카오페이 링크로 바로 들어가면 가장 편해요.",
         pagesTitle: "페이지 및 파일",
         supportCardTitle: "지원",
         supportCardBody: "TinyPaws 사용자용 도움말, 자주 묻는 질문, 호환성, 연락처를 확인할 수 있습니다.",
