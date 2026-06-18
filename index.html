@@ -550,7 +550,7 @@
 
     .support-options {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
       margin: 18px 0 20px;
     }
@@ -610,10 +610,6 @@
     .support-sheet .inline-note {
       margin-top: 0;
       margin-bottom: 16px;
-    }
-
-    .support-sheet .language-actions {
-      justify-content: flex-end;
     }
 
     @media (max-width: 860px) {
@@ -912,20 +908,8 @@
             <div class="support-qr" data-i18n="supportOption2Qr"></div>
             <span data-i18n="supportOption2Link"></span>
           </div>
-          <div class="support-option">
-            <strong data-i18n="supportOption3Title"></strong>
-            <span data-i18n="supportOption3Body"></span>
-            <div class="support-qr" data-i18n="supportOption3Qr"></div>
-            <span data-i18n="supportOption3Link"></span>
-          </div>
         </div>
       <p class="inline-note" data-i18n="supportModalNote"></p>
-      <div class="language-actions">
-        <button type="button" class="language-button primary" data-support-action="toss" data-i18n="supportModalPrimary"></button>
-        <button type="button" class="language-button secondary" data-support-action="kakao" data-i18n="supportModalSecondary"></button>
-        <button type="button" class="language-button secondary" data-support-action="bank" data-i18n="supportModalTertiary"></button>
-        <button type="button" class="language-button secondary" data-close-support-modal data-i18n="supportModalClose"></button>
-      </div>
     </div>
   </div>
 
@@ -1007,15 +991,7 @@
         supportOption2Body: "Good for mobile-first users who already use Kakao services.",
         supportOption2Qr: "KakaoPay QR goes here later",
         supportOption2Link: "Replace this with your real KakaoPay link or a QR image.",
-        supportOption3Title: "Bank transfer",
-        supportOption3Body: "Useful as a fallback if a direct payment link is not ready yet.",
-        supportOption3Qr: "Bank transfer note or account image goes here",
-        supportOption3Link: "Show bank name, account number, and account holder here later.",
-        supportModalNote: "At the moment, each button opens an email draft so the UI is ready first. When your real links or QR images are ready, you only need to swap the destinations.",
-        supportModalPrimary: "Open Toss path",
-        supportModalSecondary: "Open KakaoPay path",
-        supportModalTertiary: "Open bank transfer guide",
-        supportModalClose: "Close",
+        supportModalNote: "When your real links or QR images are ready, you can replace the placeholder area without changing the layout.",
         pagesTitle: "Pages & Files",
         supportCardTitle: "Support",
         supportCardBody: "Help, FAQs, compatibility, and contact details for TinyPaws users.",
@@ -1109,15 +1085,7 @@
         supportOption2Body: "모바일 중심 사용자에게 자연스럽고 접근성이 좋습니다.",
         supportOption2Qr: "나중에 카카오페이 QR 이미지를 여기에 넣어 주세요",
         supportOption2Link: "실제 카카오페이 링크 또는 QR 이미지로 교체하면 됩니다.",
-        supportOption3Title: "계좌이체",
-        supportOption3Body: "직접 링크가 아직 없을 때 대체 수단으로 쓰기 좋습니다.",
-        supportOption3Qr: "여기에 계좌 안내 또는 계좌 이미지를 넣어 주세요",
-        supportOption3Link: "나중에 은행명, 계좌번호, 예금주 안내를 여기에 적으면 됩니다.",
-        supportModalNote: "지금은 버튼을 누르면 이메일 초안이 열리도록 연결돼 있어요. 실제 링크나 QR 이미지가 준비되면 클릭 대상만 바꿔주면 됩니다.",
-        supportModalPrimary: "토스 응원 열기",
-        supportModalSecondary: "카카오페이 응원 열기",
-        supportModalTertiary: "계좌이체 안내 열기",
-        supportModalClose: "닫기",
+        supportModalNote: "실제 링크나 QR 이미지가 준비되면 이 자리의 placeholder만 교체하면 됩니다.",
         pagesTitle: "페이지 및 파일",
         supportCardTitle: "지원",
         supportCardBody: "TinyPaws 사용자용 도움말, 자주 묻는 질문, 호환성, 연락처를 확인할 수 있습니다.",
@@ -1144,8 +1112,6 @@
     const modal = document.getElementById("languageModal");
     const supportModal = document.getElementById("supportModal");
     const supportOpenButtons = document.querySelectorAll("[data-open-support-modal]");
-    const supportCloseButtons = document.querySelectorAll("[data-close-support-modal]");
-    const supportActionButtons = document.querySelectorAll("[data-support-action]");
     const descriptionMeta = document.querySelector('meta[name="description"]');
 
     function applyLanguage(language) {
@@ -1194,33 +1160,10 @@
       button.addEventListener("click", openSupportModal);
     });
 
-    supportCloseButtons.forEach((button) => {
-      button.addEventListener("click", closeSupportModal);
-    });
-
     supportModal.addEventListener("click", (event) => {
       if (event.target === supportModal) {
         closeSupportModal();
       }
-    });
-
-    supportActionButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const action = button.dataset.supportAction;
-        const subjects = {
-          toss: "Toss support for TinyPaws",
-          kakao: "KakaoPay support for TinyPaws",
-          bank: "Bank transfer support for TinyPaws"
-        };
-        const bodies = {
-          toss: "Hi youngji, I'd like to support TinyPaws through Toss.",
-          kakao: "Hi youngji, I'd like to support TinyPaws through KakaoPay.",
-          bank: "Hi youngji, I'd like to support TinyPaws through bank transfer."
-        };
-        const subject = encodeURIComponent(subjects[action] || "TinyPaws support");
-        const body = encodeURIComponent(bodies[action] || "Hi youngji, I'd like to support TinyPaws.");
-        window.location.href = `mailto:dbsdudwl94@gmail.com?subject=${subject}&body=${body}`;
-      });
     });
 
     const storedLanguage = localStorage.getItem(storageKey);
