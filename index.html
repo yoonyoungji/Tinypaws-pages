@@ -51,7 +51,8 @@
 
     .hero,
     .card,
-    .language-sheet {
+    .language-sheet,
+    .support-sheet {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 28px;
@@ -418,7 +419,21 @@
     .support-card {
       background:
         radial-gradient(circle at top right, rgba(255, 212, 170, 0.42), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(255, 233, 204, 0.64), transparent 32%),
         linear-gradient(180deg, rgba(255, 250, 244, 0.98) 0%, rgba(250, 238, 223, 0.96) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .support-card::after {
+      content: "";
+      position: absolute;
+      right: -26px;
+      bottom: -26px;
+      width: 136px;
+      height: 136px;
+      border-radius: 999px;
+      background: rgba(191, 107, 70, 0.08);
     }
 
     .support-kicker {
@@ -438,6 +453,49 @@
       margin-top: 18px;
     }
 
+    .support-card h2,
+    .support-card p,
+    .support-card .cta-row,
+    .support-card .inline-note,
+    .support-card .support-kicker,
+    .support-card .support-points {
+      position: relative;
+      z-index: 1;
+    }
+
+    .support-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .support-point {
+      padding: 14px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(143, 66, 39, 0.12);
+      background: rgba(255, 252, 247, 0.72);
+      text-align: center;
+    }
+
+    .support-point strong {
+      display: block;
+      color: var(--accent-strong);
+      font-size: 0.96rem;
+      margin-bottom: 4px;
+    }
+
+    .support-point span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .support-card .pill.primary-support {
+      background: var(--accent);
+      color: #fff9f5;
+      border-color: transparent;
+    }
+
     code {
       font-family: "SFMono-Regular", "SF Mono", ui-monospace, monospace;
       font-size: 0.92em;
@@ -453,11 +511,13 @@
       font-size: 0.95rem;
     }
 
-    .language-modal[hidden] {
+    .language-modal[hidden],
+    .support-modal[hidden] {
       display: none;
     }
 
-    .language-modal {
+    .language-modal,
+    .support-modal {
       position: fixed;
       inset: 0;
       display: grid;
@@ -467,18 +527,63 @@
       z-index: 20;
     }
 
-    .language-sheet {
+    .language-sheet,
+    .support-sheet {
       width: min(100%, 460px);
       padding: 28px;
     }
 
-    .language-sheet h2 {
+    .language-sheet h2,
+    .support-sheet h2 {
       margin-bottom: 8px;
     }
 
-    .language-sheet p {
+    .language-sheet p,
+    .support-sheet p {
       color: var(--muted);
       margin-bottom: 20px;
+    }
+
+    .support-sheet {
+      width: min(100%, 620px);
+    }
+
+    .support-options {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 20px;
+    }
+
+    .support-option {
+      text-align: left;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px 16px;
+    }
+
+    .support-option strong {
+      display: block;
+      color: var(--accent-strong);
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .support-option span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
+    .support-sheet .inline-note {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .support-sheet .language-actions {
+      justify-content: flex-end;
     }
 
     @media (max-width: 860px) {
@@ -536,6 +641,14 @@
 
       .language-actions {
         flex-direction: column;
+      }
+
+      .support-points {
+        grid-template-columns: 1fr;
+      }
+
+      .support-options {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -692,9 +805,23 @@
         <div class="support-kicker" data-i18n="coffeeKicker"></div>
         <h2 data-i18n="coffeeTitle"></h2>
         <p class="muted" data-i18n="coffeeBody"></p>
+        <div class="support-points" aria-hidden="true">
+          <div class="support-point">
+            <strong data-i18n="coffeePoint1Title"></strong>
+            <span data-i18n="coffeePoint1Body"></span>
+          </div>
+          <div class="support-point">
+            <strong data-i18n="coffeePoint2Title"></strong>
+            <span data-i18n="coffeePoint2Body"></span>
+          </div>
+          <div class="support-point">
+            <strong data-i18n="coffeePoint3Title"></strong>
+            <span data-i18n="coffeePoint3Body"></span>
+          </div>
+        </div>
         <div class="cta-row">
-          <a class="pill" href="mailto:dbsdudwl94@gmail.com?subject=Buy%20a%20Coffee%20for%20TinyPaws&body=Hi%20youngji%2C%20I%27d%20like%20to%20support%20TinyPaws%20with%20a%20coffee." data-i18n="coffeePrimary"></a>
-          <a class="pill" href="./support.html" data-i18n="coffeeSecondary"></a>
+          <button type="button" class="pill primary-support" data-open-support-modal data-i18n="coffeePrimary"></button>
+          <button type="button" class="pill" data-open-support-modal data-i18n="coffeeSecondary"></button>
         </div>
         <p class="inline-note" data-i18n="coffeeNote"></p>
       </article>
@@ -732,6 +859,34 @@
       <div class="language-actions">
         <button type="button" class="language-button primary" data-set-language="ko" data-i18n="modalKorean"></button>
         <button type="button" class="language-button secondary" data-set-language="en" data-i18n="modalEnglish"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="support-modal" id="supportModal" hidden>
+    <div class="support-sheet" role="dialog" aria-modal="true" aria-labelledby="supportModalTitle">
+      <h2 id="supportModalTitle" data-i18n="supportModalTitle"></h2>
+      <p data-i18n="supportModalBody"></p>
+      <div class="support-options">
+        <div class="support-option">
+          <strong data-i18n="supportOption1Title"></strong>
+          <span data-i18n="supportOption1Body"></span>
+        </div>
+        <div class="support-option">
+          <strong data-i18n="supportOption2Title"></strong>
+          <span data-i18n="supportOption2Body"></span>
+        </div>
+        <div class="support-option">
+          <strong data-i18n="supportOption3Title"></strong>
+          <span data-i18n="supportOption3Body"></span>
+        </div>
+      </div>
+      <p class="inline-note" data-i18n="supportModalNote"></p>
+      <div class="language-actions">
+        <button type="button" class="language-button primary" data-support-action="toss" data-i18n="supportModalPrimary"></button>
+        <button type="button" class="language-button secondary" data-support-action="kakao" data-i18n="supportModalSecondary"></button>
+        <button type="button" class="language-button secondary" data-support-action="bank" data-i18n="supportModalTertiary"></button>
+        <button type="button" class="language-button secondary" data-close-support-modal data-i18n="supportModalClose"></button>
       </div>
     </div>
   </div>
@@ -793,12 +948,31 @@
         contactTitle: "Contact",
         developerLabel: "Developer: youngji Yoon",
         responseTime: "Typical response time: within 3 business days",
-        coffeeKicker: "☕ Support TinyPaws",
-        coffeeTitle: "Buy the developer a coffee",
-        coffeeBody: "If TinyPaws made your desktop a little happier, you can send a small note of support. Later, this same spot can be swapped to a Buy Me a Coffee or Ko-fi link without redesigning the page.",
-        coffeePrimary: "Send a coffee note",
-        coffeeSecondary: "See support options",
-        coffeeNote: "This button currently opens an email to the developer. Replace it later with your real support or donation link whenever you are ready.",
+        coffeeKicker: "☕ Support from Korea",
+        coffeeTitle: "Support TinyPaws with Toss or KakaoPay",
+        coffeeBody: "For Korean users, the easiest support path is a simple local payment flow. This section is designed for Toss, KakaoPay, or a future QR-based support link.",
+        coffeePoint1Title: "New pets",
+        coffeePoint1Body: "Support future character additions.",
+        coffeePoint2Title: "Polish",
+        coffeePoint2Body: "Help fund small UX and animation improvements.",
+        coffeePoint3Title: "Updates",
+        coffeePoint3Body: "Keep the app healthy and maintained.",
+        coffeePrimary: "Support with Toss",
+        coffeeSecondary: "Support with KakaoPay",
+        coffeeNote: "These buttons are placeholders for now. Replace them with your real Toss link, KakaoPay link, or QR guide when you are ready.",
+        supportModalTitle: "Choose a support method",
+        supportModalBody: "Pick the support method that feels easiest for you. For now this modal is a guide, and each button can later be replaced with your real Toss link, KakaoPay link, or a payment guide page.",
+        supportOption1Title: "Toss",
+        supportOption1Body: "Best for Korean users who want the fastest support flow.",
+        supportOption2Title: "KakaoPay",
+        supportOption2Body: "Good for mobile-first users who already use Kakao services.",
+        supportOption3Title: "Bank transfer",
+        supportOption3Body: "Useful as a fallback if a direct payment link is not ready yet.",
+        supportModalNote: "Right now the buttons open an email draft so you can keep the layout ready. Once your real payment links or QR images are prepared, swap the click targets only.",
+        supportModalPrimary: "Open Toss support",
+        supportModalSecondary: "Open KakaoPay support",
+        supportModalTertiary: "See bank transfer guide",
+        supportModalClose: "Close",
         pagesTitle: "Pages & Files",
         supportCardTitle: "Support",
         supportCardBody: "Help, FAQs, compatibility, and contact details for TinyPaws users.",
@@ -871,12 +1045,31 @@
         contactTitle: "문의",
         developerLabel: "개발자: youngji Yoon",
         responseTime: "보통 3영업일 이내에 답변드립니다.",
-        coffeeKicker: "☕ TinyPaws 응원하기",
-        coffeeTitle: "개발자에게 커피 사주기",
-        coffeeBody: "TinyPaws가 데스크톱을 조금 더 즐겁게 만들어줬다면, 작은 응원 메시지를 보낼 수 있어요. 나중에 원하면 이 자리를 Buy Me a Coffee나 Ko-fi 링크로 바로 바꿀 수 있게 구성해뒀습니다.",
-        coffeePrimary: "커피 응원 보내기",
-        coffeeSecondary: "지원 페이지 보기",
-        coffeeNote: "지금은 개발자 메일로 연결됩니다. 실제 후원 링크가 준비되면 같은 자리에서 바로 교체할 수 있습니다.",
+        coffeeKicker: "☕ 한국 사용자 후원",
+        coffeeTitle: "토스 또는 카카오페이로 TinyPaws 응원하기",
+        coffeeBody: "한국 사용자에게는 토스나 카카오페이 같은 간단한 국내 결제 흐름이 가장 자연스럽습니다. 이 영역은 나중에 실제 송금 링크나 QR 안내로 바로 바꿀 수 있게 구성해뒀습니다.",
+        coffeePoint1Title: "새 캐릭터",
+        coffeePoint1Body: "앞으로 추가될 펫 캐릭터 제작에 도움을 줍니다.",
+        coffeePoint2Title: "완성도",
+        coffeePoint2Body: "작은 UX 개선과 애니메이션 다듬기에 쓰입니다.",
+        coffeePoint3Title: "업데이트",
+        coffeePoint3Body: "앱을 계속 안정적으로 유지하는 데 보탬이 됩니다.",
+        coffeePrimary: "토스로 후원하기",
+        coffeeSecondary: "카카오페이로 후원하기",
+        coffeeNote: "지금 버튼은 placeholder입니다. 실제 토스 송금 링크, 카카오페이 링크, 또는 QR 안내가 준비되면 이 자리에서 바로 교체하면 됩니다.",
+        supportModalTitle: "후원 방법 선택",
+        supportModalBody: "가장 편한 후원 방법을 골라 주세요. 지금은 안내용 모달이며, 나중에 실제 토스 링크, 카카오페이 링크, 또는 후원 안내 페이지로 바로 교체할 수 있게 구성해뒀습니다.",
+        supportOption1Title: "토스",
+        supportOption1Body: "한국 사용자에게 가장 빠르고 익숙한 후원 흐름입니다.",
+        supportOption2Title: "카카오페이",
+        supportOption2Body: "모바일 중심 사용자에게 자연스럽고 접근성이 좋습니다.",
+        supportOption3Title: "계좌이체",
+        supportOption3Body: "직접 링크가 아직 없을 때 대체 수단으로 쓰기 좋습니다.",
+        supportModalNote: "지금 버튼은 이메일 초안을 열도록 연결돼 있습니다. 실제 링크나 QR 이미지가 준비되면 클릭 대상만 바꾸면 됩니다.",
+        supportModalPrimary: "토스 후원 열기",
+        supportModalSecondary: "카카오페이 후원 열기",
+        supportModalTertiary: "계좌이체 안내 보기",
+        supportModalClose: "닫기",
         pagesTitle: "페이지 및 파일",
         supportCardTitle: "지원",
         supportCardBody: "TinyPaws 사용자용 도움말, 자주 묻는 질문, 호환성, 연락처를 확인할 수 있습니다.",
@@ -901,6 +1094,10 @@
     const switchButtons = document.querySelectorAll("[data-set-language]");
     const ariaLabelElements = document.querySelectorAll("[data-aria-label-key]");
     const modal = document.getElementById("languageModal");
+    const supportModal = document.getElementById("supportModal");
+    const supportOpenButtons = document.querySelectorAll("[data-open-support-modal]");
+    const supportCloseButtons = document.querySelectorAll("[data-close-support-modal]");
+    const supportActionButtons = document.querySelectorAll("[data-support-action]");
     const descriptionMeta = document.querySelector('meta[name="description"]');
 
     function applyLanguage(language) {
@@ -935,6 +1132,47 @@
 
     switchButtons.forEach((button) => {
       button.addEventListener("click", () => chooseLanguage(button.dataset.setLanguage));
+    });
+
+    function openSupportModal() {
+      supportModal.hidden = false;
+    }
+
+    function closeSupportModal() {
+      supportModal.hidden = true;
+    }
+
+    supportOpenButtons.forEach((button) => {
+      button.addEventListener("click", openSupportModal);
+    });
+
+    supportCloseButtons.forEach((button) => {
+      button.addEventListener("click", closeSupportModal);
+    });
+
+    supportModal.addEventListener("click", (event) => {
+      if (event.target === supportModal) {
+        closeSupportModal();
+      }
+    });
+
+    supportActionButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const action = button.dataset.supportAction;
+        const subjects = {
+          toss: "Toss support for TinyPaws",
+          kakao: "KakaoPay support for TinyPaws",
+          bank: "Bank transfer support for TinyPaws"
+        };
+        const bodies = {
+          toss: "Hi youngji, I'd like to support TinyPaws through Toss.",
+          kakao: "Hi youngji, I'd like to support TinyPaws through KakaoPay.",
+          bank: "Hi youngji, I'd like to support TinyPaws through bank transfer."
+        };
+        const subject = encodeURIComponent(subjects[action] || "TinyPaws support");
+        const body = encodeURIComponent(bodies[action] || "Hi youngji, I'd like to support TinyPaws.");
+        window.location.href = `mailto:dbsdudwl94@gmail.com?subject=${subject}&body=${body}`;
+      });
     });
 
     const storedLanguage = localStorage.getItem(storageKey);
