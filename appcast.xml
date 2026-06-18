@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="appcast.xsl"?>
 <rss version="2.0"
      xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -9,7 +10,7 @@
     <language>en</language>
     <item>
       <title>Version 1.0</title>
-      <pubDate>Wed, 17 Jun 2026 16:27:20 +0900</pubDate>
+      <pubDate>Thu, 18 Jun 2026 10:47:06 +0900</pubDate>
       <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
       <sparkle:version>10</sparkle:version>
       <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
@@ -18,8 +19,8 @@
       <enclosure
         url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws.zip"
         type="application/octet-stream"
-        sparkle:edSignature="4URBlhu04D9J1CRnBNSzJSYBmbM9HZU7e0H/ZIQ+dtNXWfxF4lYfERJ+BpMrtzrXzz/k9FPvM8qDtcqais/7Ag=="
-        length="20567546" />
+        sparkle:edSignature="kIiLZuSn7VGeuuy8R0e6+tsSD31d57J7wkxvPWanARNfFAg0YGjHTyJ6+HDT4b9IlmShG+cRbGUIQSa93NgyBQ=="
+        length="20574962" />
     </item>
   </channel>
 </rss>
