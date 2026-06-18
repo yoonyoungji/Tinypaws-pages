@@ -563,6 +563,36 @@
       padding: 18px 16px;
     }
 
+    .support-option .support-qr {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      margin: 14px 0 12px;
+      border-radius: 18px;
+      border: 1px dashed rgba(143, 66, 39, 0.24);
+      background:
+        linear-gradient(135deg, rgba(255, 250, 244, 0.96), rgba(248, 238, 225, 0.92));
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .support-option .support-qr img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 14px;
+      display: block;
+    }
+
+    .support-option code {
+      display: inline-block;
+      margin-top: 6px;
+      word-break: break-word;
+    }
+
     .support-option strong {
       display: block;
       color: var(--accent-strong);
@@ -867,20 +897,28 @@
     <div class="support-sheet" role="dialog" aria-modal="true" aria-labelledby="supportModalTitle">
       <h2 id="supportModalTitle" data-i18n="supportModalTitle"></h2>
       <p data-i18n="supportModalBody"></p>
-      <div class="support-options">
-        <div class="support-option">
-          <strong data-i18n="supportOption1Title"></strong>
-          <span data-i18n="supportOption1Body"></span>
+        <div class="support-options">
+          <div class="support-option">
+            <strong data-i18n="supportOption1Title"></strong>
+            <span data-i18n="supportOption1Body"></span>
+            <div class="support-qr">
+              <img src="./support-assets/toss-qr.png" alt="Toss support QR">
+            </div>
+            <span data-i18n="supportOption1Link"></span>
+          </div>
+          <div class="support-option">
+            <strong data-i18n="supportOption2Title"></strong>
+            <span data-i18n="supportOption2Body"></span>
+            <div class="support-qr" data-i18n="supportOption2Qr"></div>
+            <span data-i18n="supportOption2Link"></span>
+          </div>
+          <div class="support-option">
+            <strong data-i18n="supportOption3Title"></strong>
+            <span data-i18n="supportOption3Body"></span>
+            <div class="support-qr" data-i18n="supportOption3Qr"></div>
+            <span data-i18n="supportOption3Link"></span>
+          </div>
         </div>
-        <div class="support-option">
-          <strong data-i18n="supportOption2Title"></strong>
-          <span data-i18n="supportOption2Body"></span>
-        </div>
-        <div class="support-option">
-          <strong data-i18n="supportOption3Title"></strong>
-          <span data-i18n="supportOption3Body"></span>
-        </div>
-      </div>
       <p class="inline-note" data-i18n="supportModalNote"></p>
       <div class="language-actions">
         <button type="button" class="language-button primary" data-support-action="toss" data-i18n="supportModalPrimary"></button>
@@ -964,10 +1002,15 @@
         supportModalBody: "Choose the easiest way to send a small cheer. Right now this popup works like a cute guide, and later each button can point to your real Toss link, KakaoPay link, or payment help page.",
         supportOption1Title: "Toss",
         supportOption1Body: "Best for Korean users who want the fastest support flow.",
+        supportOption1Link: "Scan this QR with Toss on your phone to send a small cheer.",
         supportOption2Title: "KakaoPay",
         supportOption2Body: "Good for mobile-first users who already use Kakao services.",
+        supportOption2Qr: "KakaoPay QR goes here later",
+        supportOption2Link: "Replace this with your real KakaoPay link or a QR image.",
         supportOption3Title: "Bank transfer",
         supportOption3Body: "Useful as a fallback if a direct payment link is not ready yet.",
+        supportOption3Qr: "Bank transfer note or account image goes here",
+        supportOption3Link: "Show bank name, account number, and account holder here later.",
         supportModalNote: "At the moment, each button opens an email draft so the UI is ready first. When your real links or QR images are ready, you only need to swap the destinations.",
         supportModalPrimary: "Open Toss path",
         supportModalSecondary: "Open KakaoPay path",
@@ -1061,10 +1104,15 @@
         supportModalBody: "가장 편한 후원 방법을 골라 주세요. 지금은 귀여운 안내 모달처럼 동작하고, 나중에는 실제 토스 링크나 카카오페이 링크, 후원 안내 페이지로 바로 연결되게 바꿀 수 있습니다.",
         supportOption1Title: "토스",
         supportOption1Body: "한국 사용자에게 가장 빠르고 익숙한 후원 흐름입니다.",
+        supportOption1Link: "휴대폰에서 토스로 이 QR을 스캔하면 바로 작게 응원할 수 있어요.",
         supportOption2Title: "카카오페이",
         supportOption2Body: "모바일 중심 사용자에게 자연스럽고 접근성이 좋습니다.",
+        supportOption2Qr: "나중에 카카오페이 QR 이미지를 여기에 넣어 주세요",
+        supportOption2Link: "실제 카카오페이 링크 또는 QR 이미지로 교체하면 됩니다.",
         supportOption3Title: "계좌이체",
         supportOption3Body: "직접 링크가 아직 없을 때 대체 수단으로 쓰기 좋습니다.",
+        supportOption3Qr: "여기에 계좌 안내 또는 계좌 이미지를 넣어 주세요",
+        supportOption3Link: "나중에 은행명, 계좌번호, 예금주 안내를 여기에 적으면 됩니다.",
         supportModalNote: "지금은 버튼을 누르면 이메일 초안이 열리도록 연결돼 있어요. 실제 링크나 QR 이미지가 준비되면 클릭 대상만 바꿔주면 됩니다.",
         supportModalPrimary: "토스 응원 열기",
         supportModalSecondary: "카카오페이 응원 열기",
