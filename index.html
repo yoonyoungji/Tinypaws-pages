@@ -1162,6 +1162,7 @@
       localStorage.setItem(storageKey, language);
       applyLanguage(language);
       modal.hidden = true;
+      scrollToHashTarget();
     }
 
     switchButtons.forEach((button) => {
@@ -1177,6 +1178,17 @@
 
     function closeSupportModal() {
       supportModal.hidden = true;
+    }
+
+    function scrollToHashTarget() {
+      if (!window.location.hash) return;
+
+      const target = document.querySelector(window.location.hash);
+      if (!target) return;
+
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ block: "start" });
+      });
     }
 
     supportOpenButtons.forEach((button) => {
@@ -1198,7 +1210,11 @@
       modal.hidden = false;
     }
 
+    window.addEventListener("hashchange", scrollToHashTarget);
+    window.addEventListener("load", scrollToHashTarget);
+
     document.documentElement.classList.add("ready");
+    scrollToHashTarget();
   </script>
 </body>
 </html>
