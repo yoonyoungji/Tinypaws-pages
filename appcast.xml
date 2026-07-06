@@ -10,7 +10,7 @@
     <language>en</language>
 <item>
   <title>Version 1.0.2</title>
-  <pubDate>Mon, 06 Jul 2026 10:02:26 +0900</pubDate>
+  <pubDate>Mon, 06 Jul 2026 10:15:38 +0900</pubDate>
   <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
   <sparkle:version>12</sparkle:version>
   <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
@@ -19,8 +19,8 @@
   <enclosure
     url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.2.zip"
     type="application/octet-stream"
-    sparkle:edSignature="g8NiQr1Smr4tQ6LLGT5qrTm0EWiTIJRPoFTR/FgQR4nkQ1XmjzUN9q1Lq20gWczTiZ+ECJ1lJBIEvSAn3tKzCA=="
-    length="20589057" />
+    sparkle:edSignature="YcSEAfNYgp8fyJf0xr5UeNdUrqkXW5clSCprTeNiSOUeC9qHmuiJb/whoF4WLJwbM38pkoViKCQMgmQiygLiDg=="
+    length="20590901" />
 </item>
 <item>
       <title>Version 1.0.1</title>
