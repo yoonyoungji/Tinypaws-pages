@@ -459,7 +459,8 @@
     .support-card .cta-row,
     .support-card .inline-note,
     .support-card .support-kicker,
-    .support-card .support-points {
+    .support-card .support-points,
+    .support-card .supporters {
       position: relative;
       z-index: 1;
     }
@@ -489,6 +490,54 @@
     .support-point span {
       color: var(--muted);
       font-size: 0.9rem;
+    }
+
+    .supporters {
+      margin-top: 24px;
+    }
+
+    .supporters-copy {
+      max-width: 44rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .supporters-list {
+      display: grid;
+      gap: 10px;
+      max-width: 360px;
+    }
+
+    .supporter-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 16px;
+      border-radius: 18px;
+      background: rgba(255, 244, 232, 0.98);
+      border: 1px solid rgba(191, 107, 70, 0.2);
+      color: var(--accent-strong);
+      font-weight: 600;
+    }
+
+    .supporter-icon {
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    .supporter-rank {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 32px;
+      height: 24px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: rgba(191, 107, 70, 0.12);
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
     .support-card .pill.primary-support {
@@ -866,6 +915,17 @@
           <button type="button" class="pill" data-open-support-modal="kakaopay" data-i18n="coffeeSecondary"></button>
         </div>
         <p class="inline-note" data-i18n="coffeeNote"></p>
+        <div class="supporters">
+          <p class="supporters-copy">
+            <strong data-i18n="supportersTitle"></strong><br>
+            <span data-i18n="supportersBody"></span>
+          </p>
+          <div class="supporters-list" aria-label="Coffee supporters">
+            <span class="supporter-pill"><span class="supporter-icon" aria-hidden="true">🏆</span><span class="supporter-rank" data-i18n="supporterRank1"></span>김*상</span>
+            <span class="supporter-pill"><span class="supporter-icon" aria-hidden="true">🥈</span><span class="supporter-rank" data-i18n="supporterRank2"></span>김*준</span>
+            <span class="supporter-pill"><span class="supporter-icon" aria-hidden="true">🥉</span><span class="supporter-rank" data-i18n="supporterRank3"></span>장*민</span>
+          </div>
+        </div>
       </article>
 
       <article class="card full">
@@ -1005,6 +1065,11 @@
         coffeePrimary: "Cheer with Toss",
         coffeeSecondary: "Cheer with KakaoPay",
         coffeeNote: "Pick whichever feels easiest. Tiny support helps TinyPaws keep tiptoeing around your desktop.",
+        supportersTitle: "Coffee Supporters",
+        supportersBody: "Thank you to the people who bought the developer a coffee and helped keep TinyPaws warm and cozy.",
+        supporterRank1: "1st",
+        supporterRank2: "2nd",
+        supporterRank3: "3rd",
         supportModalTitle: "Pick a tiny support path",
         supportModalBody: "Choose the easiest way to send a small cheer. On desktop, scan the QR with your phone. On mobile, the KakaoPay link is the quickest path.",
         supportOption1Title: "Toss",
@@ -1101,6 +1166,11 @@
         coffeePrimary: "토스로 응원하기",
         coffeeSecondary: "카카오페이로 응원하기",
         coffeeNote: "가장 편한 쪽으로 가볍게 응원해 주세요. 작은 응원이 TinyPaws 친구들을 계속 움직이게 해줘요.",
+        supportersTitle: "커피 후원자",
+        supportersBody: "개발자에게 커피를 사주신 분들께 감사드려요. TinyPaws를 계속 다듬고 돌보는 데 큰 힘이 됩니다.",
+        supporterRank1: "1위",
+        supporterRank2: "2위",
+        supporterRank3: "3위",
         supportModalTitle: "어떤 방식으로 응원할까요?",
         supportModalBody: "가장 편한 방법을 골라 주세요. 데스크톱에서는 QR을 스캔하고, 모바일에서는 카카오페이 링크로 바로 열 수 있어요.",
         supportOption1Title: "토스",
