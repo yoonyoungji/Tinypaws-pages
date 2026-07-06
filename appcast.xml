@@ -8,21 +8,21 @@
     <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
     <description>TinyPaws direct distribution updates</description>
     <language>en</language>
-    <item>
-      <title>Version 1.0.2</title>
-      <pubDate>Mon, 06 Jul 2026 09:14:07 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
-      <sparkle:version>12</sparkle:version>
-      <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.2.html</sparkle:releaseNotesLink>
-      <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.2.zip"
-        type="application/octet-stream"
-        sparkle:edSignature="b5YQUzGypXO3hQeY/jtWRJz45B7QS3RQgKvt+0PgzIHunNQ+3RmZSM10ifj/WMDEB6w5VipYF+pCUBBqWc6FBA=="
-        length="20589057" />
-    </item>
-    <item>
+<item>
+  <title>Version 1.0.2</title>
+  <pubDate>Mon, 06 Jul 2026 10:02:26 +0900</pubDate>
+  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <sparkle:version>12</sparkle:version>
+  <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+  <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
+  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.2.html</sparkle:releaseNotesLink>
+  <enclosure
+    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.2.zip"
+    type="application/octet-stream"
+    sparkle:edSignature="g8NiQr1Smr4tQ6LLGT5qrTm0EWiTIJRPoFTR/FgQR4nkQ1XmjzUN9q1Lq20gWczTiZ+ECJ1lJBIEvSAn3tKzCA=="
+    length="20589057" />
+</item>
+<item>
       <title>Version 1.0.1</title>
       <pubDate>Mon, 06 Jul 2026 10:10:00 +0900</pubDate>
       <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
@@ -36,7 +36,7 @@
         sparkle:edSignature="jxHGUCm492yvQOQ85BrW2Io3lPdBT6BrD2LEFDv9vXOgbiSNwle8dE4My054jOqUd9ZpYRBEjgcHwekS3zxOAw=="
         length="20583659" />
     </item>
-    <item>
+<item>
       <title>Version 1.0</title>
       <pubDate>Wed, 17 Jun 2026 15:51:58 +0900</pubDate>
       <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
