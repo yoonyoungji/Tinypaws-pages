@@ -17,10 +17,38 @@
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
       <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.2.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws.zip"
+        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.2.zip"
         type="application/octet-stream"
         sparkle:edSignature="b5YQUzGypXO3hQeY/jtWRJz45B7QS3RQgKvt+0PgzIHunNQ+3RmZSM10ifj/WMDEB6w5VipYF+pCUBBqWc6FBA=="
         length="20589057" />
+    </item>
+    <item>
+      <title>Version 1.0.1</title>
+      <pubDate>Mon, 06 Jul 2026 10:10:00 +0900</pubDate>
+      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <sparkle:version>11</sparkle:version>
+      <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.1.html</sparkle:releaseNotesLink>
+      <enclosure
+        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.1.zip"
+        type="application/octet-stream"
+        sparkle:edSignature="jxHGUCm492yvQOQ85BrW2Io3lPdBT6BrD2LEFDv9vXOgbiSNwle8dE4My054jOqUd9ZpYRBEjgcHwekS3zxOAw=="
+        length="20583659" />
+    </item>
+    <item>
+      <title>Version 1.0</title>
+      <pubDate>Wed, 17 Jun 2026 15:51:58 +0900</pubDate>
+      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <sparkle:version>10</sparkle:version>
+      <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.html</sparkle:releaseNotesLink>
+      <enclosure
+        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.zip"
+        type="application/octet-stream"
+        sparkle:edSignature="7XOBQvj4UViK0znqMTDO05DnMG9Dz3TQsSaxSBWWiPZ/89hpolOezn3jolnQP2n3dWw0gvNV2OLcHueObDt6Bw=="
+        length="20564609" />
     </item>
   </channel>
 </rss>
