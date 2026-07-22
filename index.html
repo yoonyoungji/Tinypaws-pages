@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TinyPaws</title>
-  <meta name="description" content="TinyPaws direct download, release notes, and support pages for the macOS desktop companion app. ">
+  <meta name="description" content="TinyPaws support and privacy pages for the macOS desktop companion app.">
   <style>
     :root {
       color-scheme: light;
@@ -17,18 +17,9 @@
       --accent: #bf6b46;
       --accent-strong: #8f4227;
       --shadow: 0 20px 50px rgba(74, 44, 26, 0.12);
-      --overlay: rgba(45, 36, 30, 0.42);
     }
 
     * { box-sizing: border-box; }
-
-    html {
-      visibility: hidden;
-    }
-
-    html.ready {
-      visibility: visible;
-    }
 
     body {
       margin: 0;
@@ -44,15 +35,13 @@
     a { color: var(--accent-strong); }
 
     .wrap {
-      width: min(1080px, calc(100% - 32px));
+      width: min(1040px, calc(100% - 32px));
       margin: 0 auto;
       padding: 44px 0 64px;
     }
 
     .hero,
-    .card,
-    .language-sheet,
-    .support-sheet {
+    .card {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 28px;
@@ -65,23 +54,8 @@
       margin-bottom: 20px;
     }
 
-    .hero-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-      gap: 24px;
-      align-items: center;
-    }
-
-    .hero-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-
     .eyebrow {
-      margin: 0;
+      margin: 0 0 8px;
       color: var(--accent-strong);
       font-size: 0.92rem;
       font-weight: 700;
@@ -95,7 +69,6 @@
       font-size: clamp(2.2rem, 5vw, 4rem);
       line-height: 1.03;
       margin-bottom: 14px;
-      max-width: 12ch;
     }
 
     h2 {
@@ -110,23 +83,34 @@
       margin-bottom: 0;
     }
 
-    .actions,
-    .language-switcher,
-    .language-actions,
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .lang {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .version-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      color: var(--accent-strong);
+      font-size: 0.95rem;
+      font-weight: 700;
     }
 
     .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
       margin-top: 22px;
     }
 
-    .btn,
-    .language-button,
-    .switcher button,
-    .pill {
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -136,155 +120,23 @@
       text-decoration: none;
       font-weight: 700;
       border: 1px solid transparent;
-      font: inherit;
-      cursor: pointer;
-      transition: transform 140ms ease, background-color 140ms ease, border-color 140ms ease;
     }
 
-    .btn:hover,
-    .language-button:hover,
-    .switcher button:hover,
-    .pill:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn.primary,
-    .language-button.primary {
+    .btn.primary {
       background: var(--accent);
       color: #fff9f5;
     }
 
-    .btn.secondary,
-    .language-button.secondary,
-    .switcher button,
-    .pill {
+    .btn.secondary {
       background: var(--surface-strong);
       color: var(--accent-strong);
       border-color: rgba(143, 66, 39, 0.2);
     }
 
-    .switcher {
-      display: inline-flex;
-      gap: 8px;
-      padding: 8px;
-      background: rgba(255, 250, 244, 0.92);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-    }
-
-    .switcher button {
-      min-height: 38px;
-      padding: 0 14px;
-    }
-
-    .switcher button.active {
-      background: var(--accent);
-      color: #fff9f5;
-      border-color: transparent;
-    }
-
-    .hero-meta {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .meta-block {
-      padding: 16px 18px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: rgba(255, 250, 244, 0.82);
-    }
-
-    .meta-label {
-      display: block;
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .meta-value {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .hero-art {
-      position: relative;
-      min-height: 360px;
-      border-radius: 28px;
-      background:
-        radial-gradient(circle at top left, rgba(255, 225, 199, 0.95), transparent 45%),
-        radial-gradient(circle at bottom right, rgba(255, 207, 158, 0.9), transparent 40%),
-        linear-gradient(180deg, rgba(255, 252, 247, 0.96) 0%, rgba(251, 241, 228, 0.98) 100%);
-      border: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .hero-art::before,
-    .hero-art::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      background: rgba(191, 107, 70, 0.1);
-    }
-
-    .hero-art::before {
-      width: 180px;
-      height: 180px;
-      top: -40px;
-      right: -20px;
-    }
-
-    .hero-art::after {
-      width: 140px;
-      height: 140px;
-      left: -28px;
-      bottom: -28px;
-    }
-
-    .pet-badge {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 122px;
-      height: 122px;
-      border-radius: 32px;
-      background: rgba(255, 252, 247, 0.92);
-      border: 1px solid rgba(143, 66, 39, 0.14);
-      box-shadow: 0 16px 34px rgba(74, 44, 26, 0.12);
-      padding: 14px;
-    }
-
-    .pet-badge img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .pet-badge.one { top: 34px; left: 30px; transform: rotate(-6deg); }
-    .pet-badge.two { top: 62px; right: 42px; transform: rotate(7deg); }
-    .pet-badge.three { bottom: 86px; left: 86px; transform: rotate(4deg); }
-    .pet-badge.four { bottom: 34px; right: 56px; transform: rotate(-5deg); }
-
-    .speech-chip {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      padding: 14px 18px;
-      border-radius: 999px;
-      background: rgba(255, 250, 244, 0.95);
-      border: 1px solid rgba(143, 66, 39, 0.16);
+    .btn.tertiary {
+      background: rgba(255, 244, 232, 0.98);
       color: var(--accent-strong);
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      box-shadow: 0 10px 24px rgba(74, 44, 26, 0.08);
-      white-space: nowrap;
+      border-color: rgba(191, 107, 70, 0.28);
     }
 
     .grid {
@@ -301,81 +153,6 @@
       grid-column: 1 / -1;
     }
 
-    .character-showcase {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 18px;
-    }
-
-    .character-card {
-      padding: 20px 18px;
-      background: var(--surface-strong);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      text-align: center;
-    }
-
-    .character-card img {
-      width: 100%;
-      max-width: 124px;
-      height: 124px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 10px;
-    }
-
-    .character-name {
-      font-weight: 800;
-      color: var(--accent-strong);
-      margin-bottom: 4px;
-    }
-
-    .character-note {
-      color: var(--muted);
-      font-size: 0.94rem;
-      margin: 0;
-    }
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .media-card {
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: var(--surface-strong);
-    }
-
-    .media-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      background: #f5ece1;
-    }
-
-    .media-copy {
-      padding: 16px 18px 18px;
-    }
-
-    .media-title {
-      font-weight: 800;
-      color: var(--accent-strong);
-      margin-bottom: 6px;
-    }
-
-    .media-note {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin: 0;
-    }
-
     ul {
       margin: 0;
       padding-left: 18px;
@@ -386,12 +163,6 @@
     }
 
     .muted { color: var(--muted); }
-
-    .inline-note {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
 
     .page-links {
       display: grid;
@@ -416,90 +187,26 @@
       color: var(--accent-strong);
     }
 
-    .support-card {
+    .support-creator {
       scroll-margin-top: 24px;
-      background:
-        radial-gradient(circle at top right, rgba(255, 212, 170, 0.42), transparent 35%),
-        radial-gradient(circle at bottom left, rgba(255, 233, 204, 0.64), transparent 32%),
-        linear-gradient(180deg, rgba(255, 250, 244, 0.98) 0%, rgba(250, 238, 223, 0.96) 100%);
-      position: relative;
-      overflow: hidden;
     }
 
-    .support-card::after {
-      content: "";
-      position: absolute;
-      right: -26px;
-      bottom: -26px;
-      width: 136px;
-      height: 136px;
-      border-radius: 999px;
-      background: rgba(191, 107, 70, 0.08);
-    }
-
-    .support-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(191, 107, 70, 0.12);
-      color: var(--accent-strong);
-      font-size: 0.92rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .support-card .cta-row {
-      margin-top: 18px;
-    }
-
-    .support-card h2,
-    .support-card p,
-    .support-card .cta-row,
-    .support-card .inline-note,
-    .support-card .support-kicker,
-    .support-card .support-points,
-    .support-card .supporters {
-      position: relative;
-      z-index: 1;
-    }
-
-    .support-points {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .support-point {
-      padding: 14px 12px;
-      border-radius: 18px;
-      border: 1px solid rgba(143, 66, 39, 0.12);
-      background: rgba(255, 252, 247, 0.72);
-      text-align: center;
-    }
-
-    .support-point strong {
-      display: block;
-      color: var(--accent-strong);
-      font-size: 0.96rem;
-      margin-bottom: 4px;
-    }
-
-    .support-point span {
+    .support-creator-copy {
+      max-width: 42rem;
       color: var(--muted);
-      font-size: 0.9rem;
+      margin-bottom: 18px;
     }
 
-    .supporters {
-      margin-top: 24px;
+    .support-creator-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .supporters-copy {
       max-width: 44rem;
       color: var(--muted);
-      margin-bottom: 14px;
+      margin-bottom: 18px;
     }
 
     .supporters-list {
@@ -540,20 +247,6 @@
       white-space: nowrap;
     }
 
-    .support-card .pill.primary-support {
-      background: var(--accent);
-      color: #fff9f5;
-      border-color: transparent;
-    }
-
-    code {
-      font-family: "SFMono-Regular", "SF Mono", ui-monospace, monospace;
-      font-size: 0.92em;
-      background: rgba(143, 66, 39, 0.08);
-      padding: 2px 6px;
-      border-radius: 8px;
-    }
-
     footer {
       padding-top: 18px;
       text-align: center;
@@ -561,140 +254,14 @@
       font-size: 0.95rem;
     }
 
-    .language-modal[hidden],
-    .support-modal[hidden] {
-      display: none;
-    }
-
-    .language-modal,
-    .support-modal {
-      position: fixed;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      padding: 20px;
-      background: var(--overlay);
-      z-index: 20;
-    }
-
-    .language-sheet,
-    .support-sheet {
-      width: min(100%, 460px);
-      padding: 28px;
-    }
-
-    .language-sheet h2,
-    .support-sheet h2 {
-      margin-bottom: 8px;
-    }
-
-    .language-sheet p,
-    .support-sheet p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .support-sheet {
-      width: min(100%, 540px);
-    }
-
-    .support-options {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 12px;
-      margin: 16px 0 18px;
-    }
-
-    .support-option {
-      text-align: left;
-      background: var(--surface-strong);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 18px 16px;
-    }
-
-    .support-option .support-qr {
-      display: grid;
-      place-items: center;
-      width: 100%;
-      max-width: 320px;
-      aspect-ratio: 1 / 1;
-      margin: 12px auto 10px;
-      border-radius: 16px;
-      border: 1px dashed rgba(143, 66, 39, 0.24);
-      background:
-        linear-gradient(135deg, rgba(255, 250, 244, 0.96), rgba(248, 238, 225, 0.92));
-      color: var(--muted);
-      font-size: 0.88rem;
-      text-align: center;
-      padding: 10px;
-    }
-
-    .support-option .support-qr img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 14px;
-      display: block;
-    }
-
-    .support-option .support-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-      color: var(--accent-strong);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .support-option .support-link:hover {
-      text-decoration: underline;
-    }
-
-    .support-option code {
-      display: inline-block;
-      margin-top: 6px;
-      word-break: break-word;
-    }
-
-    .support-option strong {
-      display: block;
-      color: var(--accent-strong);
-      margin-bottom: 6px;
-      font-size: 1rem;
-    }
-
-    .support-option span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.94rem;
-      line-height: 1.5;
-    }
-
-    .support-sheet .inline-note {
-      margin-top: 0;
-      margin-bottom: 16px;
-    }
-
-    @media (max-width: 860px) {
-      .hero-layout,
-      .character-showcase,
-      .hero-meta,
-      .media-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
     @media (max-width: 760px) {
       .wrap {
-        width: min(100% - 20px, 1080px);
+        width: min(100% - 20px, 1040px);
         padding: 20px 0 32px;
       }
 
       .hero,
-      .card,
-      .language-sheet {
+      .card {
         border-radius: 22px;
       }
 
@@ -702,43 +269,12 @@
         padding: 28px 20px;
       }
 
-      .card,
-      .language-sheet {
+      .card {
         padding: 22px 20px;
       }
 
-      .hero-top {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero-layout,
       .grid,
-      .page-links,
-      .hero-meta,
-      .character-showcase,
-      .media-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-art {
-        min-height: 320px;
-      }
-
-      .pet-badge {
-        width: 104px;
-        height: 104px;
-      }
-
-      .language-actions {
-        flex-direction: column;
-      }
-
-      .support-points {
-        grid-template-columns: 1fr;
-      }
-
-      .support-options {
+      .page-links {
         grid-template-columns: 1fr;
       }
     }
@@ -747,552 +283,95 @@
 <body>
   <main class="wrap">
     <section class="hero">
-      <div class="hero-layout">
-        <div>
-          <div class="hero-top">
-            <p class="eyebrow">TinyPaws</p>
-            <div class="switcher language-switcher" data-aria-label-key="switcherAriaLabel">
-              <button type="button" data-set-language="ko" data-i18n="switchKorean"></button>
-              <button type="button" data-set-language="en" data-i18n="switchEnglish"></button>
-            </div>
-          </div>
-          <h1 data-i18n="heroTitle"></h1>
-          <p class="lead" data-i18n="heroLead"></p>
-          <div class="actions">
-            <a class="btn primary" href="./downloads/TinyPaws.dmg" data-i18n="downloadButton"></a>
-            <a class="btn secondary" href="./release-notes/1.1.8.html" data-i18n="releaseNotesButton"></a>
-            <a class="btn secondary" href="./support.html" data-i18n="supportButton"></a>
-            <a class="btn secondary" href="./privacy.html" data-i18n="privacyButton"></a>
-          </div>
-          <div class="hero-meta">
-            <div class="meta-block">
-              <span class="meta-label" data-i18n="metaVersionLabel"></span>
-              <span class="meta-value" data-i18n="metaVersionValue"></span>
-            </div>
-            <div class="meta-block">
-              <span class="meta-label" data-i18n="metaPlatformLabel"></span>
-              <span class="meta-value" data-i18n="metaPlatformValue"></span>
-            </div>
-            <div class="meta-block">
-              <span class="meta-label" data-i18n="metaUpdatesLabel"></span>
-              <span class="meta-value" data-i18n="metaUpdatesValue"></span>
-            </div>
-            <div class="meta-block">
-              <span class="meta-label" data-i18n="metaFeedLabel"></span>
-              <span class="meta-value"><code>appcast.xml</code></span>
-            </div>
-          </div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="pet-badge one"><img src="./characters/cat.png" alt=""></div>
-          <div class="pet-badge two"><img src="./characters/capybara.png" alt=""></div>
-          <div class="pet-badge three"><img src="./characters/poodle.png" alt=""></div>
-          <div class="pet-badge four"><img src="./characters/hamster.png" alt=""></div>
-          <div class="speech-chip" data-i18n="heroArtLabel"></div>
-        </div>
+      <p class="eyebrow">TinyPaws</p>
+      <h1>A tiny desktop companion for your Mac.</h1>
+      <p class="lead">
+        TinyPaws is a lightweight macOS desktop companion app with animated pets, simple customization,
+        and a cozy always-on-desktop presence.
+      </p>
+      <div class="lang">
+        <p class="lead">
+          TinyPaws는 Mac 화면 위에서 함께 머무는 작은 데스크톱 펫 앱입니다.
+          앱 심사와 사용자 안내에 필요한 지원 정보와 개인정보처리방침을 이 페이지에서 확인할 수 있습니다.
+        </p>
+      </div>
+      <div class="version-badge">Latest version: 1.1.9</div>
+      <div class="actions">
+        <a class="btn primary" href="./support.html">Support Page</a>
+        <a class="btn secondary" href="./privacy.html">Privacy Policy</a>
+        <a class="btn tertiary" href="#buy-developer-a-coffee">Buy Developer a Coffee</a>
       </div>
     </section>
 
     <section class="grid">
-      <article class="card full">
-        <h2 data-i18n="charactersTitle"></h2>
-        <p class="muted" data-i18n="charactersBody"></p>
-        <div class="character-showcase">
-          <div class="character-card">
-            <img src="./characters/cat.png" alt="Cat character">
-            <div class="character-name" data-i18n="characterCatName"></div>
-            <p class="character-note" data-i18n="characterCatNote"></p>
-          </div>
-          <div class="character-card">
-            <img src="./characters/capybara.png" alt="Capybara character">
-            <div class="character-name" data-i18n="characterCapybaraName"></div>
-            <p class="character-note" data-i18n="characterCapybaraNote"></p>
-          </div>
-          <div class="character-card">
-            <img src="./characters/poodle.png" alt="Poodle character">
-            <div class="character-name" data-i18n="characterPoodleName"></div>
-            <p class="character-note" data-i18n="characterPoodleNote"></p>
-          </div>
-          <div class="character-card">
-            <img src="./characters/hamster.png" alt="Hamster character">
-            <div class="character-name" data-i18n="characterHamsterName"></div>
-            <p class="character-note" data-i18n="characterHamsterNote"></p>
-          </div>
-        </div>
-      </article>
-
-      <article class="card full">
-        <h2 data-i18n="mediaTitle"></h2>
-        <p class="muted" data-i18n="mediaBody"></p>
-        <div class="media-grid">
-          <div class="media-card">
-            <img src="./media/main.png" alt="TinyPaws main view">
-            <div class="media-copy">
-              <div class="media-title" data-i18n="mediaCard1Title"></div>
-              <p class="media-note" data-i18n="mediaCard1Body"></p>
-            </div>
-          </div>
-          <div class="media-card">
-            <img src="./media/characters.png" alt="TinyPaws character selection">
-            <div class="media-copy">
-              <div class="media-title" data-i18n="mediaCard2Title"></div>
-              <p class="media-note" data-i18n="mediaCard2Body"></p>
-            </div>
-          </div>
-          <div class="media-card">
-            <img src="./media/customize.png" alt="TinyPaws customization controls">
-            <div class="media-copy">
-              <div class="media-title" data-i18n="mediaCard3Title"></div>
-              <p class="media-note" data-i18n="mediaCard3Body"></p>
-            </div>
-          </div>
-          <div class="media-card">
-            <img src="./media/animation.png" alt="TinyPaws animation preview">
-            <div class="media-copy">
-              <div class="media-title" data-i18n="mediaCard4Title"></div>
-              <p class="media-note" data-i18n="mediaCard4Body"></p>
-            </div>
-          </div>
-        </div>
-      </article>
-
       <article class="card">
-        <h2 data-i18n="downloadTitle"></h2>
-        <p class="muted" data-i18n="downloadBody"></p>
-        <div class="cta-row">
-          <a class="pill" href="./downloads/TinyPaws.dmg" data-i18n="downloadPrimary"></a>
-          <a class="pill" href="./appcast.xml" data-i18n="downloadSecondary"></a>
-        </div>
-        <p class="inline-note" data-i18n="downloadNote"></p>
-      </article>
-
-      <article class="card">
-        <h2 data-i18n="aboutTitle"></h2>
+        <h2>About TinyPaws</h2>
         <ul>
-          <li data-i18n="aboutItem1"></li>
-          <li data-i18n="aboutItem2"></li>
-          <li data-i18n="aboutItem3"></li>
-          <li data-i18n="aboutItem4"></li>
+          <li>Animated desktop pet for macOS</li>
+          <li>Character, size, opacity, and walk speed controls</li>
+          <li>Drag to reposition on your desktop</li>
+          <li>Menu bar companion with optional keyboard-reactive behavior</li>
         </ul>
       </article>
 
       <article class="card">
-        <h2 data-i18n="updatesTitle"></h2>
-        <ul>
-          <li data-i18n="updatesItem1"></li>
-          <li data-i18n="updatesItem2"></li>
-          <li data-i18n="updatesItem3"></li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2 data-i18n="contactTitle"></h2>
-        <p class="muted" data-i18n="developerLabel"></p>
+        <h2>Contact</h2>
+        <p class="muted">Developer: youngji Yoon</p>
         <p><a href="mailto:dbsdudwl94@gmail.com">dbsdudwl94@gmail.com</a></p>
-        <p class="muted" data-i18n="responseTime"></p>
-      </article>
-
-      <article class="card support-card full" id="buy-developer-a-coffee">
-        <div class="support-kicker" data-i18n="coffeeKicker"></div>
-        <h2 data-i18n="coffeeTitle"></h2>
-        <p class="muted" data-i18n="coffeeBody"></p>
-        <div class="support-points" aria-hidden="true">
-          <div class="support-point">
-            <strong data-i18n="coffeePoint1Title"></strong>
-            <span data-i18n="coffeePoint1Body"></span>
-          </div>
-          <div class="support-point">
-            <strong data-i18n="coffeePoint2Title"></strong>
-            <span data-i18n="coffeePoint2Body"></span>
-          </div>
-          <div class="support-point">
-            <strong data-i18n="coffeePoint3Title"></strong>
-            <span data-i18n="coffeePoint3Body"></span>
-          </div>
-        </div>
-        <div class="cta-row">
-          <button type="button" class="pill primary-support" data-open-support-modal="toss" data-i18n="coffeePrimary"></button>
-          <button type="button" class="pill" data-open-support-modal="kakaopay" data-i18n="coffeeSecondary"></button>
-        </div>
-        <p class="inline-note" data-i18n="coffeeNote"></p>
-        <div class="supporters">
-          <p class="supporters-copy">
-            <strong data-i18n="supportersTitle"></strong><br>
-            <span data-i18n="supportersBody"></span>
-          </p>
-          <div class="supporters-list" aria-label="Coffee supporters">
-            <span class="supporter-pill"><span class="supporter-icon" aria-hidden="true">🏆</span><span class="supporter-rank" data-i18n="supporterRank1"></span>김*상</span>
-            <span class="supporter-pill"><span class="supporter-icon" aria-hidden="true">🥈</span><span class="supporter-rank" data-i18n="supporterRank2"></span>김*준</span>
-            <span class="supporter-pill"><span class="supporter-icon" aria-hidden="true">🥉</span><span class="supporter-rank" data-i18n="supporterRank3"></span>장*민</span>
-          </div>
-        </div>
+        <p class="muted">Typical response time: within 3 business days</p>
       </article>
 
       <article class="card full">
-        <h2 data-i18n="pagesTitle"></h2>
+        <h2>Pages</h2>
         <div class="page-links">
           <a class="page-link" href="./support.html">
-            <strong data-i18n="supportCardTitle"></strong>
-            <span data-i18n="supportCardBody"></span>
+            <strong>Support</strong>
+            Help, FAQs, compatibility, and contact details for TinyPaws users.
           </a>
           <a class="page-link" href="./privacy.html">
-            <strong data-i18n="privacyCardTitle"></strong>
-            <span data-i18n="privacyCardBody"></span>
+            <strong>Privacy Policy</strong>
+            What TinyPaws stores locally, how permissions are used, and what data is not collected.
           </a>
-          <a class="page-link" href="./release-notes/1.1.8.html">
-            <strong data-i18n="releaseCardTitle"></strong>
-            <span data-i18n="releaseCardBody"></span>
-          </a>
-          <a class="page-link" href="./appcast.xml">
-            <strong data-i18n="appcastCardTitle"></strong>
-            <span data-i18n="appcastCardBody"></span>
-          </a>
-          <a class="page-link" href="./downloads/">
-            <strong data-i18n="archiveCardTitle"></strong>
-            <span data-i18n="archiveCardBody"></span>
-          </a>
+        </div>
+      </article>
+
+      <article class="card full support-creator" id="buy-developer-a-coffee">
+        <h2>Buy Developer a Coffee</h2>
+        <p class="support-creator-copy">
+          If TinyPaws made your desktop a little more joyful, you can use this page as the quick stop for supporting
+          the developer. The menu bar item now lands here directly.
+        </p>
+        <div class="lang">
+          <p class="support-creator-copy">
+            TinyPaws가 마음에 드셨다면 이 섹션에서 개발자 후원 안내를 바로 확인할 수 있어요. 이제 메뉴바의
+            `개발자에게 커피사기` 항목도 이 위치로 바로 이동합니다.
+          </p>
+        </div>
+        <div class="support-creator-actions">
+          <a class="btn primary" href="mailto:dbsdudwl94@gmail.com?subject=TinyPaws%20Support">Contact Developer</a>
+          <a class="btn secondary" href="./support.html">Open Support Page</a>
+        </div>
+        <p class="supporters-copy">
+          <strong>Coffee Supporters</strong><br>
+          Thank you to the people who bought the developer a coffee and helped keep TinyPaws warm and cozy.
+        </p>
+        <div class="lang">
+          <p class="supporters-copy">
+            <strong>Coffee Supporters</strong><br>
+            개발자에게 커피를 사주신 분들께 감사드려요. TinyPaws를 계속 다듬고 돌보는 데 큰 힘이 됩니다.
+          </p>
+        </div>
+        <div class="supporters-list" aria-label="Coffee supporters">
+          <span class="supporter-pill"><span class="supporter-icon" aria-hidden="true">🏆</span><span class="supporter-rank">1위</span>장*민</span>
+          <span class="supporter-pill"><span class="supporter-icon" aria-hidden="true">🥈</span><span class="supporter-rank">2위</span>한*수</span>
+          <span class="supporter-pill"><span class="supporter-icon" aria-hidden="true">🥉</span><span class="supporter-rank">3위</span>김*상</span>
         </div>
       </article>
     </section>
 
-    <footer data-i18n="footerText"></footer>
+    <footer>
+      TinyPaws official support and privacy information
+    </footer>
   </main>
-
-  <div class="language-modal" id="languageModal" hidden>
-    <div class="language-sheet" role="dialog" aria-modal="true" aria-labelledby="languageModalTitle">
-      <h2 id="languageModalTitle" data-i18n="modalTitle"></h2>
-      <p data-i18n="modalBody"></p>
-      <div class="language-actions">
-        <button type="button" class="language-button primary" data-set-language="ko" data-i18n="modalKorean"></button>
-        <button type="button" class="language-button secondary" data-set-language="en" data-i18n="modalEnglish"></button>
-      </div>
-    </div>
-  </div>
-
-  <div class="support-modal" id="supportModal" hidden>
-    <div class="support-sheet" role="dialog" aria-modal="true" aria-labelledby="supportModalTitle">
-      <h2 id="supportModalTitle" data-i18n="supportModalTitle"></h2>
-      <p data-i18n="supportModalBody"></p>
-        <div class="support-options">
-          <div class="support-option" data-support-option="toss">
-            <strong data-i18n="supportOption1Title"></strong>
-            <span data-i18n="supportOption1Body"></span>
-            <div class="support-qr">
-              <img src="./support-assets/toss-qr.png" alt="Toss support QR">
-            </div>
-            <span data-i18n="supportOption1Link"></span>
-          </div>
-          <div class="support-option" data-support-option="kakaopay">
-            <strong data-i18n="supportOption2Title"></strong>
-            <span data-i18n="supportOption2Body"></span>
-            <div class="support-qr">
-              <img src="./support-assets/kakaopay-qr.jpeg" alt="KakaoPay support QR">
-            </div>
-            <span data-i18n="supportOption2Link"></span>
-            <a class="support-link" href="https://qr.kakaopay.com/Ej8FZ01vl" target="_blank" rel="noreferrer" data-i18n="supportOption2Action"></a>
-          </div>
-        </div>
-      <p class="inline-note" data-i18n="supportModalNote"></p>
-    </div>
-  </div>
-
-  <script>
-    const storageKey = "tinypaws-language";
-    const translations = {
-      en: {
-        pageTitle: "TinyPaws",
-        metaDescription: "TinyPaws direct download, release notes, and support pages for the macOS desktop companion app.",
-        heroTitle: "A tiny desktop companion for your Mac.",
-        heroLead: "Download TinyPaws directly for macOS, read release notes, and get future updates through Sparkle-powered in-app updates.",
-        heroArtLabel: "tiny friends on your desktop",
-        downloadButton: "Download for macOS",
-        releaseNotesButton: "Release Notes",
-        supportButton: "Support",
-        privacyButton: "Privacy",
-        metaVersionLabel: "Latest Version",
-        metaVersionValue: "1.1.8",
-        metaPlatformLabel: "Platform",
-        metaPlatformValue: "macOS 13.0+",
-        metaUpdatesLabel: "Updates",
-        metaUpdatesValue: "Automatic via Sparkle",
-        metaFeedLabel: "Update Feed",
-        charactersTitle: "Meet the TinyPaws Crew",
-        charactersBody: "The direct-download build includes a cozy cast of desktop companions, each with its own silhouette and personality.",
-        characterCatName: "Cat",
-        characterCatNote: "A classic tiny troublemaker with quick little steps.",
-        characterCapybaraName: "Capybara",
-        characterCapybaraNote: "Calm, chunky, and perfect for slow desk days.",
-        characterPoodleName: "Poodle",
-        characterPoodleNote: "A fluffy walker that makes the desktop feel lively.",
-        characterHamsterName: "Hamster",
-        characterHamsterNote: "Small, bright, and made for cheerful motion.",
-        mediaTitle: "See TinyPaws in Action",
-        mediaBody: "A quick look at the desktop pet, character selection, customization controls, and motion style before you download.",
-        mediaCard1Title: "Desktop companion view",
-        mediaCard1Body: "The pet stays visible on your desktop without feeling heavy or noisy.",
-        mediaCard2Title: "Character variety",
-        mediaCard2Body: "Switch between different pet styles depending on your mood.",
-        mediaCard3Title: "Simple customization",
-        mediaCard3Body: "Adjust size, opacity, and other lightweight settings from the menu bar.",
-        mediaCard4Title: "Animated movement",
-        mediaCard4Body: "Walking, reacting, and idle motion help the pet feel alive on screen.",
-        downloadTitle: "Direct Download",
-        downloadBody: "TinyPaws is distributed outside the Mac App Store. Download the DMG, move TinyPaws into Applications, and keep future versions up to date from inside the app.",
-        downloadPrimary: "Download DMG",
-        downloadSecondary: "Open appcast.xml",
-        downloadNote: "Before launch, upload your signed and notarized release archive to ./downloads/TinyPaws.dmg.",
-        aboutTitle: "About TinyPaws",
-        aboutItem1: "Animated desktop pet for macOS",
-        aboutItem2: "Character, size, opacity, and walk speed controls",
-        aboutItem3: "Drag to reposition on your desktop",
-        aboutItem4: "Menu bar companion with direct-download distribution",
-        updatesTitle: "How Updates Work",
-        updatesItem1: "The direct-download build checks for updates with Sparkle.",
-        updatesItem2: "Each release is signed, notarized, and published with release notes.",
-        updatesItem3: "The appcast feed is hosted on this site for in-app update delivery.",
-        contactTitle: "Contact",
-        developerLabel: "Developer: youngji Yoon",
-        responseTime: "Typical response time: within 3 business days",
-        coffeeKicker: "☕ Tiny cheers from Korea",
-        coffeeTitle: "Send TinyPaws a little snack fund",
-        coffeeBody: "If TinyPaws made your desktop feel a bit softer and happier, you can send a tiny cheer through a simple Korean payment method. It helps keep the little pets walking, blinking, and growing.",
-        coffeePoint1Title: "New pets",
-        coffeePoint1Body: "Support future character additions.",
-        coffeePoint2Title: "Polish",
-        coffeePoint2Body: "Help fund small UX and animation improvements.",
-        coffeePoint3Title: "Updates",
-        coffeePoint3Body: "Keep the app healthy and maintained.",
-        coffeePrimary: "Cheer with Toss",
-        coffeeSecondary: "Cheer with KakaoPay",
-        coffeeNote: "Pick whichever feels easiest. Tiny support helps TinyPaws keep tiptoeing around your desktop.",
-        supportersTitle: "Coffee Supporters",
-        supportersBody: "Thank you to the people who bought the developer a coffee and helped keep TinyPaws warm and cozy.",
-        supporterRank1: "1st",
-        supporterRank2: "2nd",
-        supporterRank3: "3rd",
-        supportModalTitle: "Pick a tiny support path",
-        supportModalBody: "Choose the easiest way to send a small cheer. On desktop, scan the QR with your phone. On mobile, the KakaoPay link is the quickest path.",
-        supportOption1Title: "Toss",
-        supportOption1Body: "☕ A tiny snack for TinyPaws.",
-        supportOption1Link: "Scan this QR with Toss on your phone to send a small cheer.",
-        supportOption2Title: "KakaoPay",
-        supportOption2Body: "💛 A soft little cheer for the tiny crew.",
-        supportOption2Link: "Scan this QR, or jump straight into the KakaoPay support link.",
-        supportOption2Action: "Open KakaoPay link",
-        supportModalNote: "If you are on desktop, scan the QR with your phone. If you are already on mobile, the KakaoPay link is the easiest route.",
-        pagesTitle: "Pages & Files",
-        supportCardTitle: "Support",
-        supportCardBody: "Help, FAQs, compatibility, and contact details for TinyPaws users.",
-        privacyCardTitle: "Privacy Policy",
-        privacyCardBody: "What TinyPaws stores locally, how permissions are used, and what data is not collected.",
-        releaseCardTitle: "Release Notes",
-        releaseCardBody: "Version history and major changes for direct-download builds.",
-        appcastCardTitle: "Appcast Feed",
-        appcastCardBody: "Sparkle update feed used by the app for automatic update checks.",
-        archiveCardTitle: "Previous Downloads",
-        archiveCardBody: "Versioned DMG and ZIP archives for earlier direct-download builds.",
-        footerText: "TinyPaws official direct download, release notes, and support information",
-        switcherAriaLabel: "Language switcher",
-        switchKorean: "Korean",
-        switchEnglish: "English",
-        modalTitle: "Choose your language",
-        modalBody: "Pick the language you want to use on the TinyPaws site. You can change it again anytime from the top-right button.",
-        modalKorean: "한국어로 보기",
-        modalEnglish: "Continue in English"
-      },
-      ko: {
-        pageTitle: "TinyPaws",
-        metaDescription: "TinyPaws macOS 데스크톱 컴패니언 앱의 직접 다운로드, 릴리스 노트, 지원 페이지입니다.",
-        heroTitle: "Mac 위에 함께 머무는 작은 데스크톱 친구.",
-        heroLead: "TinyPaws를 macOS용으로 직접 다운로드하고, 릴리스 노트를 확인하고, Sparkle 기반 앱 내 업데이트를 통해 다음 버전도 받아보세요.",
-        heroArtLabel: "작은 친구들이 화면 위에 함께해요",
-        downloadButton: "macOS용 다운로드",
-        releaseNotesButton: "릴리스 노트",
-        supportButton: "지원",
-        privacyButton: "개인정보",
-        metaVersionLabel: "최신 버전",
-        metaVersionValue: "1.1.8",
-        metaPlatformLabel: "지원 환경",
-        metaPlatformValue: "macOS 13.0+",
-        metaUpdatesLabel: "업데이트",
-        metaUpdatesValue: "Sparkle 자동 업데이트",
-        metaFeedLabel: "업데이트 피드",
-        charactersTitle: "TinyPaws 캐릭터들",
-        charactersBody: "직접 다운로드 버전에는 각기 다른 분위기의 데스크톱 친구들이 함께 들어 있습니다.",
-        characterCatName: "고양이",
-        characterCatNote: "작고 재빠른 움직임이 매력인 기본 캐릭터입니다.",
-        characterCapybaraName: "카피바라",
-        characterCapybaraNote: "차분하고 둥글둥글한 분위기로 책상 위를 함께해요.",
-        characterPoodleName: "푸들",
-        characterPoodleNote: "복슬복슬한 실루엣으로 화면에 생동감을 더합니다.",
-        characterHamsterName: "햄스터",
-        characterHamsterNote: "작고 발랄한 느낌이 잘 살아 있는 캐릭터입니다.",
-        mediaTitle: "동작 화면 미리보기",
-        mediaBody: "다운로드 전에 TinyPaws의 메인 화면, 캐릭터 선택, 커스터마이징, 애니메이션 느낌을 한 번에 볼 수 있습니다.",
-        mediaCard1Title: "메인 데스크톱 화면",
-        mediaCard1Body: "작업을 방해하지 않으면서도 화면 위에 자연스럽게 머무르는 모습을 보여줍니다.",
-        mediaCard2Title: "캐릭터 선택",
-        mediaCard2Body: "기분에 따라 다양한 펫 캐릭터로 바꿔 사용할 수 있습니다.",
-        mediaCard3Title: "간단한 꾸미기",
-        mediaCard3Body: "메뉴 막대에서 크기, 투명도 등 가벼운 설정을 빠르게 조절할 수 있습니다.",
-        mediaCard4Title: "애니메이션 움직임",
-        mediaCard4Body: "걷기, 반응, 대기 동작으로 화면 위에서 살아 있는 느낌을 더합니다.",
-        downloadTitle: "직접 다운로드",
-        downloadBody: "TinyPaws는 Mac App Store 밖에서 배포됩니다. DMG를 내려받아 Applications로 옮겨 설치하고, 이후 버전은 앱 안에서 업데이트할 수 있습니다.",
-        downloadPrimary: "DMG 다운로드",
-        downloadSecondary: "appcast.xml 열기",
-        downloadNote: "출시 전에 서명 및 notarization이 끝난 파일을 ./downloads/TinyPaws.dmg 경로에 업로드해 주세요.",
-        aboutTitle: "TinyPaws 소개",
-        aboutItem1: "macOS용 애니메이션 데스크톱 펫",
-        aboutItem2: "캐릭터, 크기, 투명도, 이동 속도 조절",
-        aboutItem3: "드래그해서 원하는 위치로 이동",
-        aboutItem4: "직접 배포 방식에 맞춘 메뉴 막대 컴패니언",
-        updatesTitle: "업데이트 방식",
-        updatesItem1: "직접 다운로드 빌드는 Sparkle로 업데이트를 확인합니다.",
-        updatesItem2: "각 릴리스는 서명, notarization, 릴리스 노트와 함께 배포됩니다.",
-        updatesItem3: "앱 내 업데이트를 위해 appcast 피드를 이 사이트에서 제공합니다.",
-        contactTitle: "문의",
-        developerLabel: "개발자: youngji Yoon",
-        responseTime: "보통 3영업일 이내에 답변드립니다.",
-        coffeeKicker: "☕ TinyPaws 간식비 보내기",
-        coffeeTitle: "토스나 카카오페이로 작게 응원해 주세요",
-        coffeeBody: "TinyPaws가 데스크톱을 조금 더 포근하게 만들어줬다면, 작은 간식비처럼 가볍게 응원할 수 있어요. 이 응원은 작은 친구들의 새 움직임, 새 캐릭터, 다음 업데이트를 만드는 데 보탬이 됩니다.",
-        coffeePoint1Title: "새 캐릭터",
-        coffeePoint1Body: "앞으로 추가될 펫 캐릭터 제작에 도움을 줍니다.",
-        coffeePoint2Title: "완성도",
-        coffeePoint2Body: "작은 UX 개선과 애니메이션 다듬기에 쓰입니다.",
-        coffeePoint3Title: "업데이트",
-        coffeePoint3Body: "앱을 계속 안정적으로 유지하는 데 보탬이 됩니다.",
-        coffeePrimary: "토스로 응원하기",
-        coffeeSecondary: "카카오페이로 응원하기",
-        coffeeNote: "가장 편한 쪽으로 가볍게 응원해 주세요. 작은 응원이 TinyPaws 친구들을 계속 움직이게 해줘요.",
-        supportersTitle: "커피 후원자",
-        supportersBody: "개발자에게 커피를 사주신 분들께 감사드려요. TinyPaws를 계속 다듬고 돌보는 데 큰 힘이 됩니다.",
-        supporterRank1: "1위",
-        supporterRank2: "2위",
-        supporterRank3: "3위",
-        supportModalTitle: "어떤 방식으로 응원할까요?",
-        supportModalBody: "가장 편한 방법을 골라 주세요. 데스크톱에서는 QR을 스캔하고, 모바일에서는 카카오페이 링크로 바로 열 수 있어요.",
-        supportOption1Title: "토스",
-        supportOption1Body: "☕ TinyPaws 간식비처럼 가볍게.",
-        supportOption1Link: "휴대폰에서 토스로 이 QR을 스캔하면 바로 작게 응원할 수 있어요.",
-        supportOption2Title: "카카오페이",
-        supportOption2Body: "💛 작은 친구들에게 보내는 포근한 응원.",
-        supportOption2Link: "이 QR을 스캔하거나 카카오페이 링크를 열어서 바로 응원할 수 있어요.",
-        supportOption2Action: "카카오페이 링크 열기",
-        supportModalNote: "데스크톱에서는 휴대폰으로 QR을 스캔하고, 모바일에서는 카카오페이 링크로 바로 들어가면 가장 편해요.",
-        pagesTitle: "페이지 및 파일",
-        supportCardTitle: "지원",
-        supportCardBody: "TinyPaws 사용자용 도움말, 자주 묻는 질문, 호환성, 연락처를 확인할 수 있습니다.",
-        privacyCardTitle: "개인정보처리방침",
-        privacyCardBody: "TinyPaws가 기기에 저장하는 정보, 권한 사용 방식, 수집하지 않는 데이터를 안내합니다.",
-        releaseCardTitle: "릴리스 노트",
-        releaseCardBody: "직접 다운로드 버전의 변경 내역과 주요 업데이트를 확인할 수 있습니다.",
-        appcastCardTitle: "Appcast 피드",
-        appcastCardBody: "앱이 자동 업데이트를 확인할 때 사용하는 Sparkle 피드입니다.",
-        archiveCardTitle: "이전 버전 다운로드",
-        archiveCardBody: "직접 다운로드 빌드의 이전 DMG와 ZIP 보관본을 확인할 수 있습니다.",
-        footerText: "TinyPaws 공식 다운로드, 릴리스 노트, 지원 안내",
-        switcherAriaLabel: "언어 전환",
-        switchKorean: "한국어",
-        switchEnglish: "영문",
-        modalTitle: "사용할 언어를 선택해 주세요",
-        modalBody: "TinyPaws 사이트에서 사용할 언어를 선택해 주세요. 오른쪽 위 버튼에서 언제든 다시 바꿀 수 있습니다.",
-        modalKorean: "한국어로 시작하기",
-        modalEnglish: "영문으로 보기"
-      }
-    };
-
-    const elements = document.querySelectorAll("[data-i18n]");
-    const switchButtons = document.querySelectorAll("[data-set-language]");
-    const ariaLabelElements = document.querySelectorAll("[data-aria-label-key]");
-    const modal = document.getElementById("languageModal");
-    const supportModal = document.getElementById("supportModal");
-    const supportOpenButtons = document.querySelectorAll("[data-open-support-modal]");
-    const supportOptions = document.querySelectorAll("[data-support-option]");
-    const descriptionMeta = document.querySelector('meta[name="description"]');
-
-    function applyLanguage(language) {
-      const lang = translations[language] ? language : "en";
-      const copy = translations[lang];
-
-      elements.forEach((element) => {
-        const key = element.dataset.i18n;
-        element.textContent = copy[key];
-      });
-
-      ariaLabelElements.forEach((element) => {
-        const key = element.dataset.ariaLabelKey;
-        element.setAttribute("aria-label", copy[key]);
-      });
-
-      document.documentElement.lang = lang;
-      document.title = copy.pageTitle;
-      descriptionMeta.setAttribute("content", copy.metaDescription);
-      document.documentElement.dataset.language = lang;
-
-      switchButtons.forEach((button) => {
-        button.classList.toggle("active", button.dataset.setLanguage === lang);
-      });
-    }
-
-    function chooseLanguage(language) {
-      localStorage.setItem(storageKey, language);
-      applyLanguage(language);
-      modal.hidden = true;
-      scrollToHashTarget();
-    }
-
-    switchButtons.forEach((button) => {
-      button.addEventListener("click", () => chooseLanguage(button.dataset.setLanguage));
-    });
-
-    function openSupportModal(target) {
-      supportOptions.forEach((option) => {
-        option.hidden = option.dataset.supportOption !== target;
-      });
-      supportModal.hidden = false;
-    }
-
-    function closeSupportModal() {
-      supportModal.hidden = true;
-    }
-
-    function scrollToHashTarget() {
-      if (!window.location.hash) return;
-
-      const target = document.querySelector(window.location.hash);
-      if (!target) return;
-
-      requestAnimationFrame(() => {
-        target.scrollIntoView({ block: "start" });
-      });
-    }
-
-    supportOpenButtons.forEach((button) => {
-      button.addEventListener("click", () => openSupportModal(button.dataset.openSupportModal));
-    });
-
-    supportModal.addEventListener("click", (event) => {
-      if (event.target === supportModal) {
-        closeSupportModal();
-      }
-    });
-
-    const storedLanguage = localStorage.getItem(storageKey);
-
-    if (storedLanguage) {
-      applyLanguage(storedLanguage);
-    } else {
-      applyLanguage("ko");
-      modal.hidden = false;
-    }
-
-    window.addEventListener("hashchange", scrollToHashTarget);
-    window.addEventListener("load", scrollToHashTarget);
-
-    document.documentElement.classList.add("ready");
-    scrollToHashTarget();
-  </script>
 </body>
 </html>
