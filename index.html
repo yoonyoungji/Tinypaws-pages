@@ -201,6 +201,107 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .support-payment-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 12px 18px;
+      border: 1px solid rgba(143, 66, 39, 0.2);
+      border-radius: 18px;
+      background: var(--surface-strong);
+      color: var(--accent-strong);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .support-payment-button.primary {
+      border-color: transparent;
+      background: var(--accent);
+      color: #fff9f5;
+    }
+
+    .support-payment-button:hover {
+      transform: translateY(-1px);
+    }
+
+    .payment-modal[hidden],
+    .payment-option[hidden] {
+      display: none;
+    }
+
+    .payment-modal {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(45, 36, 30, 0.42);
+      z-index: 20;
+    }
+
+    .payment-sheet {
+      position: relative;
+      width: min(100%, 420px);
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .payment-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(143, 66, 39, 0.1);
+      color: var(--accent-strong);
+      font: inherit;
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .payment-option {
+      text-align: center;
+    }
+
+    .payment-option h2 {
+      padding-right: 32px;
+    }
+
+    .payment-option p {
+      color: var(--muted);
+    }
+
+    .payment-qr {
+      width: min(100%, 300px);
+      margin: 18px auto;
+      padding: 12px;
+      border: 1px dashed rgba(143, 66, 39, 0.24);
+      border-radius: 20px;
+      background: var(--surface-strong);
+    }
+
+    .payment-qr img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .payment-link {
+      display: inline-flex;
+      margin-top: 4px;
+      font-weight: 700;
     }
 
     .supporters-copy {
@@ -348,8 +449,8 @@
           </p>
         </div>
         <div class="support-creator-actions">
-          <a class="btn primary" href="mailto:dbsdudwl94@gmail.com?subject=TinyPaws%20Support">Contact Developer</a>
-          <a class="btn secondary" href="./support.html">Open Support Page</a>
+          <button class="support-payment-button primary" type="button" data-open-payment="toss">토스로 응원하기</button>
+          <button class="support-payment-button" type="button" data-open-payment="kakaopay">카카오페이로 응원하기</button>
         </div>
         <p class="supporters-copy">
           <strong>Coffee Supporters</strong><br>
@@ -373,5 +474,57 @@
       TinyPaws official support and privacy information
     </footer>
   </main>
+
+  <div class="payment-modal" id="paymentModal" hidden>
+    <div class="payment-sheet" role="dialog" aria-modal="true" aria-label="Payment options">
+      <button class="payment-close" type="button" aria-label="Close payment options" data-close-payment>×</button>
+      <section class="payment-option" data-payment-option="toss" hidden>
+        <h2>토스로 응원하기</h2>
+        <p>휴대폰의 토스 앱으로 아래 QR 코드를 스캔해 주세요.</p>
+        <div class="payment-qr">
+          <img src="./support-assets/toss-qr.png" alt="토스 송금 QR 코드">
+        </div>
+      </section>
+      <section class="payment-option" data-payment-option="kakaopay" hidden>
+        <h2>카카오페이로 응원하기</h2>
+        <p>카카오페이 앱으로 아래 QR 코드를 스캔하거나 링크를 열어 주세요.</p>
+        <div class="payment-qr">
+          <img src="./support-assets/kakaopay-qr.jpeg" alt="카카오페이 송금 QR 코드">
+        </div>
+        <a class="payment-link" href="https://qr.kakaopay.com/Ej8FZ01vl" target="_blank" rel="noreferrer">카카오페이 링크 열기</a>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const paymentModal = document.getElementById("paymentModal");
+    const paymentOptions = document.querySelectorAll("[data-payment-option]");
+    const paymentOpenButtons = document.querySelectorAll("[data-open-payment]");
+    const paymentCloseButton = document.querySelector("[data-close-payment]");
+
+    function closePaymentModal() {
+      paymentModal.hidden = true;
+    }
+
+    function openPaymentModal(method) {
+      paymentOptions.forEach((option) => {
+        option.hidden = option.dataset.paymentOption !== method;
+      });
+      paymentModal.hidden = false;
+      paymentCloseButton.focus();
+    }
+
+    paymentOpenButtons.forEach((button) => {
+      button.addEventListener("click", () => openPaymentModal(button.dataset.openPayment));
+    });
+
+    paymentCloseButton.addEventListener("click", closePaymentModal);
+    paymentModal.addEventListener("click", (event) => {
+      if (event.target === paymentModal) closePaymentModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !paymentModal.hidden) closePaymentModal();
+    });
+  </script>
 </body>
 </html>
