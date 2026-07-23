@@ -41,7 +41,9 @@ h1 { max-width: 16ch; margin-bottom: 14px; font-size: clamp(2.25rem, 5vw, 4rem);
 h2 { margin-bottom: 10px; font-size: 1.35rem; line-height: 1.25; }
 h3 { margin-bottom: 6px; font-size: 1rem; }
 .lead { max-width: 52rem; margin-bottom: 0; color: var(--muted); font-size: 1.08rem; }
-.version-badge { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--accent-strong); background: #fffaf4; font-size: .92rem; font-weight: 800; }
+.version-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 20px; }
+.version-badge { display: inline-flex; align-items: center; gap: 7px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--accent-strong); background: #fffaf4; font-size: .92rem; font-weight: 800; }
+.download-button { min-height: 40px; }
 .actions, .nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
 .btn, .nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 17px; border: 1px solid transparent; border-radius: 999px; text-decoration: none; font-weight: 800; }
 .btn.primary { color: #fff9f5; background: var(--accent); }
