@@ -61,6 +61,11 @@ li + li { margin-top: 8px; }
 .character strong { display: block; font-size: .9rem; }
 .character small { display: block; color: var(--muted); font-size: .74rem; }
 .release { border-color: rgba(191, 107, 70, .3); background: linear-gradient(135deg, rgba(255, 240, 221, .98), #fffaf4); }
+.release-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.release-note-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 70px; padding: 17px 20px; border: 1px solid var(--line); border-radius: 20px; color: var(--text); background: var(--surface); box-shadow: 0 10px 26px rgba(74, 44, 26, .08); text-decoration: none; }
+.release-note-link:hover { border-color: rgba(191, 107, 70, .4); background: #fffaf4; }
+.release-note-link strong { color: var(--accent-strong); font-size: 1.05rem; }
+.release-note-link span { color: var(--muted); font-size: .9rem; font-weight: 700; }
 .faq-item + .faq-item { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
 .supporters-list { display: grid; gap: 9px; max-width: 360px; }
 .supporter-pill { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 15px; border: 1px solid rgba(191, 107, 70, .2); border-radius: 17px; color: var(--accent-strong); background: #fff4e8; font-weight: 700; }
@@ -82,6 +87,6 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
   .hero, .card { border-radius: 22px; }
   .hero { padding: 30px 21px; }
   .card { padding: 23px 20px; }
-  .grid, .feature-grid { grid-template-columns: 1fr; }
+  .grid, .feature-grid, .release-list { grid-template-columns: 1fr; }
   .character-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
