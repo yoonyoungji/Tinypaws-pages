@@ -1,18 +1,14 @@
 const supportedLocales = ["ko", "en"];
 const copy = {
   ko: {
-    common: { home: "홈", support: "지원", privacy: "개인정보처리방침", releases: "버전 기록", download: "TinyPaws 다운로드", latest: "최신 버전 1.2.3", email: "문의 이메일", developer: "개발자: youngji Yoon", response: "답변은 보통 3영업일 안에 드립니다.", footer: "TinyPaws 공식 지원 및 개인정보처리방침", close: "닫기" },
+    common: { home: "홈", support: "지원", privacy: "개인정보처리방침", releases: "버전 기록", download: "TinyPaws 다운로드", latest: "최신 버전 1.2.4", email: "문의 이메일", developer: "개발자: youngji Yoon", response: "답변은 보통 3영업일 안에 드립니다.", footer: "TinyPaws 공식 지원 및 개인정보처리방침", close: "닫기" },
     index: {
       title: "TinyPaws — Mac 데스크톱 펫", eyebrow: "TinyPaws · macOS 데스크톱 펫", heading: "Mac 화면에서 함께 걷는 작은 친구.", lead: "TinyPaws는 화면 위를 자연스럽게 움직이며 일상에 작은 생기를 더하는 macOS 데스크톱 펫입니다. 메뉴 막대에서 캐릭터와 움직임을 내 취향대로 설정해 보세요.", downloadCta: "최신 버전 다운로드", supportCta: "도움말 보기", privacyCta: "개인정보처리방침", releasesCta: "버전 기록",
-      // TEMP: Restore the six-character copy, including Heukkongi, when reopening.
-      // companions: "여섯 명의 데스크톱 친구", companionsLead: "카피바라, 고양이, 고릴라, 흑콩이, 푸들, 햄스터 중 마음에 드는 캐릭터를 고를 수 있어요.",
-      companions: "다섯 명의 데스크톱 친구", companionsLead: "카피바라, 고양이, 고릴라, 푸들, 햄스터 중 마음에 드는 캐릭터를 고를 수 있어요.",
+      companions: "여섯 명의 데스크톱 친구", companionsLead: "카피바라, 고양이, 고릴라, 꺼먹살이, 푸들, 햄스터 중 마음에 드는 캐릭터를 고를 수 있어요.",
       features: "내 화면에 맞게 설정", featureItems: [["걷기 스타일", "화면 안을 자유롭게 걷거나, 모니터 테두리를 따라 걷게 할 수 있어요."], ["이동 범위", "현재 모니터 안에서만 또는 모든 연결된 모니터에서 움직이게 설정하세요."], ["디테일 조절", "사이즈, 투명도, 걷기 속도를 바꿔 작업 흐름에 맞출 수 있어요."]],
       showcase: "TinyPaws를 한눈에", showcaseLead: "화면 위에서 함께 걷고, 내 작업 환경에 맞게 설정하는 모습을 확인해 보세요.", showcaseItems: [["함께 걷는 작은 친구", "화면 위를 자연스럽게 걷고, 필요할 때는 원하는 위치로 옮길 수 있어요.", "01-main-ko-final.png"], ["취향에 맞춘 디테일", "캐릭터 크기와 투명도, 걷기 속도를 나에게 편한 방식으로 조절하세요.", "03-customize-ko-final.png"], ["내 화면에 맞는 움직임", "현재 모니터 안에서만 움직이게 하거나, 여러 화면을 자유롭게 오가게 할 수 있어요.", "04-placement-ko-final.png"], ["입력에 반응하는 재미", "타이핑과 스페이스바 입력에 맞춰 캐릭터가 더 생동감 있게 반응합니다.", "05-animation-ko-final.png"]],
-      // keyboard: "키보드에 반응하는 움직임", keyboardLead: "입력하면 캐릭터가 걸어가고, 스페이스바로 점프합니다. 흑콩이는 스페이스바를 누르면 귀여운 간식 포즈를 취하고, 고릴라는 Delete 키를 빠르게 연속 입력하면 특별한 질주 효과를 보여줘요.",
-      keyboard: "키보드에 반응하는 움직임", keyboardLead: "입력하면 캐릭터가 걸어가고, 스페이스바로 점프합니다. 고릴라는 Delete 키를 빠르게 연속 입력하면 특별한 질주 효과를 보여줘요.",
-      // release: "1.2.3 업데이트", releaseLead: "흑콩이 전용 달리기 프레임을 추가해 빠른 움직임이 더 부드러워졌고, 연기 같은 잔상 대시 효과와 간식 포즈도 다듬었습니다.",
-      release: "1.2.3 업데이트", releaseLead: "새로운 캐릭터 동작과 시각 효과를 다듬었습니다.",
+      keyboard: "키보드에 반응하는 움직임", keyboardLead: "입력하면 캐릭터가 걸어가고, 스페이스바로 점프합니다. 꺼먹살이는 스페이스바를 누르면 귀여운 간식 포즈를 취하고, 고릴라는 Delete 키를 빠르게 연속 입력하면 특별한 질주 효과를 보여줘요.",
+      release: "1.2.4 업데이트", releaseLead: "꺼먹살이 전용 달리기 프레임을 추가해 빠른 움직임이 더 부드러워졌고, 연기 같은 잔상 대시 효과와 간식 포즈도 다듬었습니다.",
       pages: "도움이 필요하신가요?", pagesLead: "사용 방법, 자주 묻는 질문, 개인정보 처리 방침을 확인할 수 있습니다.", coffee: "개발자에게 커피 사주기", coffeeLead: "TinyPaws가 즐거움을 더해 주었다면, 작은 응원으로 다음 업데이트를 함께 만들어 주세요.", toss: "토스로 응원하기", kakaopay: "카카오페이로 응원하기", supporters: "Coffee Supporters", supportersLead: "TinyPaws를 계속 다듬고 돌보는 데 힘을 보태 주신 분들께 감사드려요.", tossHelp: "휴대폰의 토스 앱으로 아래 QR 코드를 스캔해 주세요.", kakaopayHelp: "카카오페이 앱으로 아래 QR 코드를 스캔하거나 링크를 열어 주세요.", openKakao: "카카오페이 링크 열기"
     },
     releases: { title: "TinyPaws 버전 기록", eyebrow: "TinyPaws 업데이트", heading: "버전 기록", lead: "TinyPaws의 새 기능, 개선 사항, 수정 내역을 버전별로 확인하세요.", open: "릴리스 노트 보기" },
@@ -24,17 +20,14 @@ const copy = {
     }
   },
   en: {
-    common: { home: "Home", support: "Support", privacy: "Privacy Policy", releases: "Release history", download: "Download TinyPaws", latest: "Latest version 1.2.3", email: "Support email", developer: "Developer: youngji Yoon", response: "Typical response time: within 3 business days", footer: "TinyPaws official support and privacy information", close: "Close" },
+    common: { home: "Home", support: "Support", privacy: "Privacy Policy", releases: "Release history", download: "Download TinyPaws", latest: "Latest version 1.2.4", email: "Support email", developer: "Developer: youngji Yoon", response: "Typical response time: within 3 business days", footer: "TinyPaws official support and privacy information", close: "Close" },
     index: {
       title: "TinyPaws — A Mac desktop pet", eyebrow: "TinyPaws · macOS desktop pet", heading: "A tiny friend that walks alongside your Mac.", lead: "TinyPaws is a macOS desktop pet that moves naturally across your screen and brings a little life to everyday work. Make it yours from the menu bar.", downloadCta: "Download latest version", supportCta: "Get support", privacyCta: "Privacy policy", releasesCta: "Release history",
-      // companions: "Six desktop companions", companionsLead: "Choose the friend that feels right: Capybara, Cat, Gorilla, Heukkongi, Poodle, or Hamster.",
-      companions: "Five desktop companions", companionsLead: "Choose the friend that feels right: Capybara, Cat, Gorilla, Poodle, or Hamster.",
+      companions: "Six desktop companions", companionsLead: "Choose the friend that feels right: Capybara, Cat, Gorilla, Kkeomeoksari, Poodle, or Hamster.",
       features: "Made to fit your desktop", featureItems: [["Walking style", "Let your companion wander freely or follow the edge of a display."], ["Movement range", "Keep it on the current display or let it explore every connected monitor."], ["Fine-tune the details", "Adjust size, opacity, and walk speed for the way you work."]],
       showcase: "See TinyPaws in action", showcaseLead: "See how your companion walks alongside your work and adapts to your desktop.", showcaseItems: [["A small friend at your side", "Your companion walks naturally across the screen and can be moved whenever you need.", "01-main-en-final.png"], ["Details tuned to you", "Adjust character size, opacity, and walking speed to suit the way you work.", "03-customize-en-final.png"], ["Movement for your setup", "Keep your companion on one display or let it wander across all of your screens.", "04-placement-en-final.png"], ["A more lively desktop", "Your companion reacts to typing and the Space bar for a more playful presence.", "05-animation-en-final.png"]],
-      // keyboard: "Movement that reacts to your keyboard", keyboardLead: "Your companion walks as you type and jumps with the Space bar. Heukkongi does a cute snack pose with Space; Gorilla has a special rampage effect when you rapidly press Delete.",
-      keyboard: "Movement that reacts to your keyboard", keyboardLead: "Your companion walks as you type and jumps with the Space bar. Gorilla has a special rampage effect when you rapidly press Delete.",
-      // release: "New in 1.2.3", releaseLead: "Heukkongi now has dedicated run frames for smoother fast movement, a smoky phantom-dash effect, and a refined snack pose.",
-      release: "New in 1.2.3", releaseLead: "Refined character movement and visual effects.",
+      keyboard: "Movement that reacts to your keyboard", keyboardLead: "Your companion walks as you type and jumps with the Space bar. Kkeomeoksari does a cute snack pose with Space; Gorilla has a special rampage effect when you rapidly press Delete.",
+      release: "New in 1.2.4", releaseLead: "Kkeomeoksari now has dedicated run frames for smoother fast movement, a smoky phantom-dash effect, and a refined snack pose.",
       pages: "Need a hand?", pagesLead: "Find usage help, FAQs, and details about privacy.", coffee: "Buy Developer a Coffee", coffeeLead: "If TinyPaws brightens your desktop, a small show of support helps make the next update possible.", toss: "Support with Toss", kakaopay: "Support with Kakao Pay", supporters: "Coffee Supporters", supportersLead: "Thank you to everyone helping keep TinyPaws warm, cozy, and growing.", tossHelp: "Scan this QR code with the Toss app on your phone.", kakaopayHelp: "Scan this QR code with Kakao Pay, or open the link below.", openKakao: "Open Kakao Pay link"
     },
     releases: { title: "TinyPaws Release history", eyebrow: "TinyPaws updates", heading: "Release history", lead: "Browse new features, improvements, and fixes for every TinyPaws version.", open: "Read release notes" },
@@ -47,10 +40,8 @@ const copy = {
   }
 };
 
-// TEMP: Restore the Heukkongi entry when reopening the character.
-// const characters = [["capybara", "Capybara", "카피바라"], ["cat", "Cat", "고양이"], ["gorilla", "Gorilla", "고릴라"], ["heukkongi", "Heukkongi", "흑콩이"], ["poodle", "Poodle", "푸들"], ["hamster", "Hamster", "햄스터"]];
-const characters = [["capybara", "Capybara", "카피바라"], ["cat", "Cat", "고양이"], ["gorilla", "Gorilla", "고릴라"], ["poodle", "Poodle", "푸들"], ["hamster", "Hamster", "햄스터"]];
-const releaseVersions = ["1.2.3", "1.2.2", "1.2.1", "1.2.0", "1.1.9", "1.1.8", "1.1.7", "1.1.6", "1.1.5", "1.1.4", "1.1.3", "1.1.2", "1.1.1", "1.0.9", "1.0.8", "1.0.7", "1.0.6", "1.0.5", "1.0.4", "1.0.3", "1.0.2", "1.0.1", "1.0"];
+const characters = [["capybara", "Capybara", "카피바라"], ["cat", "Cat", "고양이"], ["gorilla", "Gorilla", "고릴라"], ["kkeomeoksari", "Kkeomeoksari", "꺼먹살이"], ["poodle", "Poodle", "푸들"], ["hamster", "Hamster", "햄스터"]];
+const releaseVersions = ["1.2.4", "1.2.3", "1.2.2", "1.2.1", "1.2.0", "1.1.9", "1.1.8", "1.1.7", "1.1.6", "1.1.5", "1.1.4", "1.1.3", "1.1.2", "1.1.1", "1.0.9", "1.0.8", "1.0.7", "1.0.6", "1.0.5", "1.0.4", "1.0.3", "1.0.2", "1.0.1", "1.0"];
 const esc = (value) => String(value).replace(/[&<>"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[char]);
 const list = (items) => `<ul>${items.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>`;
 const nav = (c) => `<nav class="nav" aria-label="Page links"><a href="./index.html">${c.home}</a><a href="./downloads/TinyPaws.dmg">${c.download}</a><a href="./release-notes.html">${c.releases}</a><a href="./support.html">${c.support}</a><a href="./privacy.html">${c.privacy}</a></nav>`;
