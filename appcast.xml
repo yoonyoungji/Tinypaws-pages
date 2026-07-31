@@ -14,6 +14,7 @@
   <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
   <sparkle:version>36</sparkle:version>
   <sparkle:shortVersionString>1.2.7</sparkle:shortVersionString>
+  <sparkle:criticalUpdate/>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
   <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.7.html</sparkle:releaseNotesLink>
   <enclosure
