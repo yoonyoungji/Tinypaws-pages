@@ -8,6 +8,20 @@
     <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
     <description>TinyPaws direct distribution updates</description>
     <language>en</language>
+    <item>
+      <title>Version 1.2.8</title>
+      <pubDate>Mon, 03 Aug 2026 11:02:42 +0900</pubDate>
+      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <sparkle:version>37</sparkle:version>
+      <sparkle:shortVersionString>1.2.8</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.8.html</sparkle:releaseNotesLink>
+      <enclosure
+        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.2.8.zip"
+        type="application/octet-stream"
+        sparkle:edSignature="XIsFNfr2EuVGsXOJLWeXBlFBibduR+pjUzfRiS+/QrJzkAsr7IxLBUIleYNClQusdnGXUeQmX2mdBUJ2TmdfCw=="
+        length="23264708" />
+    </item>
 <item>
   <title>Version 1.2.7</title>
   <pubDate>Fri, 31 Jul 2026 12:53:11 +0900</pubDate>
