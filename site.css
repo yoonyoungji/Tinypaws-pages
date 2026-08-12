@@ -104,8 +104,9 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
 .hero-home .lead { max-width: 33rem; }
 .hero-action-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 26px; }
 .hero-action-row .btn { box-shadow: 0 11px 20px rgba(143, 66, 39, .19); }
-.trust-list { display: flex; flex-wrap: wrap; gap: 12px 17px; margin: 17px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .84rem; font-weight: 700; }
-.trust-list span { color: var(--accent); font-size: 1rem; }
+.trust-list { display: flex; flex-wrap: wrap; gap: 8px 17px; margin: 17px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .84rem; font-weight: 700; }
+.trust-list li { display: inline-flex; align-items: center; gap: 5px; margin: 0; white-space: nowrap; }
+.trust-list span { display: inline-grid; width: 1em; place-items: center; color: var(--accent); font-size: 1rem; line-height: 1; }
 .desktop-note { margin: 13px 0 0; color: var(--muted); font-size: .78rem; }
 .hero-demo { position: relative; margin: 0; transform: rotate(1.2deg); }
 .demo-window { padding: 9px; border: 1px solid rgba(94, 67, 49, .17); border-radius: 23px; background: #fffaf6; box-shadow: 0 28px 48px rgba(74, 44, 26, .2); }
