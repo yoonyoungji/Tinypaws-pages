@@ -78,3 +78,41 @@ paymentCards.forEach((card) => {
     });
   });
 });
+
+const wearableShowcase = document.querySelector("[data-wearable-showcase]");
+if (wearableShowcase) {
+  const accessoryNames = { sunglasses: "선글라스" };
+  const accessoryState = {
+    sunglasses: true
+  };
+  const status = wearableShowcase.querySelector("[data-wearable-status]");
+
+  const updateWearablePreview = () => {
+    Object.entries(accessoryState).forEach(([accessory, isOn]) => {
+      const layer = wearableShowcase.querySelector(`[data-accessory-layer="${accessory}"]`);
+      const button = wearableShowcase.querySelector(`[data-accessory-toggle="${accessory}"]`);
+      if (layer) layer.toggleAttribute("hidden", !isOn);
+      if (button) {
+        button.setAttribute("aria-pressed", String(isOn));
+        const stateLabel = button.querySelector("small");
+        if (stateLabel) stateLabel.textContent = isOn ? "착용 중" : "벗음";
+      }
+    });
+
+    const worn = Object.keys(accessoryState).filter((accessory) => accessoryState[accessory]);
+    if (!status) return;
+    status.textContent = worn.length
+      ? `${worn.map((accessory) => accessoryNames[accessory]).join("와 ")} 착용 중`
+      : "기본 모습으로 산책 중";
+  };
+
+  wearableShowcase.querySelectorAll("[data-accessory-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const accessory = button.dataset.accessoryToggle;
+      accessoryState[accessory] = !accessoryState[accessory];
+      updateWearablePreview();
+    });
+  });
+
+  updateWearablePreview();
+}

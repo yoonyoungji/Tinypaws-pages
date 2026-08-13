@@ -191,6 +191,28 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
 .item-result-grid strong, .item-result-grid span { display: block; }
 .item-result-grid strong { font-size: .84rem; }
 .item-result-grid span { margin-top: 3px; color: var(--accent-strong); font-size: .72rem; font-weight: 800; }
+.wearable-showcase { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr); gap: 34px; align-items: center; margin-top: 16px; padding: 34px; overflow: hidden; border: 1px solid rgba(111,79,44,.16); border-radius: 26px; background: linear-gradient(135deg, #f4dfbd, #fff8eb 58%, #f7e8cd); box-shadow: 0 16px 36px rgba(74,44,26,.08); }
+.wearable-preview { position: relative; min-height: 360px; padding: 42px 22px 20px; overflow: hidden; border-radius: 22px; background: radial-gradient(circle at 50% 42%, rgba(255,255,255,.94), rgba(255,250,239,.62) 47%, rgba(210,161,96,.14) 74%), repeating-linear-gradient(135deg, rgba(255,255,255,.18) 0 2px, transparent 2px 10px); }
+.wearable-preview::before, .wearable-preview::after { position: absolute; border: 1px solid rgba(143,66,39,.12); border-radius: 50%; content: ""; }
+.wearable-preview::before { inset: 32px 55px 49px; }.wearable-preview::after { inset: 55px 79px 73px; }
+.wearable-preview-label { position: absolute; top: 16px; left: 17px; z-index: 2; padding: 5px 9px; border-radius: 999px; color: #7b4a2d; background: rgba(255,255,255,.72); font-size: .66rem; font-weight: 900; letter-spacing: .09em; }
+.wearable-pet { position: relative; z-index: 1; width: min(100%, 330px); margin: 8px auto 0; }
+.wearable-pet > img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+.wearable-layers { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+[data-accessory-layer] { opacity: 1; transform-origin: center; transition: opacity .22s ease, transform .22s ease; }
+[data-accessory-layer][hidden] { display: block; opacity: 0; transform: translateY(-4px) scale(.94); }
+.glasses-arm-shadow, .glasses-arm, .glasses-shine { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.glasses-arm-shadow { stroke: #392006; stroke-width: 5; }.glasses-arm { stroke: #f7b928; stroke-width: 2.4; }
+.glasses-lens-shadow { fill: #392006; }.glasses-lens { fill: #201b18; stroke: #ffc83d; stroke-width: 3; }.glasses-shine { stroke: rgba(255,255,255,.78); stroke-width: 2.2; }
+.wearable-status { position: relative; z-index: 2; width: fit-content; margin: 5px auto 0; padding: 7px 11px; border-radius: 999px; color: #694023; background: rgba(255,255,255,.82); font-size: .75rem; font-weight: 850; }
+.wearable-copy h3 { margin: 4px 0 12px; font-size: clamp(1.75rem, 3vw, 2.4rem); line-height: 1.16; letter-spacing: -.04em; }.wearable-copy > p:not(.eyebrow):not(.wearable-tip) { margin: 0; color: var(--muted); }
+.wearable-controls { display: grid; max-width: 240px; margin-top: 22px; }
+.wearable-controls button { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 10px; min-height: 66px; padding: 10px 12px; border: 1px solid rgba(143,66,39,.15); border-radius: 17px; color: var(--text); background: rgba(255,255,255,.64); font: inherit; text-align: left; cursor: pointer; transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease; }
+.wearable-controls button:hover { transform: translateY(-2px); border-color: rgba(143,66,39,.34); }.wearable-controls button:focus-visible { outline: 3px solid rgba(191,107,70,.3); outline-offset: 2px; }
+.wearable-controls button[aria-pressed="true"] { border-color: rgba(143,66,39,.38); background: #fffaf2; box-shadow: 0 7px 18px rgba(99,58,29,.08); }
+.wearable-controls button > span:first-child { display: grid; width: 37px; height: 37px; place-items: center; border-radius: 12px; background: #f0d2a7; font-size: 1.05rem; }.wearable-controls button[aria-pressed="true"] > span:first-child { background: #e8b963; }
+.wearable-controls strong, .wearable-controls small { display: block; }.wearable-controls strong { font-size: .84rem; }.wearable-controls small { color: var(--muted); font-size: .7rem; font-weight: 700; }
+.wearable-tip { display: flex; align-items: center; gap: 7px; margin: 13px 0 0; color: #825035; font-size: .76rem; font-weight: 750; }.wearable-tip span { color: #c27b38; }
 .item-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0 0; padding: 0; list-style: none; }
 .item-steps li { display: flex; align-items: center; gap: 12px; padding: 15px 17px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,252,247,.66); }
 .item-steps li > span { display: grid; flex: 0 0 34px; width: 34px; height: 34px; place-items: center; border-radius: 12px; color: #fff; background: var(--accent); font-size: .72rem; font-weight: 900; }
@@ -240,7 +262,7 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
   .quick-start, .friends-section, .settings-section, .items-section, .updates-section, .coffee-section, .privacy-summary { margin-top: 53px; }
   .step-grid, .item-steps, .items-heading, .payment-grid, .coffee-heading, .supporter-thanks, .privacy-summary { grid-template-columns: 1fr; }.step-grid li { min-height: 0; }.step-grid span { margin-bottom: 14px; }
   .section-heading { display: block; }.section-heading > p { margin-top: 12px; }.text-link { display: inline-block; margin-top: 16px; }
-  .settings-section, .coffee-section, .privacy-summary { padding: 29px 22px; border-radius: 24px; }.settings-heading, .items-heading { grid-template-columns: 1fr; gap: 14px; }.settings-visuals { grid-template-columns: 1fr; margin-top: 23px; }.settings-visuals .settings-visual-main { grid-column: auto; }.keyboard-feature { grid-template-columns: auto 1fr; }.keyboard-feature a { grid-column: 2; }.item-draw-showcase { grid-template-columns: 1fr; margin-top: 22px; }.item-draw-prompt { min-height: 290px; border-radius: 21px; }.coffee-heading, .supporter-thanks { gap: 14px; }.supporter-thanks .supporters-list { justify-content: flex-start; }
+  .settings-section, .coffee-section, .privacy-summary { padding: 29px 22px; border-radius: 24px; }.settings-heading, .items-heading { grid-template-columns: 1fr; gap: 14px; }.settings-visuals { grid-template-columns: 1fr; margin-top: 23px; }.settings-visuals .settings-visual-main { grid-column: auto; }.keyboard-feature { grid-template-columns: auto 1fr; }.keyboard-feature a { grid-column: 2; }.item-draw-showcase, .wearable-showcase { grid-template-columns: 1fr; margin-top: 22px; }.item-draw-prompt { min-height: 290px; border-radius: 21px; }.wearable-showcase { gap: 24px; padding: 24px; }.wearable-preview { min-height: 330px; }.coffee-heading, .supporter-thanks { gap: 14px; }.supporter-thanks .supporters-list { justify-content: flex-start; }
   .update-list a { grid-template-columns: 62px 1fr auto; gap: 9px; padding: 13px 14px; }.update-list strong { font-size: .86rem; }
   .home-page footer { display: block; }.home-page footer p { margin-top: 10px; }
   .character-dialog { width: min(100% - 20px, 680px); max-height: 92vh; border-radius: 24px; }.character-dialog-shell { grid-template-columns: 1fr; }.character-dialog-visual { padding: 12px; }.character-dialog-copy { padding: 30px 22px 28px; }.character-dialog-copy h2 { font-size: 2.5rem; }.character-dialog-close { top: 12px; right: 12px; }
@@ -249,12 +271,13 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
 @media (max-width: 520px) {
   .item-result-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .item-draw-prompt { padding: 26px 22px; }
+  .wearable-showcase { padding: 18px; }.wearable-preview { min-height: 275px; padding: 38px 12px 16px; }.wearable-pet { width: min(100%, 255px); }.wearable-preview::before { inset: 30px 30px 44px; }.wearable-preview::after { inset: 50px 52px 64px; }.wearable-controls { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .character-grid-home .character-sprite { animation: none; }
-  .character-grid-home .character, .update-list a, .payment-card summary b { transition: none; }
+  .character-grid-home .character, .update-list a, .payment-card summary b, [data-accessory-layer], .wearable-controls button { transition: none; }
   .coffee-section:target { animation: none; }
   .character-dialog[open] { animation: none; }
 }
