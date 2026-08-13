@@ -31,6 +31,7 @@
       <nav class="topnav" aria-label="주요 메뉴">
         <a href="#how-it-works">사용 방법</a>
         <a href="#settings">설정 가이드</a>
+        <a href="#items">아이템</a>
         <a href="#friends">친구들</a>
         <a href="#support-creator">후원</a>
         <a href="./support.html">지원</a>
@@ -44,7 +45,7 @@
         <p class="lead">일하는 동안 화면 한쪽에서 천천히 걷고, 타이핑과 스페이스바에 반응해요. 메뉴 막대에서 나만의 친구를 골라 보세요.</p>
         <div class="hero-action-row">
           <a class="btn primary download-button" href="./downloads/TinyPaws.dmg">무료로 다운로드 <span aria-hidden="true">↓</span></a>
-          <span class="version-badge">✦ 최신 버전 1.3.8</span>
+          <span class="version-badge">✦ 최신 버전 1.3.9</span>
         </div>
         <ul class="trust-list" aria-label="다운로드 정보">
           <li><span aria-hidden="true">♡</span> 무료</li>
@@ -110,9 +111,39 @@
       </div>
     </section>
 
+    <section class="items-section" id="items" aria-labelledby="items-title">
+      <div class="items-heading">
+        <div><p class="eyebrow">A surprise for every friend</p><h2 id="items-title">이번에는 어떤<br>아이템이 나올까요?</h2></div>
+        <div><p>메뉴 막대의 <strong>아이템 골라보기</strong>에서 물음표 버튼을 누르면 현재 친구에게 어울리는 랜덤 아이템이 나타나요. 캐릭터를 바꾸면 아이템도 그 친구에 맞게 달라져요.</p><p class="event-period">캐릭터별 랜덤 아이템</p></div>
+      </div>
+      <div class="item-draw-showcase" aria-label="캐릭터별 랜덤 아이템 소개">
+        <div class="item-draw-prompt">
+          <span class="item-gift" aria-hidden="true">🎁</span>
+          <p class="item-draw-label">아이템 골라보기</p>
+          <strong>친구를 위한 깜짝 선물</strong>
+          <p>물음표를 누르는 순간, 지금 함께 걷는 캐릭터에게 꼭 맞는 아이템을 만날 수 있어요.</p>
+          <span class="item-question" aria-hidden="true">?</span>
+        </div>
+        <div class="item-result-grid">
+          <article><img src="./character-assets/kkeomeoksari.png" alt="꺼먹살이"><div><strong>꺼먹살이</strong><span>🌼 꽃 장식</span></div></article>
+          <article><img src="./character-assets/capybara.png" alt="카피바라"><div><strong>카피바라</strong><span>🍃 나뭇잎</span></div></article>
+          <article><img src="./character-assets/cat.png" alt="고양이"><div><strong>고양이</strong><span>🎉 생일모자</span></div></article>
+          <article><img src="./character-assets/hedgehog.png" alt="고슴도치"><div><strong>고슴도치</strong><span>👒 밀짚모자</span></div></article>
+          <article><img src="./character-assets/poodle.png" alt="푸들"><div><strong>푸들</strong><span>🧢 캡</span></div></article>
+          <article><img src="./character-assets/hamster.png" alt="햄스터"><div><strong>햄스터</strong><span>🌻 해바라기씨</span></div></article>
+        </div>
+      </div>
+      <ol class="item-steps" aria-label="랜덤 아이템 뽑는 방법">
+        <li><span>01</span><div><strong>메뉴 막대 열기</strong><p>TinyPaws 아이콘을 눌러요.</p></div></li>
+        <li><span>02</span><div><strong>물음표 누르기</strong><p>친구의 랜덤 아이템을 뽑아요.</p></div></li>
+        <li><span>03</span><div><strong>한 번 더 누르기</strong><p>아이템을 벗고 기본 모습으로 돌아가요.</p></div></li>
+      </ol>
+    </section>
+
     <section class="updates-section" aria-labelledby="updates-title">
       <div class="section-heading"><div><p class="eyebrow">Fresh from TinyPaws</p><h2 id="updates-title">최근 업데이트</h2></div><a class="text-link" href="./release-notes.html">모든 버전 기록 보기 →</a></div>
       <div class="update-list">
+        <a href="./release-notes/1.3.9.html"><span>v1.3.9</span><strong>캐릭터별 아이템 뽑기 추가</strong><b>→</b></a>
         <a href="./release-notes/1.3.8.html"><span>v1.3.8</span><strong>캐릭터 소개 페이지와 온보딩 정리</strong><b>→</b></a>
         <a href="./release-notes/1.3.3.html"><span>v1.3.3</span><strong>고슴도치 친구와 전용 애니메이션 추가</strong><b>→</b></a>
         <a href="./release-notes/1.3.2.html"><span>v1.3.2</span><strong>오늘의 TinyPaws와 친밀도 메시지 추가</strong><b>→</b></a>
