@@ -115,7 +115,7 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
 .window-bar span { margin-left: 6px; color: var(--muted); font-size: .68rem; font-weight: 800; }
 .demo-window img { display: block; width: 100%; aspect-ratio: 16 / 10; border-radius: 14px; object-fit: cover; object-position: center; background: #f5ede4; }
 .hero-demo figcaption { margin-top: 13px; color: var(--muted); font-size: .84rem; font-weight: 700; text-align: center; }
-.quick-start, .friends-section, .settings-section, .items-section, .updates-section, .coffee-section, .privacy-summary { margin-top: 76px; }
+.quick-start, .reactions-section, .friends-section, .settings-section, .items-section, .updates-section, .coffee-section, .privacy-summary { margin-top: 76px; }
 .section-intro h2, .section-heading h2, .privacy-summary h2 { margin-bottom: 0; font-size: clamp(2rem, 3.7vw, 3.15rem); line-height: 1.08; letter-spacing: -.045em; }
 .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 26px 0 0; padding: 0; list-style: none; counter-reset: steps; }
 .step-grid li { min-height: 184px; padding: 22px; border: 1px solid var(--line); border-radius: 23px; background: rgba(255, 252, 247, .76); }
@@ -172,6 +172,23 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
 .keyboard-feature > span { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 12px; background: rgba(255,255,255,.48); font-weight: 900; }
 .keyboard-feature strong { display: block; }.keyboard-feature p { margin: 2px 0 0; color: #685449; font-size: .86rem; }
 .keyboard-feature a { color: #71351f; font-size: .84rem; font-weight: 900; text-decoration: none; white-space: nowrap; }
+.reactions-section { scroll-margin-top: 24px; }
+.reactions-heading > p { max-width: 31rem; }
+.reaction-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 27px; }
+.reaction-card { display: flex; min-height: 270px; flex-direction: column; padding: 24px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, rgba(255,253,249,.96), rgba(255,241,225,.82)); box-shadow: 0 14px 30px rgba(74,44,26,.06); }
+.reaction-card-featured { color: #fffaf3; background: linear-gradient(145deg, #9f5336, #c97850); box-shadow: 0 16px 34px rgba(105,55,34,.16); }
+.reaction-quote-mark { height: 32px; color: rgba(191,107,70,.38); font-family: Georgia, serif; font-size: 3.6rem; line-height: 1; }
+.reaction-card-featured .reaction-quote-mark { color: rgba(255,229,198,.64); }
+.reaction-card blockquote { margin: 28px 0 27px; color: var(--text); font-size: 1.08rem; font-weight: 750; line-height: 1.65; letter-spacing: -.025em; }
+.reaction-card-featured blockquote { color: #fffaf3; }
+.reaction-character { display: flex; align-items: center; gap: 12px; color: var(--accent-strong); font-size: .8rem; font-weight: 900; }
+.reaction-character img { width: 52px; height: 52px; padding: 5px; border-radius: 17px; background: rgba(255,255,255,.72); object-fit: contain; image-rendering: pixelated; }
+.reaction-card-featured .reaction-character { color: #fff4e8; }
+.reaction-character span { display: grid; gap: 2px; }.reaction-character strong, .reaction-character small { display: block; }.reaction-character small { color: var(--muted); font-size: .7rem; font-weight: 750; }.reaction-card-featured .reaction-character small { color: rgba(255,250,243,.72); }
+.reaction-invite { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 14px; padding: 18px 20px; border: 1px dashed rgba(143,66,39,.22); border-radius: 20px; background: rgba(255,252,247,.66); }
+.reaction-invite strong { display: block; }
+.reaction-invite p { margin: 3px 0 0; color: var(--muted); font-size: .86rem; }
+.reaction-invite .btn { flex: 0 0 auto; }
 .items-section { scroll-margin-top: 24px; }
 .items-heading { display: grid; grid-template-columns: 1fr minmax(280px, .82fr); align-items: end; gap: 38px; }
 .items-heading h2 { max-width: 17ch; margin-bottom: 0; font-size: clamp(2rem, 3.7vw, 3.15rem); line-height: 1.08; letter-spacing: -.045em; }
@@ -259,9 +276,10 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
   .topnav { gap: 13px; }.topnav a { font-size: .78rem; }
   .hero-home { grid-template-columns: 1fr; gap: 29px; min-height: 0; padding: 32px 22px; }.hero-home h1 { font-size: clamp(2.65rem, 12vw, 3.8rem); }
   .hero-demo { width: 100%; margin: 0 auto; }
-  .quick-start, .friends-section, .settings-section, .items-section, .updates-section, .coffee-section, .privacy-summary { margin-top: 53px; }
+  .quick-start, .reactions-section, .friends-section, .settings-section, .items-section, .updates-section, .coffee-section, .privacy-summary { margin-top: 53px; }
   .step-grid, .item-steps, .items-heading, .payment-grid, .coffee-heading, .supporter-thanks, .privacy-summary { grid-template-columns: 1fr; }.step-grid li { min-height: 0; }.step-grid span { margin-bottom: 14px; }
   .section-heading { display: block; }.section-heading > p { margin-top: 12px; }.text-link { display: inline-block; margin-top: 16px; }
+  .reaction-grid { grid-template-columns: 1fr; }.reaction-card { min-height: 0; }.reaction-card blockquote { margin: 22px 0; }.reaction-invite { align-items: flex-start; flex-direction: column; }.reaction-invite .btn { width: 100%; }
   .settings-section, .coffee-section, .privacy-summary { padding: 29px 22px; border-radius: 24px; }.settings-heading, .items-heading { grid-template-columns: 1fr; gap: 14px; }.settings-visuals { grid-template-columns: 1fr; margin-top: 23px; }.settings-visuals .settings-visual-main { grid-column: auto; }.keyboard-feature { grid-template-columns: auto 1fr; }.keyboard-feature a { grid-column: 2; }.item-draw-showcase, .wearable-showcase { grid-template-columns: 1fr; margin-top: 22px; }.item-draw-prompt { min-height: 290px; border-radius: 21px; }.wearable-showcase { gap: 24px; padding: 24px; }.wearable-preview { min-height: 330px; }.coffee-heading, .supporter-thanks { gap: 14px; }.supporter-thanks .supporters-list { justify-content: flex-start; }
   .update-list a { grid-template-columns: 62px 1fr auto; gap: 9px; padding: 13px 14px; }.update-list strong { font-size: .86rem; }
   .home-page footer { display: block; }.home-page footer p { margin-top: 10px; }
