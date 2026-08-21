@@ -9,6 +9,20 @@
     <description>TinyPaws direct distribution updates</description>
     <language>en</language>
     <item>
+      <title>Version 1.4.2</title>
+      <pubDate>Fri, 21 Aug 2026 09:49:01 +0900</pubDate>
+      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <sparkle:version>51</sparkle:version>
+      <sparkle:shortVersionString>1.4.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.4.2.html</sparkle:releaseNotesLink>
+      <enclosure
+        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.4.2.zip"
+        type="application/octet-stream"
+        sparkle:edSignature="LXnMPtokvBVmdXhjUkH3Vtu6jf6NilIxhiYLJAbGIsDKy2Dc+WvC/ecfTIsbqZz0xnZcjsiHApa6Y5RHXtwUAQ=="
+        length="42876827" />
+    </item>
+<item>
       <title>Version 1.4.1</title>
       <pubDate>Fri, 14 Aug 2026 14:29:06 +0900</pubDate>
       <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
