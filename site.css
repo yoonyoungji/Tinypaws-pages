@@ -115,7 +115,7 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
 .window-bar span { margin-left: 6px; color: var(--muted); font-size: .68rem; font-weight: 800; }
 .demo-window img { display: block; width: 100%; aspect-ratio: 16 / 10; border-radius: 14px; object-fit: cover; object-position: center; background: #f5ede4; }
 .hero-demo figcaption { margin-top: 13px; color: var(--muted); font-size: .84rem; font-weight: 700; text-align: center; }
-.quick-start, .reactions-section, .friends-section, .settings-section, .items-section, .updates-section, .coffee-section, .privacy-summary { margin-top: 76px; }
+.quick-start, .reactions-section, .friends-section, .settings-section, .password-safety-section, .items-section, .updates-section, .coffee-section, .privacy-summary { margin-top: 76px; }
 .section-intro h2, .section-heading h2, .privacy-summary h2 { margin-bottom: 0; font-size: clamp(2rem, 3.7vw, 3.15rem); line-height: 1.08; letter-spacing: -.045em; }
 .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 26px 0 0; padding: 0; list-style: none; counter-reset: steps; }
 .step-grid li { min-height: 184px; padding: 22px; border: 1px solid var(--line); border-radius: 23px; background: rgba(255, 252, 247, .76); }
@@ -172,6 +172,22 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
 .keyboard-feature > span { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 12px; background: rgba(255,255,255,.48); font-weight: 900; }
 .keyboard-feature strong { display: block; }.keyboard-feature p { margin: 2px 0 0; color: #685449; font-size: .86rem; }
 .keyboard-feature a { color: #71351f; font-size: .84rem; font-weight: 900; text-decoration: none; white-space: nowrap; }
+.password-safety-section { display: grid; grid-template-columns: minmax(280px, .88fr) minmax(0, 1.12fr); align-items: center; gap: clamp(28px, 6vw, 72px); padding: 42px; overflow: hidden; border: 1px solid #b8e5f2; border-radius: 30px; background: linear-gradient(135deg, #ecfbff, #f8fdff 58%, #e3f5fb); }
+.password-freeze-visual { display: grid; justify-items: center; gap: 13px; margin: 0; }
+.password-freeze-pet { position: relative; width: min(100%, 326px); aspect-ratio: 273 / 249; isolation: isolate; }
+.password-freeze-pet::before { position: absolute; inset: 8% 3% 1%; border-radius: 44%; background: radial-gradient(circle, rgba(129, 220, 249, .44), rgba(129, 220, 249, 0) 68%); content: ""; filter: blur(12px); }
+.password-freeze-pet > img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+.frozen-ice-layer, .frozen-sheen { position: absolute; z-index: 2; inset: 0; pointer-events: none; -webkit-mask: url("./character-assets/capybara.png") center / contain no-repeat; mask: url("./character-assets/capybara.png") center / contain no-repeat; }
+.frozen-ice-layer { background: linear-gradient(135deg, rgba(201, 248, 255, .48), rgba(47, 169, 232, .76) 55%, rgba(191, 241, 255, .56)); mix-blend-mode: color; opacity: .84; }
+.frozen-sheen { background: linear-gradient(141deg, transparent 33%, rgba(255, 255, 255, .72) 47%, transparent 57%); opacity: .58; }
+.frozen-crystals { position: absolute; z-index: 3; inset: 0; width: 100%; height: 100%; opacity: .86; filter: drop-shadow(0 1px 1px rgba(78, 177, 215, .22)); pointer-events: none; }
+.freeze-status { position: absolute; z-index: 4; right: -4px; bottom: 5px; padding: 6px 10px; border: 1px solid rgba(60, 151, 185, .26); border-radius: 999px; color: #337b98; background: rgba(249, 254, 255, .88); box-shadow: 0 7px 16px rgba(42, 117, 149, .12); font-size: .73rem; font-weight: 850; }
+.password-freeze-visual figcaption { max-width: 23rem; color: #578196; font-size: .78rem; font-weight: 700; text-align: center; }
+.password-safety-copy h2 { max-width: 14ch; margin-bottom: 16px; color: #254c62; font-size: clamp(2rem, 3.7vw, 3.2rem); line-height: 1.08; letter-spacing: -.05em; }
+.password-safety-copy > p:not(.eyebrow) { max-width: 35rem; margin-bottom: 12px; color: #527184; }
+.password-safety-list { display: grid; gap: 8px; margin-top: 22px; padding: 0; list-style: none; color: #32617a; font-size: .88rem; font-weight: 750; }
+.password-safety-list li { display: flex; align-items: center; gap: 9px; margin: 0; }
+.password-safety-list li::before { display: grid; width: 21px; height: 21px; flex: 0 0 21px; place-items: center; border-radius: 8px; color: #fff; background: #64b8d5; content: "✦"; font-size: .68rem; }
 .reactions-section { scroll-margin-top: 24px; }
 .reactions-heading > p { max-width: 31rem; }
 .reaction-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 27px; }
@@ -277,11 +293,11 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
   .topnav { gap: 13px; }.topnav a { font-size: .78rem; }
   .hero-home { grid-template-columns: 1fr; gap: 29px; min-height: 0; padding: 32px 22px; }.hero-home h1 { font-size: clamp(2.65rem, 12vw, 3.8rem); }
   .hero-demo { width: 100%; margin: 0 auto; }
-  .quick-start, .reactions-section, .friends-section, .settings-section, .items-section, .updates-section, .coffee-section, .privacy-summary { margin-top: 53px; }
+  .quick-start, .reactions-section, .friends-section, .settings-section, .password-safety-section, .items-section, .updates-section, .coffee-section, .privacy-summary { margin-top: 53px; }
   .step-grid, .item-steps, .items-heading, .payment-grid, .coffee-heading, .supporter-thanks, .privacy-summary { grid-template-columns: 1fr; }.step-grid li { min-height: 0; }.step-grid span { margin-bottom: 14px; }
   .section-heading { display: block; }.section-heading > p { margin-top: 12px; }.text-link { display: inline-block; margin-top: 16px; }
   .reaction-grid { grid-template-columns: 1fr; }.reaction-card { min-height: 0; }.reaction-card blockquote { margin: 22px 0; }.reaction-invite { align-items: flex-start; flex-direction: column; }.reaction-invite .btn { width: 100%; }
-  .settings-section, .coffee-section, .privacy-summary { padding: 29px 22px; border-radius: 24px; }.settings-heading, .items-heading { grid-template-columns: 1fr; gap: 14px; }.settings-visuals { grid-template-columns: 1fr; margin-top: 23px; }.settings-visuals .settings-visual-main { grid-column: auto; }.keyboard-feature { grid-template-columns: auto 1fr; }.keyboard-feature a { grid-column: 2; }.item-draw-showcase, .wearable-showcase { grid-template-columns: 1fr; margin-top: 22px; }.item-draw-prompt { min-height: 290px; border-radius: 21px; }.wearable-showcase { gap: 24px; padding: 24px; }.wearable-preview { min-height: 330px; }.coffee-heading, .supporter-thanks { gap: 14px; }.supporter-thanks .supporters-list { justify-content: flex-start; }
+  .settings-section, .password-safety-section, .coffee-section, .privacy-summary { padding: 29px 22px; border-radius: 24px; }.settings-heading, .items-heading, .password-safety-section { grid-template-columns: 1fr; gap: 14px; }.settings-visuals { grid-template-columns: 1fr; margin-top: 23px; }.settings-visuals .settings-visual-main { grid-column: auto; }.keyboard-feature { grid-template-columns: auto 1fr; }.keyboard-feature a { grid-column: 2; }.password-freeze-visual { order: 2; margin-top: 14px; }.password-safety-copy h2 { max-width: 16ch; }.item-draw-showcase, .wearable-showcase { grid-template-columns: 1fr; margin-top: 22px; }.item-draw-prompt { min-height: 290px; border-radius: 21px; }.wearable-showcase { gap: 24px; padding: 24px; }.wearable-preview { min-height: 330px; }.coffee-heading, .supporter-thanks { gap: 14px; }.supporter-thanks .supporters-list { justify-content: flex-start; }
   .update-list a { grid-template-columns: 62px 1fr auto; gap: 9px; padding: 13px 14px; }.update-list strong { font-size: .86rem; }
   .home-page footer { display: block; }.home-page footer p { margin-top: 10px; }
   .character-dialog { width: min(100% - 20px, 680px); max-height: 92vh; border-radius: 24px; }.character-dialog-shell { grid-template-columns: 1fr; }.character-dialog-visual { padding: 12px; }.character-dialog-copy { padding: 30px 22px 28px; }.character-dialog-copy h2 { font-size: 2.5rem; }.character-dialog-close { top: 12px; right: 12px; }
