@@ -1,14 +1,14 @@
 const supportedLocales = ["ko", "en"];
 const copy = {
   ko: {
-    common: { home: "홈", support: "지원", privacy: "개인정보처리방침", releases: "버전 기록", download: "TinyPaws 다운로드", latest: "최신 버전 1.4.7", email: "문의 이메일", developer: "개발자: youngji Yoon", response: "답변은 보통 3영업일 안에 드립니다.", footer: "TinyPaws 공식 지원 및 개인정보처리방침", close: "닫기" },
+    common: { home: "홈", support: "지원", privacy: "개인정보처리방침", releases: "버전 기록", download: "TinyPaws 다운로드", latest: "최신 버전 1.4.8", email: "문의 이메일", developer: "개발자: youngji Yoon", response: "답변은 보통 3영업일 안에 드립니다.", footer: "TinyPaws 공식 지원 및 개인정보처리방침", close: "닫기" },
     index: {
       title: "TinyPaws — Mac 데스크톱 펫", eyebrow: "TinyPaws · macOS 데스크톱 펫", heading: "Mac 화면에서 함께 걷는 작은 친구.", lead: "TinyPaws는 화면 위를 자연스럽게 움직이며 일상에 작은 생기를 더하는 macOS 데스크톱 펫입니다. 메뉴 막대에서 캐릭터와 움직임을 내 취향대로 설정해 보세요.", downloadCta: "최신 버전 다운로드", supportCta: "도움말 보기", privacyCta: "개인정보처리방침", releasesCta: "버전 기록",
       companions: "일곱 명의 데스크톱 친구", companionsLead: "카피바라, 아메리칸 숏헤어, 러시안 블루, 고슴도치, 꺼먹살이, 푸들, 햄스터 중 마음에 드는 캐릭터를 고를 수 있어요.",
       features: "내 화면에 맞게 설정", featureItems: [["걷기 스타일", "화면 안을 자유롭게 걷거나, 모니터 테두리를 따라 걷게 할 수 있어요."], ["이동 범위", "현재 모니터 안에서만 또는 모든 연결된 모니터에서 움직이게 설정하세요."], ["디테일 조절", "사이즈, 투명도, 걷기 속도를 바꿔 작업 흐름에 맞출 수 있어요."]],
       showcase: "TinyPaws를 한눈에", showcaseLead: "화면 위에서 함께 걷고, 내 작업 환경에 맞게 설정하는 모습을 확인해 보세요.", showcaseItems: [["함께 걷는 작은 친구", "화면 위를 자연스럽게 걷고, 필요할 때는 원하는 위치로 옮길 수 있어요.", "01-main-ko-final.png"], ["취향에 맞춘 디테일", "캐릭터 크기와 투명도, 걷기 속도를 나에게 편한 방식으로 조절하세요.", "03-customize-ko-final.png"], ["내 화면에 맞는 움직임", "현재 모니터 안에서만 움직이게 하거나, 여러 화면을 자유롭게 오가게 할 수 있어요.", "04-placement-ko-final.png"], ["입력에 반응하는 재미", "타이핑과 스페이스바 입력에 맞춰 캐릭터가 더 생동감 있게 반응합니다.", "05-animation-ko-final.png"]],
       keyboard: "키보드에 반응하는 움직임", keyboardLead: "입력하면 캐릭터가 걸어가고, 스페이스바로 점프합니다. 꺼먹살이는 스페이스바를 누르면 귀여운 간식 포즈를 취해요.",
-      release: "1.4.7 업데이트", releaseLead: "Dock과 메뉴 막대 주변의 테두리 걷기 경로와 얼음 효과 표현을 더 자연스럽게 다듬었습니다.",
+      release: "1.4.8 업데이트", releaseLead: "수수께끼 새 친구와 전용 애니메이션을 추가하고, 상단 테두리의 후원 안내 위치를 개선했습니다.",
       pages: "도움이 필요하신가요?", pagesLead: "사용 방법, 자주 묻는 질문, 개인정보 처리 방침을 확인할 수 있습니다.", coffee: "개발자에게 커피 사주기", coffeeLead: "TinyPaws가 즐거움을 더해 주었다면, 작은 응원으로 다음 업데이트를 함께 만들어 주세요.", toss: "토스로 응원하기", kakaopay: "카카오페이로 응원하기", supporters: "Coffee Supporters", supportersLead: "TinyPaws를 계속 다듬고 돌보는 데 힘을 보태 주신 분들께 감사드려요.", tossHelp: "휴대폰의 토스 앱으로 아래 QR 코드를 스캔해 주세요.", kakaopayHelp: "카카오페이 앱으로 아래 QR 코드를 스캔하거나 링크를 열어 주세요.", openKakao: "카카오페이 링크 열기"
     },
     releases: { title: "TinyPaws 버전 기록", eyebrow: "TinyPaws 업데이트", heading: "버전 기록", lead: "TinyPaws의 새 기능, 개선 사항, 수정 내역을 버전별로 확인하세요.", open: "릴리스 노트 보기" },
@@ -20,14 +20,14 @@ const copy = {
     }
   },
   en: {
-    common: { home: "Home", support: "Support", privacy: "Privacy Policy", releases: "Release history", download: "Download TinyPaws", latest: "Latest version 1.4.7", email: "Support email", developer: "Developer: youngji Yoon", response: "Typical response time: within 3 business days", footer: "TinyPaws official support and privacy information", close: "Close" },
+    common: { home: "Home", support: "Support", privacy: "Privacy Policy", releases: "Release history", download: "Download TinyPaws", latest: "Latest version 1.4.8", email: "Support email", developer: "Developer: youngji Yoon", response: "Typical response time: within 3 business days", footer: "TinyPaws official support and privacy information", close: "Close" },
     index: {
       title: "TinyPaws — A Mac desktop pet", eyebrow: "TinyPaws · macOS desktop pet", heading: "A tiny friend that walks alongside your Mac.", lead: "TinyPaws is a macOS desktop pet that moves naturally across your screen and brings a little life to everyday work. Make it yours from the menu bar.", downloadCta: "Download latest version", supportCta: "Get support", privacyCta: "Privacy policy", releasesCta: "Release history",
       companions: "Seven desktop companions", companionsLead: "Choose the friend that feels right: Capybara, American Shorthair, Russian Blue, Hedgehog, Kkeomeoksari, Poodle, or Hamster.",
       features: "Made to fit your desktop", featureItems: [["Walking style", "Let your companion wander freely or follow the edge of a display."], ["Movement range", "Keep it on the current display or let it explore every connected monitor."], ["Fine-tune the details", "Adjust size, opacity, and walk speed for the way you work."]],
       showcase: "See TinyPaws in action", showcaseLead: "See how your companion walks alongside your work and adapts to your desktop.", showcaseItems: [["A small friend at your side", "Your companion walks naturally across the screen and can be moved whenever you need.", "01-main-en-final.png"], ["Details tuned to you", "Adjust character size, opacity, and walking speed to suit the way you work.", "03-customize-en-final.png"], ["Movement for your setup", "Keep your companion on one display or let it wander across all of your screens.", "04-placement-en-final.png"], ["A more lively desktop", "Your companion reacts to typing and the Space bar for a more playful presence.", "05-animation-en-final.png"]],
       keyboard: "Movement that reacts to your keyboard", keyboardLead: "Your companion walks as you type and jumps with the Space bar. Kkeomeoksari does a cute snack pose with Space.",
-      release: "New in 1.4.7", releaseLead: "Refined edge walking around the Dock and menu bar, with a cleaner ice effect.",
+      release: "New in 1.4.8", releaseLead: "Added a mysterious new friend with dedicated animations and improved top-edge support prompts.",
       pages: "Need a hand?", pagesLead: "Find usage help, FAQs, and details about privacy.", coffee: "Buy Developer a Coffee", coffeeLead: "If TinyPaws brightens your desktop, a small show of support helps make the next update possible.", toss: "Support with Toss", kakaopay: "Support with Kakao Pay", supporters: "Coffee Supporters", supportersLead: "Thank you to everyone helping keep TinyPaws warm, cozy, and growing.", tossHelp: "Scan this QR code with the Toss app on your phone.", kakaopayHelp: "Scan this QR code with Kakao Pay, or open the link below.", openKakao: "Open Kakao Pay link"
     },
     releases: { title: "TinyPaws Release history", eyebrow: "TinyPaws updates", heading: "Release history", lead: "Browse new features, improvements, and fixes for every TinyPaws version.", open: "Read release notes" },
@@ -61,7 +61,7 @@ copy.en.privacy = {
 };
 
 const characters = [["kkeomeoksari", "Kkeomeoksari", "꺼먹살이"], ["capybara", "Capybara", "카피바라"], ["cat", "American Shorthair", "아메리칸 숏헤어"], ["russian-blue", "Russian Blue", "러시안 블루", true], ["hedgehog", "Hedgehog", "고슴도치"], ["poodle", "Poodle", "푸들"], ["hamster", "Hamster", "햄스터"]];
-const releaseVersions = ["1.4.7", "1.4.6", "1.4.5", "1.4.4", "1.4.3", "1.4.2", "1.4.1", "1.4.0", "1.3.9", "1.3.8", "1.3.7", "1.3.6", "1.3.5", "1.3.4", "1.3.3", "1.3.2", "1.3.1", "1.3.0", "1.2.9", "1.2.8", "1.2.7", "1.2.6", "1.2.5", "1.2.4", "1.2.3", "1.2.2", "1.2.1", "1.2.0", "1.1.9", "1.1.8", "1.1.7", "1.1.6", "1.1.5", "1.1.4", "1.1.3", "1.1.2", "1.1.1", "1.0.9", "1.0.8", "1.0.7", "1.0.6", "1.0.5", "1.0.4", "1.0.3", "1.0.2", "1.0.1", "1.0"];
+const releaseVersions = ["1.4.8", "1.4.7", "1.4.6", "1.4.5", "1.4.4", "1.4.3", "1.4.2", "1.4.1", "1.4.0", "1.3.9", "1.3.8", "1.3.7", "1.3.6", "1.3.5", "1.3.4", "1.3.3", "1.3.2", "1.3.1", "1.3.0", "1.2.9", "1.2.8", "1.2.7", "1.2.6", "1.2.5", "1.2.4", "1.2.3", "1.2.2", "1.2.1", "1.2.0", "1.1.9", "1.1.8", "1.1.7", "1.1.6", "1.1.5", "1.1.4", "1.1.3", "1.1.2", "1.1.1", "1.0.9", "1.0.8", "1.0.7", "1.0.6", "1.0.5", "1.0.4", "1.0.3", "1.0.2", "1.0.1", "1.0"];
 const esc = (value) => String(value).replace(/[&<>"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[char]);
 const list = (items) => `<ul>${items.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>`;
 const nav = (c) => `<nav class="nav" aria-label="Page links"><a href="./index.html">${c.home}</a><a href="./downloads/TinyPaws.dmg">${c.download}</a><a href="./release-notes.html">${c.releases}</a><a href="./support.html">${c.support}</a><a href="./privacy.html">${c.privacy}</a></nav>`;
