@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TinyPaws 1.5.0 Release Notes</title>
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+  <h1>TinyPaws 1.5.0</h1>
+  <p>This update reduces keyboard-input overhead and makes character animation more efficient.</p>
+  <ul>
+    <li>Keyboard events are now deferred outside macOS input delivery so foreground typing stays responsive.</li>
+    <li>Active animation updates now run at an efficient 60 Hz while keyboard polling uses a lighter interval.</li>
+    <li>Removed unnecessary duplicate timer scheduling and temporary trigger diagnostics.</li>
+  </ul>
+  <p><a href="../release-notes.html">Back to release history</a></p>
+</body>
+</html>
