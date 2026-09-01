@@ -5,19 +5,33 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>TinyPaws Changelog</title>
-    <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+    <link>https://www.gettinypaws.com/</link>
     <description>TinyPaws direct distribution updates</description>
     <language>en</language>
     <item>
+      <title>Version 1.5.2</title>
+      <pubDate>Tue, 01 Sep 2026 10:00:27 +0900</pubDate>
+      <link>https://www.gettinypaws.com/</link>
+      <sparkle:version>61</sparkle:version>
+      <sparkle:shortVersionString>1.5.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.5.2.html</sparkle:releaseNotesLink>
+      <enclosure
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.5.2.zip"
+        type="application/octet-stream"
+        sparkle:edSignature="YZLtrthyEbteFml+4Yg4+qtNwdxWfD8wzFROdBDkucA/K01yp3jd+T9dLyJWd2lIDu3S1Z8lPzBkrLIMk5zZDA=="
+        length="42372051" />
+    </item>
+<item>
       <title>Version 1.5.1</title>
       <pubDate>Tue, 01 Sep 2026 09:18:19 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>60</sparkle:version>
       <sparkle:shortVersionString>1.5.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.5.1.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.5.1.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.5.1.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.5.1.zip"
         type="application/octet-stream"
         sparkle:edSignature="oBV/0xnheVGosXnN0VmmiHGbDvFdCSK91ebPk8qsqg6M7wB/hc1q8PLCKImGdvZU+pdxGslK7AWyg0hOCq/gBA=="
         length="42372079" />
@@ -25,13 +39,13 @@
 <item>
       <title>Version 1.5.0</title>
       <pubDate>Tue, 01 Sep 2026 08:21:20 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>59</sparkle:version>
       <sparkle:shortVersionString>1.5.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.5.0.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.5.0.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.5.0.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.5.0.zip"
         type="application/octet-stream"
         sparkle:edSignature="rp/iswMdR2EhbkejgYfStMzbaHGLTPCzBWu8AckWZ2ajA4quwY/GxeQvEBKZjl4xclBpc8qileV7eIvJGCNvDQ=="
         length="42373010" />
@@ -39,13 +53,13 @@
 <item>
       <title>Version 1.4.9</title>
       <pubDate>Mon, 31 Aug 2026 14:35:49 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>58</sparkle:version>
       <sparkle:shortVersionString>1.4.9</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.4.9.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.4.9.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.4.9.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.4.9.zip"
         type="application/octet-stream"
         sparkle:edSignature="5ZCMmGiyei7AbVCU1LsnRlbxT4nAYT/7TyzW21l7psmhFGCrW6Ne2eRRi41WGQi35QQAjYE8lM5gJITCX7dNCw=="
         length="42373916" />
@@ -53,13 +67,13 @@
 <item>
       <title>Version 1.4.8</title>
       <pubDate>Fri, 28 Aug 2026 10:47:30 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>57</sparkle:version>
       <sparkle:shortVersionString>1.4.8</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.4.8.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.4.8.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.4.8.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.4.8.zip"
         type="application/octet-stream"
         sparkle:edSignature="/Y1ks+tpIdvanWyrWU4GTW5iUU5avGStvJQWMCEwI40+eAdEk8EiC28ANwFMKTj6IFtE0NHi8k12gN70Wl1bAg=="
         length="42373513" />
@@ -67,13 +81,13 @@
 <item>
       <title>Version 1.4.7</title>
       <pubDate>Fri, 28 Aug 2026 09:18:50 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>56</sparkle:version>
       <sparkle:shortVersionString>1.4.7</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.4.7.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.4.7.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.4.7.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.4.7.zip"
         type="application/octet-stream"
         sparkle:edSignature="jZiay5m5Djl6TMWmZsnCSc8cCZ2UR4S3bB276cq9w8zEcVmT/sO5W3guHBgdy+ZTNTwcnKQiaeOoLHuSHGcBCA=="
         length="41536928" />
@@ -81,13 +95,13 @@
 <item>
       <title>Version 1.4.6</title>
       <pubDate>Fri, 28 Aug 2026 08:40:57 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>55</sparkle:version>
       <sparkle:shortVersionString>1.4.6</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.4.6.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.4.6.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.4.6.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.4.6.zip"
         type="application/octet-stream"
         sparkle:edSignature="YPs/tlettDMA6ZegkVRxQmTh2VLJcqGevmh+7AYIFbwPYZKgHczh7j1xx7wInhVY31UdlKjpi4IehoS53oCnBw=="
         length="41537302" />
@@ -95,13 +109,13 @@
 <item>
       <title>Version 1.4.5</title>
       <pubDate>Thu, 27 Aug 2026 16:11:12 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>54</sparkle:version>
       <sparkle:shortVersionString>1.4.5</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.4.5.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.4.5.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.4.5.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.4.5.zip"
         type="application/octet-stream"
         sparkle:edSignature="XyCyRqpi8go4oiRr/FFTLz1U36oEbOyvxMwY3gjI5KchRVKvp/ORE/F2bpYJ5rAw/BRxslfmROWYCHoeVNSmDA=="
         length="41533158" />
@@ -109,13 +123,13 @@
 <item>
       <title>Version 1.4.4</title>
       <pubDate>Fri, 21 Aug 2026 13:53:36 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>53</sparkle:version>
       <sparkle:shortVersionString>1.4.4</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.4.4.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.4.4.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.4.4.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.4.4.zip"
         type="application/octet-stream"
         sparkle:edSignature="qtY2jeLMenEf+nQ7XBBN/prv8hPhvk0M40AOD79y/C3IJpLeUcLrhyXoTA34NyXnfq3FznFNQ5x+Q6Ikz08EAw=="
         length="42875599" />
@@ -123,13 +137,13 @@
 <item>
       <title>Version 1.4.3</title>
       <pubDate>Fri, 21 Aug 2026 12:42:05 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>52</sparkle:version>
       <sparkle:shortVersionString>1.4.3</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.4.3.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.4.3.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.4.3.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.4.3.zip"
         type="application/octet-stream"
         sparkle:edSignature="ffcrVTsyxvNVeuh3WD4+xAx8phs1PVlBl3oEucgvs8xpxsccUwfDWcoYMJSYWN/yA6W3NFCGrwznkZ2w8lVNCg=="
         length="42875178" />
@@ -137,13 +151,13 @@
 <item>
       <title>Version 1.4.2</title>
       <pubDate>Fri, 21 Aug 2026 09:49:01 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>51</sparkle:version>
       <sparkle:shortVersionString>1.4.2</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.4.2.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.4.2.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.4.2.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.4.2.zip"
         type="application/octet-stream"
         sparkle:edSignature="LXnMPtokvBVmdXhjUkH3Vtu6jf6NilIxhiYLJAbGIsDKy2Dc+WvC/ecfTIsbqZz0xnZcjsiHApa6Y5RHXtwUAQ=="
         length="42876827" />
@@ -151,13 +165,13 @@
 <item>
       <title>Version 1.4.1</title>
       <pubDate>Fri, 14 Aug 2026 14:29:06 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>50</sparkle:version>
       <sparkle:shortVersionString>1.4.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.4.1.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.4.1.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.4.1.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.4.1.zip"
         type="application/octet-stream"
         sparkle:edSignature="crh6EA86QYUqJQtYnkCjKjvLpX7q+8IqCBrR+BD+99yAbhsIGSa5gDCEJPK88WllIiltyPtBNZypbjyWIvzGDw=="
         length="34960850" />
@@ -165,13 +179,13 @@
 <item>
       <title>Version 1.4.0</title>
       <pubDate>Thu, 13 Aug 2026 16:27:30 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>49</sparkle:version>
       <sparkle:shortVersionString>1.4.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.4.0.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.4.0.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.4.0.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.4.0.zip"
         type="application/octet-stream"
         sparkle:edSignature="I1SM5KlvRbd4V2Sxk9eYJ2Mz8MogUYm6ansBMkM7aEI93tL0bOBMegGkiDV1A7+iQQFF65L8NuxM7phVU8pdCA=="
         length="34956213" />
@@ -179,13 +193,13 @@
 <item>
       <title>Version 1.3.9</title>
       <pubDate>Thu, 13 Aug 2026 13:12:23 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>48</sparkle:version>
       <sparkle:shortVersionString>1.3.9</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.3.9.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.3.9.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.3.9.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.3.9.zip"
         type="application/octet-stream"
         sparkle:edSignature="jI6mKlrkzqhMTip6hrBPCjPkAtSdAWGLK/Aibo95NPTdUJn0KS9yJ6foJbfatn8Ot3VZKXS2cgfXBH6ZVqhVAw=="
         length="34437193" />
@@ -193,13 +207,13 @@
 <item>
       <title>Version 1.3.8</title>
       <pubDate>Thu, 13 Aug 2026 10:42:36 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>47</sparkle:version>
       <sparkle:shortVersionString>1.3.8</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.3.8.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.3.8.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.3.8.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.3.8.zip"
         type="application/octet-stream"
         sparkle:edSignature="t/POmdLCz/ee9A9+UKImO+ODb8RaUvQhQOjVd9z1RPaXXxscjF2labriX2obAij9U14vma2w/BrAeOVkniUSBw=="
         length="34434329" />
@@ -207,13 +221,13 @@
 <item>
       <title>Version 1.3.7</title>
       <pubDate>Thu, 13 Aug 2026 10:19:56 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>46</sparkle:version>
       <sparkle:shortVersionString>1.3.7</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.3.7.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.3.7.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.3.7.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.3.7.zip"
         type="application/octet-stream"
         sparkle:edSignature="8hheZIgsObk9jJMEIlLyqPLRGLxdzigeejEp70J5W/O2fCcxcTWRSBaYmi9XWQXcl86lgQp6rNJ1IsXmLR8tAg=="
         length="34444191" />
@@ -221,13 +235,13 @@
 <item>
       <title>Version 1.3.6</title>
       <pubDate>Wed, 12 Aug 2026 16:13:56 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>45</sparkle:version>
       <sparkle:shortVersionString>1.3.6</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.3.6.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.3.6.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.3.6.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.3.6.zip"
         type="application/octet-stream"
         sparkle:edSignature="SGKJcTMH09+G7Na95pp9l8+d/LAy2/qSVdglkJZYoYm+H6VyXK2SKkG/OChGYYe7LHyYtC1kFcDGW1HMqIs/Cw=="
         length="34441246" />
@@ -235,13 +249,13 @@
 <item>
       <title>Version 1.3.5</title>
       <pubDate>Wed, 12 Aug 2026 12:47:08 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>44</sparkle:version>
       <sparkle:shortVersionString>1.3.5</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.3.5.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.3.5.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.3.5.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.3.5.zip"
         type="application/octet-stream"
         sparkle:edSignature="xJoOrL0rCUXjATe3fLmh1chLrg/hS30KJj0KXvOjtz6U5FseySCwVsbgEPPZo95zF9FBXWMAW/qzF6dhq+VrCw=="
         length="33182113" />
@@ -249,13 +263,13 @@
 <item>
       <title>Version 1.3.4</title>
       <pubDate>Wed, 12 Aug 2026 11:15:01 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>43</sparkle:version>
       <sparkle:shortVersionString>1.3.4</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.3.4.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.3.4.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.3.4.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.3.4.zip"
         type="application/octet-stream"
         sparkle:edSignature="EC6G8mBcgDM41mZyorMivRhZ/lXxC7wdGcEqOXppu3+yFKWejm1ari2DPI4dVklYbmAzMVkkwgexiwt2l+7fBA=="
         length="33182026" />
@@ -263,13 +277,13 @@
 <item>
       <title>Version 1.3.3</title>
       <pubDate>Wed, 05 Aug 2026 12:53:58 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>42</sparkle:version>
       <sparkle:shortVersionString>1.3.3</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.3.3.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.3.3.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.3.3.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.3.3.zip"
         type="application/octet-stream"
         sparkle:edSignature="rxNLSutsmMnx0BCK6oMwP3kE/QELztrttHxGLia0SUTtFXwdBFVoFWolYomRX5T7uNmrSL+PX7VR3sck2zlWBw=="
         length="33159828" />
@@ -277,13 +291,13 @@
 <item>
       <title>Version 1.3.2</title>
       <pubDate>Wed, 05 Aug 2026 10:14:39 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>41</sparkle:version>
       <sparkle:shortVersionString>1.3.2</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.3.2.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.3.2.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.3.2.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.3.2.zip"
         type="application/octet-stream"
         sparkle:edSignature="aWOITOlRXBsTqZg/ej1ikt31Cm7/Fg0/5g3d9GPlYrEINPsqekyTYaWoG1K/1v9R99E/2Cbgf7KFggjEeTypCQ=="
         length="25861316" />
@@ -291,13 +305,13 @@
 <item>
       <title>Version 1.3.1</title>
       <pubDate>Tue, 04 Aug 2026 11:18:28 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>40</sparkle:version>
       <sparkle:shortVersionString>1.3.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.3.1.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.3.1.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.3.1.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.3.1.zip"
         type="application/octet-stream"
         sparkle:edSignature="ULgdbN/8WQoc/xM90LWLD/jLXEY2cCSYlfVADQ2DsVHoh4jeJ2FuqeMruABxthTNoLxxZ1S6+7KC047SrlkbCA=="
         length="25814927" />
@@ -305,13 +319,13 @@
 <item>
       <title>Version 1.3.0</title>
       <pubDate>Tue, 04 Aug 2026 10:15:19 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>39</sparkle:version>
       <sparkle:shortVersionString>1.3.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.3.0.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.3.0.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.3.0.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.3.0.zip"
         type="application/octet-stream"
         sparkle:edSignature="Fn3wCUuq3dOSD9AvxyKSCod3lw6ngE/WOHGgn3dCf5HWSmm9o4eT+YlYfG/yGwS+EKc7ta+CwLLwWkCwnjO+Bw=="
         length="24935311" />
@@ -319,13 +333,13 @@
 <item>
       <title>Version 1.2.9</title>
       <pubDate>Mon, 03 Aug 2026 12:48:09 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>38</sparkle:version>
       <sparkle:shortVersionString>1.2.9</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.9.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.2.9.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.2.9.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.2.9.zip"
         type="application/octet-stream"
         sparkle:edSignature="Uq21/B0ck1IT8QD8CfwahT8+n5n47AI1PCTPAIG0DkO5KzkkXB2W4Hea0B5JCkXhIULiX+/jRKMOMeqxZBfqBw=="
         length="23265196" />
@@ -333,13 +347,13 @@
 <item>
       <title>Version 1.2.8</title>
       <pubDate>Mon, 03 Aug 2026 11:02:42 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>37</sparkle:version>
       <sparkle:shortVersionString>1.2.8</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.8.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.2.8.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.2.8.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.2.8.zip"
         type="application/octet-stream"
         sparkle:edSignature="XIsFNfr2EuVGsXOJLWeXBlFBibduR+pjUzfRiS+/QrJzkAsr7IxLBUIleYNClQusdnGXUeQmX2mdBUJ2TmdfCw=="
         length="23264708" />
@@ -347,14 +361,14 @@
 <item>
   <title>Version 1.2.7</title>
   <pubDate>Fri, 31 Jul 2026 12:53:11 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>36</sparkle:version>
   <sparkle:shortVersionString>1.2.7</sparkle:shortVersionString>
   <sparkle:criticalUpdate/>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.7.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.2.7.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.2.7.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.2.7.zip"
     type="application/octet-stream"
     sparkle:edSignature="+s1xYFIyPtpz5521NJaa5fuGG24zlAR+UUepnPpNcxqJLDY7OAQsdZaRhc2EOacFXMjs0VynJjGb2CRPv7IGCA=="
     length="23264138" />
@@ -362,13 +376,13 @@
 <item>
   <title>Version 1.2.6</title>
   <pubDate>Fri, 31 Jul 2026 10:29:05 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>35</sparkle:version>
   <sparkle:shortVersionString>1.2.6</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.6.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.2.6.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.2.6.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.2.6.zip"
     type="application/octet-stream"
     sparkle:edSignature="wR6tEBUKowuTxA5PxpEn+acnIyifkqVPwjzYr1qiXktLX2F7utCiFAp0r/Vf27hlnUMmHIVci0vgIYt1kTcCBQ=="
     length="21944933" />
@@ -376,13 +390,13 @@
 <item>
   <title>Version 1.2.5</title>
   <pubDate>Thu, 30 Jul 2026 14:24:25 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>34</sparkle:version>
   <sparkle:shortVersionString>1.2.5</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.5.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.2.5.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.2.5.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.2.5.zip"
     type="application/octet-stream"
     sparkle:edSignature="vdmn9jn9dqbhd8lRpYYBJvYryQB2zfhfjO8tdFfH+tm4VMVDp3w58RIlG1UWGTQRVpY3RnxNp2C1fg/vyoxBBw=="
     length="21725485" />
@@ -390,13 +404,13 @@
 <item>
   <title>Version 1.2.4</title>
   <pubDate>Fri, 24 Jul 2026 13:31:57 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>33</sparkle:version>
   <sparkle:shortVersionString>1.2.4</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.4.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.2.4.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.2.4.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.2.4.zip"
     type="application/octet-stream"
     sparkle:edSignature="arKJkdwFFGq44/vYkAW2h0xhSmVw6yiDTWThWGjUywCu3TGCoIpuDRTb+ysgc/uRVShEpB4ewLeQLSjKbeGwAA=="
     length="28709067" />
@@ -404,13 +418,13 @@
 <item>
   <title>Version 1.2.3</title>
   <pubDate>Thu, 23 Jul 2026 15:50:10 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>32</sparkle:version>
   <sparkle:shortVersionString>1.2.3</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.3.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.2.3.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.2.3.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.2.3.zip"
     type="application/octet-stream"
     sparkle:edSignature="Wo2KjlseUUfKXjK/Hb3GskS1zO2nYZeD2sZo+CSw2mukSPMd6bNfxfjevN7FNMxJi4qGOWC/2ubf1z1ZEn1xCQ=="
     length="28701376" />
@@ -418,13 +432,13 @@
 <item>
   <title>Version 1.2.2</title>
   <pubDate>Thu, 23 Jul 2026 10:46:14 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>31</sparkle:version>
   <sparkle:shortVersionString>1.2.2</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.2.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.2.2.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.2.2.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.2.2.zip"
     type="application/octet-stream"
     sparkle:edSignature="ayqT342LfXT/TRtE6F/iLJVFTp0iXxXCXrlzps32wJX9vFTWdUmw9d7UBOZi3IMB+pMCTXUUBsbgm2LT41VrDA=="
     length="28707109" />
@@ -432,13 +446,13 @@
 <item>
   <title>Version 1.2.1</title>
   <pubDate>Thu, 23 Jul 2026 10:26:46 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>30</sparkle:version>
   <sparkle:shortVersionString>1.2.1</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.1.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.2.1.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.2.1.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.2.1.zip"
     type="application/octet-stream"
     sparkle:edSignature="ughLELTSuYTP00v/N17t7UXovVyY/pnzNekh634wk3pxp1rdYuUV4FctpfpVi86Dl+rATIMKWt9CmU5XUhFPCw=="
     length="28707317" />
@@ -446,13 +460,13 @@
 <item>
   <title>Version 1.2.0</title>
   <pubDate>Wed, 22 Jul 2026 16:23:17 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>29</sparkle:version>
   <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.2.0.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.2.0.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.2.0.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.2.0.zip"
     type="application/octet-stream"
     sparkle:edSignature="P2xnM/ODsqOqXrt+0yV/k6DLUDnCiWrapb9epaok6TqFlUe6SC7DirvfIhCtwRxpjBs1z/oXwD41lLSi2rJLBQ=="
     length="24201541" />
@@ -460,13 +474,13 @@
 <item>
   <title>Version 1.1.9</title>
   <pubDate>Wed, 22 Jul 2026 09:38:18 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>28</sparkle:version>
   <sparkle:shortVersionString>1.1.9</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.1.9.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.1.9.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.1.9.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.1.9.zip"
     type="application/octet-stream"
     sparkle:edSignature="l2QwgVIJTaIqBtZITNVrIZM/HvEUL13kz7kDNUI+BjVpbKjDqp6Yv9YJx8BsZY2zkOBJuwW/uiryurt+d43+AQ=="
     length="24192745" />
@@ -474,13 +488,13 @@
 <item>
   <title>Version 1.1.8</title>
   <pubDate>Tue, 14 Jul 2026 08:47:30 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>27</sparkle:version>
   <sparkle:shortVersionString>1.1.8</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.1.8.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.1.8.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.1.8.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.1.8.zip"
     type="application/octet-stream"
     sparkle:edSignature="oN9vSgykllVrvEEMaaP20kAzgFTjsKDCBFIHcl/NVWsb7jb6g/6L4JaItL2lyAKQSgObsz2h4gP5bEgmXkwqBg=="
     length="24182879" />
@@ -488,13 +502,13 @@
 <item>
   <title>Version 1.1.7</title>
   <pubDate>Fri, 10 Jul 2026 16:20:18 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>26</sparkle:version>
   <sparkle:shortVersionString>1.1.7</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.1.7.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.1.7.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.1.7.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.1.7.zip"
     type="application/octet-stream"
     sparkle:edSignature="/C1g9c8Mc1zsaLx+sQxO9aom7wiGrD3fbwi1EJkT1/r+4LaLU1qcK4o88x+RNsiPsuB5bGco4BWVUDmVmKgdDQ=="
     length="24181933" />
@@ -502,13 +516,13 @@
 <item>
   <title>Version 1.1.6</title>
   <pubDate>Fri, 10 Jul 2026 09:42:25 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>25</sparkle:version>
   <sparkle:shortVersionString>1.1.6</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.1.6.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.1.6.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.1.6.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.1.6.zip"
     type="application/octet-stream"
     sparkle:edSignature="8+96W/qPdjZ317Ro6ddA+aoz85giPugg05ItEyVQK7crWHgZVHnPoprUsgZTfsJgO/+7qDh+IlYPxJ4rdN4qAQ=="
     length="24157820" />
@@ -516,13 +530,13 @@
 <item>
   <title>Version 1.1.5</title>
   <pubDate>Fri, 10 Jul 2026 09:15:11 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>24</sparkle:version>
   <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.1.5.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.1.5.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.1.5.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.1.5.zip"
     type="application/octet-stream"
     sparkle:edSignature="E4SoIYuIM96WsH4ni+2Oh73P9Lb047NhSVZfBNY+lsyKNsNnnhYjR96vDm6vr0mWYX//0I6l2UX9leJak7sRDQ=="
     length="24157225" />
@@ -530,13 +544,13 @@
 <item>
   <title>Version 1.1.4</title>
   <pubDate>Thu, 09 Jul 2026 13:51:13 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>23</sparkle:version>
   <sparkle:shortVersionString>1.1.4</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.1.4.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.1.4.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.1.4.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.1.4.zip"
     type="application/octet-stream"
     sparkle:edSignature="c4+lWRUx9+7kjG6aNx2j50E9BGzh8fMfpNQksOuLu+gZbvO84zX6hlDWemJSLkP6YdYgOdZyRnayrB47kX5xCw=="
     length="24156634" />
@@ -544,13 +558,13 @@
 <item>
   <title>Version 1.1.3</title>
   <pubDate>Tue, 07 Jul 2026 10:18:17 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>22</sparkle:version>
   <sparkle:shortVersionString>1.1.3</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.1.3.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.1.3.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.1.3.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.1.3.zip"
     type="application/octet-stream"
     sparkle:edSignature="N8AXz12p0MZJ5XDiNiT+YO4kK2NVjOXQVV3kmEol5d0RC4YCzwFC0Y1hZ1SlpLSHM0g1DrWdoOrERod7UHO+Cw=="
     length="20629757" />
@@ -558,13 +572,13 @@
 <item>
   <title>Version 1.1.2</title>
   <pubDate>Tue, 07 Jul 2026 09:59:07 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>21</sparkle:version>
   <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.1.2.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.1.2.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.1.2.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.1.2.zip"
     type="application/octet-stream"
     sparkle:edSignature="Y/hM7oABeadTH9SPjYQF7y6tJnVNDJ+8Tr1FW9CDz6TlmfQCeCwzQiQJXhBjMRS4wloo7wvRc6yR8Ya68OaYCQ=="
     length="20629692" />
@@ -572,13 +586,13 @@
 <item>
   <title>Version 1.1.1</title>
   <pubDate>Tue, 07 Jul 2026 09:39:38 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>20</sparkle:version>
   <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.1.1.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.1.1.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.1.1.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.1.1.zip"
     type="application/octet-stream"
     sparkle:edSignature="nWxDfgdRcI1TQ/1E5ytchL9La5y8uV3SWMhxe0iEpDl62Lt15CSOhnxJKfPW6sQhffMHKT+SvruwiuO9Zs7ACw=="
     length="20628893" />
@@ -586,13 +600,13 @@
 <item>
   <title>Version 1.0.9</title>
   <pubDate>Mon, 06 Jul 2026 16:28:39 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>19</sparkle:version>
   <sparkle:shortVersionString>1.0.9</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.9.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.0.9.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.9.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.0.9.zip"
     type="application/octet-stream"
     sparkle:edSignature="fF7BcJsaVAntWlW6Dapuu2WxaCPKj+W3Z02gJPFXjliipJ1Q9QpkkHdXEjORgh8aT3wuXfP0zvaLOgsL5I7IAA=="
     length="20625873" />
@@ -600,13 +614,13 @@
 <item>
   <title>Version 1.0.8</title>
   <pubDate>Mon, 06 Jul 2026 15:57:12 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>18</sparkle:version>
   <sparkle:shortVersionString>1.0.8</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.8.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.0.8.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.8.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.0.8.zip"
     type="application/octet-stream"
     sparkle:edSignature="8RDQoB7P5AKhdeHlzXeAMLGHCITJVA9H1Zb/VVI8CrJRWQbCkf2/0nIhHUB0rfSu0Ra34LbADHav+c3m5V2bBQ=="
     length="20625178" />
@@ -614,13 +628,13 @@
 <item>
   <title>Version 1.0.7</title>
   <pubDate>Mon, 06 Jul 2026 15:42:34 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>17</sparkle:version>
   <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.7.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.0.7.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.7.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.0.7.zip"
     type="application/octet-stream"
     sparkle:edSignature="JOibv9oOkhybrz4RF8s0U6t+aaQCWYB9k7NR7vBFZM3oeyxU90fd2bDuAkpP0J95oSPLczN1o3Zk1Cq3tNHMBg=="
     length="20610868" />
@@ -628,13 +642,13 @@
 <item>
   <title>Version 1.0.6</title>
   <pubDate>Mon, 06 Jul 2026 13:46:38 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>16</sparkle:version>
   <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.6.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.0.6.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.6.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.0.6.zip"
     type="application/octet-stream"
     sparkle:edSignature="B4D70dDR2OfTyvfnt7BqjtoA24sa285iGg9elXnS/W5j6HcUdTI0xM2YH2pnSD/CgDLMVcwpkfD7RMFnQIluCA=="
     length="20597783" />
@@ -642,13 +656,13 @@
 <item>
   <title>Version 1.0.5</title>
   <pubDate>Mon, 06 Jul 2026 13:00:30 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>15</sparkle:version>
   <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.5.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.0.5.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.5.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.0.5.zip"
     type="application/octet-stream"
     sparkle:edSignature="yyFtmn3coE7yQYIUzngnPOnfwJatfmbsyGJW/2tYfyKVB2PsYTeyqUBOMwMu1XTafAt9kyChbHWCVRYdbFgqDA=="
     length="20595161" />
@@ -656,13 +670,13 @@
 <item>
   <title>Version 1.0.4</title>
   <pubDate>Mon, 06 Jul 2026 12:47:11 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>14</sparkle:version>
   <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.4.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.0.4.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.4.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.0.4.zip"
     type="application/octet-stream"
     sparkle:edSignature="TvSop8FwBAj/MvbC0EP4Y7liP3eGxd5+sVzEAMmJKPwfz4hTSSfHgV8ID8O1etUEwbebe0/RslUbERTSJMWACQ=="
     length="20595102" />
@@ -670,13 +684,13 @@
 <item>
   <title>Version 1.0.3</title>
   <pubDate>Mon, 06 Jul 2026 10:50:12 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>13</sparkle:version>
   <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.3.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.0.3.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.3.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.0.3.zip"
     type="application/octet-stream"
     sparkle:edSignature="gSYgkEBb6hK91fEio86LfeFXAG9KB1dvzy6w1xxDaMMQNhttFWQwL+wz6c/XDM5qgp+jinqzaWgwNVc2UgjeCg=="
     length="20590745" />
@@ -684,13 +698,13 @@
 <item>
   <title>Version 1.0.2</title>
   <pubDate>Mon, 06 Jul 2026 10:15:38 +0900</pubDate>
-  <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+  <link>https://www.gettinypaws.com/</link>
   <sparkle:version>12</sparkle:version>
   <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
   <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-  <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.2.html</sparkle:releaseNotesLink>
+  <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.0.2.html</sparkle:releaseNotesLink>
   <enclosure
-    url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.2.zip"
+    url="https://www.gettinypaws.com/downloads/TinyPaws-1.0.2.zip"
     type="application/octet-stream"
     sparkle:edSignature="YcSEAfNYgp8fyJf0xr5UeNdUrqkXW5clSCprTeNiSOUeC9qHmuiJb/whoF4WLJwbM38pkoViKCQMgmQiygLiDg=="
     length="20590901" />
@@ -698,13 +712,13 @@
 <item>
       <title>Version 1.0.1</title>
       <pubDate>Mon, 06 Jul 2026 10:10:00 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>11</sparkle:version>
       <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.1.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.0.1.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.1.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.0.1.zip"
         type="application/octet-stream"
         sparkle:edSignature="jxHGUCm492yvQOQ85BrW2Io3lPdBT6BrD2LEFDv9vXOgbiSNwle8dE4My054jOqUd9ZpYRBEjgcHwekS3zxOAw=="
         length="20583659" />
@@ -712,13 +726,13 @@
 <item>
       <title>Version 1.0</title>
       <pubDate>Wed, 17 Jun 2026 15:51:58 +0900</pubDate>
-      <link>https://yoonyoungji.github.io/Tinypaws-pages/</link>
+      <link>https://www.gettinypaws.com/</link>
       <sparkle:version>10</sparkle:version>
       <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://yoonyoungji.github.io/Tinypaws-pages/release-notes/1.0.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.0.html</sparkle:releaseNotesLink>
       <enclosure
-        url="https://yoonyoungji.github.io/Tinypaws-pages/downloads/TinyPaws-1.0.zip"
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.0.zip"
         type="application/octet-stream"
         sparkle:edSignature="m0xu0tyk4kbsxOT4IbIMagdr7H3Q5uBSHYKFSg293scNCoKQqwAZpMisHSFho/1y8TKL9FK8RDp1UCBLsLnWCg=="
         length="20572254" />
