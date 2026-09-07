@@ -41,11 +41,34 @@ const characterProfiles = {
     description: "통통 튀는 에너지로 화면 위를 귀엽게 누비는 친구예요. 작지만 존재감만큼은 누구에게도 지지 않아요.",
     traits: ["통통 튀는 에너지", "바쁜 발걸음", "앙증맞은 점프"]
   },
+  "magic-girl": {
+    name: "중년마법소녀",
+    tagline: "오늘도 우아하게 변신 완료!",
+    description: "분홍빛 마법봉과 함께 화면 위에 반짝이는 기운을 더하는 친구예요. 씩씩한 걸음과 화려한 점프로 평범한 하루를 특별하게 바꿔줘요.",
+    traits: ["반짝이는 마법봉", "씩씩한 변신", "화려한 점프"]
+  },
+  "neutral-witch": {
+    name: "마카오&조마",
+    tagline: "둘이 함께라서 더 특별해요.",
+    description: "서로 다른 매력을 가진 두 친구가 한마음으로 화면을 산책해요. 나란히 움직이는 든든하고 유쾌한 호흡을 지켜봐 주세요.",
+    traits: ["두 배의 매력", "환상의 호흡", "든든한 동행"]
+  },
   burger: {
     name: "버거",
     tagline: "빨간 망토를 두른 특별한 친구.",
     description: "다정한 눈빛과 듬직한 걸음으로 화면 곁을 지켜주는 스페셜 캐릭터예요. 빨간 망토와 사랑스러운 분홍 볼터치가 버거만의 멋진 포인트예요.",
     traits: ["스페셜 캐릭터", "분홍 볼터치", "빨간 망토"]
+  }
+};
+
+const characterGroups = {
+  cats: {
+    label: "Meet the cats",
+    characters: ["cat", "russian-blue"]
+  },
+  mystery: {
+    label: "Meet the secret friends",
+    characters: ["magic-girl", "neutral-witch"]
   }
 };
 
@@ -55,24 +78,59 @@ const dialogTitle = document.getElementById("character-dialog-title");
 const dialogTagline = document.getElementById("character-dialog-tagline");
 const dialogDescription = document.getElementById("character-dialog-description");
 const dialogTraits = document.getElementById("character-dialog-traits");
+const dialogLabel = document.getElementById("character-dialog-label");
+const dialogChoices = document.getElementById("character-dialog-choices");
+
+const showCharacterProfile = (slug, group = null) => {
+  const profile = characterProfiles[slug];
+  if (!profile || !characterDialog) return;
+
+  dialogImage.src = `./character-intros/${slug}.png`;
+  dialogImage.alt = `${profile.name}의 기본, 산책, 점프 모습을 담은 TinyPaws 친구 소개 이미지`;
+  dialogTitle.textContent = profile.name;
+  dialogTagline.textContent = profile.tagline;
+  dialogDescription.textContent = profile.description;
+  dialogTraits.replaceChildren(...profile.traits.map((trait) => {
+    const span = document.createElement("span");
+    span.textContent = trait;
+    return span;
+  }));
+
+  if (dialogChoices) {
+    dialogChoices.querySelectorAll("button").forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.dataset.characterChoice === slug));
+    });
+  }
+  if (dialogLabel) dialogLabel.textContent = group?.label ?? "Meet your friend";
+};
+
+const openCharacterDialog = (slugs, group = null) => {
+  if (!characterDialog || !slugs.length) return;
+  if (dialogChoices) {
+    dialogChoices.hidden = slugs.length === 1;
+    dialogChoices.replaceChildren(...slugs.map((slug) => {
+      const profile = characterProfiles[slug];
+      const choice = document.createElement("button");
+      choice.type = "button";
+      choice.dataset.characterChoice = slug;
+      choice.textContent = profile.name;
+      choice.addEventListener("click", () => showCharacterProfile(slug, group));
+      return choice;
+    }));
+  }
+  showCharacterProfile(slugs[0], group);
+  characterDialog.showModal();
+};
 
 document.querySelectorAll("[data-character]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const slug = button.dataset.character;
-    const profile = characterProfiles[slug];
-    if (!profile || !characterDialog) return;
+  button.addEventListener("click", () => openCharacterDialog([button.dataset.character]));
+});
 
-    dialogImage.src = `./character-intros/${slug}.png`;
-    dialogImage.alt = `${profile.name}의 기본, 산책, 점프 모습을 담은 TinyPaws 친구 소개 이미지`;
-    dialogTitle.textContent = profile.name;
-    dialogTagline.textContent = profile.tagline;
-    dialogDescription.textContent = profile.description;
-    dialogTraits.replaceChildren(...profile.traits.map((trait) => {
-      const span = document.createElement("span");
-      span.textContent = trait;
-      return span;
-    }));
-    characterDialog.showModal();
+document.querySelectorAll("[data-character-group]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const group = characterGroups[button.dataset.characterGroup];
+    if (!group) return;
+    openCharacterDialog(group.characters, group);
   });
 });
 
