@@ -149,13 +149,13 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
 @keyframes multi-wander-b { 0%,100% { translate: 0 0; } 52% { translate: -14px 11px; } }
 @keyframes multi-wander-c { 0%,100% { translate: 0 0; } 46% { translate: -12px -9px; } }
 .multi-jump-showcase { grid-column: 1 / -1; padding-top: 30px; border-top: 1px solid rgba(143,66,39,.14); }
-.multi-jump-heading { display: grid; grid-template-columns: minmax(210px, .72fr) minmax(0, 1.28fr); gap: 7px 32px; align-items: end; }
+.multi-jump-heading { display: grid; grid-template-columns: minmax(300px, .88fr) minmax(0, 1.12fr); gap: 7px 32px; align-items: end; }
 .multi-jump-heading .eyebrow { grid-column: 1 / -1; margin-bottom: 0; }
 .multi-jump-heading h3 { margin: 0; font-size: clamp(1.35rem, 2.5vw, 2rem); line-height: 1.16; letter-spacing: -.04em; }
 .multi-jump-heading > p:last-child { margin: 0; color: var(--muted); font-size: .9rem; }
-.multi-jump-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; margin-top: 20px; }
-.multi-jump-gallery figure { margin: 0; overflow: hidden; border: 1px solid rgba(143,66,39,.15); border-radius: 19px; background: rgba(255,255,255,.68); box-shadow: 0 11px 24px rgba(74,44,26,.08); }
-.multi-jump-gallery img { display: block; width: 100%; aspect-ratio: 1672 / 941; object-fit: cover; }
+.multi-jump-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 280px)); justify-content: center; gap: 14px; margin-top: 20px; }
+.multi-jump-gallery figure { width: 100%; margin: 0; overflow: hidden; border: 1px solid rgba(143,66,39,.15); border-radius: 19px; background: rgba(255,255,255,.68); box-shadow: 0 11px 24px rgba(74,44,26,.08); }
+.multi-jump-gallery img { display: block; width: 100%; height: auto; object-fit: contain; }
 .multi-jump-gallery figcaption { padding: 11px 12px 13px; color: #6f5243; font-size: .76rem; font-weight: 800; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 26px; }
 .section-heading > p { max-width: 26rem; margin: 0; color: var(--muted); }
@@ -345,7 +345,7 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
   .step-grid, .item-steps, .items-heading, .payment-grid, .coffee-heading, .supporter-thanks, .privacy-summary { grid-template-columns: 1fr; }.step-grid li { min-height: 0; }.step-grid span { margin-bottom: 14px; }
   .section-heading { display: block; }.section-heading > p { margin-top: 12px; }.text-link { display: inline-block; margin-top: 16px; }
   .reaction-grid { grid-template-columns: 1fr; }.reaction-card { min-height: 0; }.reaction-card blockquote { margin: 22px 0; }.reaction-invite { align-items: flex-start; flex-direction: column; }.reaction-invite .btn { width: 100%; }
-  .multi-companion-section { grid-template-columns: 1fr; padding: 29px 22px; border-radius: 24px; }.multi-companion-demo { min-height: 340px; }.multi-jump-heading { grid-template-columns: 1fr; }.multi-jump-gallery { grid-template-columns: 1fr; gap: 14px; }.multi-jump-gallery figcaption { font-size: .82rem; }
+  .multi-companion-section { grid-template-columns: 1fr; padding: 29px 22px; border-radius: 24px; }.multi-companion-demo { min-height: 340px; }.multi-jump-heading { grid-template-columns: 1fr; }.multi-jump-gallery { grid-template-columns: minmax(0, 420px); gap: 14px; }.multi-jump-gallery figcaption { font-size: .82rem; }
   .settings-section, .password-safety-section, .coffee-section, .privacy-summary { padding: 29px 22px; border-radius: 24px; }.settings-heading, .items-heading, .password-safety-section { grid-template-columns: 1fr; gap: 14px; }.settings-visuals { grid-template-columns: 1fr; margin-top: 23px; }.settings-visuals .settings-visual-main { grid-column: auto; }.keyboard-feature { grid-template-columns: auto 1fr; }.keyboard-feature a { grid-column: 2; }.password-freeze-visual { order: 2; margin-top: 14px; }.password-safety-copy h2 { max-width: 16ch; }.item-draw-showcase, .wearable-showcase { grid-template-columns: 1fr; margin-top: 22px; }.item-draw-prompt { min-height: 290px; border-radius: 21px; }.wearable-showcase { gap: 24px; padding: 24px; }.wearable-preview { min-height: 330px; }.coffee-heading, .supporter-thanks { gap: 14px; }.supporter-thanks .supporters-list { justify-content: flex-start; }
   .update-list a { grid-template-columns: 62px 1fr auto; gap: 9px; padding: 13px 14px; }.update-list strong { font-size: .86rem; }
   .home-page footer { display: block; }.home-page footer p { margin-top: 10px; }
