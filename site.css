@@ -154,9 +154,15 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
 .multi-jump-heading h3 { margin: 0; font-size: clamp(1.35rem, 2.5vw, 2rem); line-height: 1.16; letter-spacing: -.04em; }
 .multi-jump-heading > p:last-child { margin: 0; color: var(--muted); font-size: .9rem; }
 .multi-jump-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 280px)); justify-content: center; gap: 14px; margin-top: 20px; }
-.multi-jump-gallery figure { width: 100%; margin: 0; overflow: hidden; border: 1px solid rgba(143,66,39,.15); border-radius: 19px; background: rgba(255,255,255,.68); box-shadow: 0 11px 24px rgba(74,44,26,.08); }
+.multi-jump-gallery figure { display: grid; width: 100%; grid-template-rows: auto 1fr; margin: 0; overflow: hidden; border: 1px solid rgba(143,66,39,.15); border-radius: 19px; background: rgba(255,255,255,.68); box-shadow: 0 11px 24px rgba(74,44,26,.08); }
 .multi-jump-gallery img { display: block; width: 100%; height: auto; object-fit: contain; }
-.multi-jump-gallery figcaption { padding: 11px 12px 13px; color: #6f5243; font-size: .76rem; font-weight: 800; }
+.multi-jump-gallery figcaption { display: flex; flex-direction: column; gap: 10px; padding: 11px 12px 13px; color: #6f5243; font-size: .76rem; font-weight: 800; }
+.wallpaper-download { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1px 8px; margin-top: auto; padding: 9px 10px; border: 1px solid rgba(143,66,39,.16); border-radius: 12px; color: var(--accent-strong); background: #fffaf4; text-decoration: none; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.wallpaper-download span { line-height: 1.3; }
+.wallpaper-download small { grid-column: 1; color: var(--muted); font-size: .64rem; font-weight: 700; }
+.wallpaper-download b { grid-column: 2; grid-row: 1 / 3; font-size: 1rem; }
+.wallpaper-download:hover { transform: translateY(-1px); border-color: rgba(143,66,39,.34); box-shadow: 0 7px 16px rgba(74,44,26,.08); }
+.wallpaper-download:focus-visible { outline: 3px solid rgba(191,107,70,.3); outline-offset: 2px; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 26px; }
 .section-heading > p { max-width: 26rem; margin: 0; color: var(--muted); }
 .character-grid-home { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 27px; gap: 13px; }
@@ -362,7 +368,7 @@ footer { padding-top: 18px; color: var(--muted); font-size: .94rem; text-align: 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .character-grid-home .character-sprite, .multi-pet { animation: none; }
-  .character-grid-home .character, .companion-counts button, .update-list a, .payment-card summary b, [data-accessory-layer], .wearable-controls button { transition: none; }
+  .character-grid-home .character, .companion-counts button, .wallpaper-download, .update-list a, .payment-card summary b, [data-accessory-layer], .wearable-controls button { transition: none; }
   .coffee-section:target { animation: none; }
   .character-dialog[open] { animation: none; }
 }
