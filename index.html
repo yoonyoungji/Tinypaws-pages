@@ -46,7 +46,7 @@
         <p class="lead">일하는 동안 화면 곳곳을 자유롭게 걷고, 타이핑과 스페이스바에 반응해요. 메뉴 막대에서 친구와 함께할 마릿수를 골라 보세요.</p>
         <div class="hero-action-row">
           <a class="btn primary download-button" href="./downloads/TinyPaws.dmg">무료로 다운로드 <span aria-hidden="true">↓</span></a>
-          <span class="version-badge">✦ 최신 버전 1.6.3</span>
+          <span class="version-badge">✦ 최신 버전 1.6.4</span>
         </div>
         <ul class="trust-list" aria-label="다운로드 정보">
           <li><span aria-hidden="true">♡</span> 무료</li>
@@ -120,25 +120,49 @@
       <div class="multi-companion-copy">
         <p class="eyebrow">More paws, more joy</p>
         <h2 id="multi-companion-title">한 마리의 귀여움을,<br>다섯 마리까지.</h2>
-        <p>메뉴 막대의 <strong>캐릭터 수</strong>에서 1·3·5마리를 바로 선택하세요. 추가된 친구들은 서로 다른 위치와 방향, 걸음 속도로 움직여 줄지어 다니지 않아요.</p>
-        <div class="companion-counts" aria-label="선택 가능한 캐릭터 수">
-          <span>1마리</span><span>3마리</span><span class="selected">5마리</span>
+        <p>메뉴 막대의 <strong>캐릭터 수</strong>에서 1·3·5마리를 바로 선택하세요. 여기저기 걷기에서는 각자 자유롭게, 테두리 따라 걷기에서는 한 줄로 함께 움직여요.</p>
+        <div class="companion-counts" role="group" aria-label="미리보기 캐릭터 수">
+          <button type="button" data-companion-count="1" aria-pressed="false">1마리</button>
+          <button type="button" data-companion-count="3" aria-pressed="false">3마리</button>
+          <button type="button" data-companion-count="5" aria-pressed="true">5마리</button>
         </div>
         <ul class="multi-companion-points">
           <li>여기저기 걷기에서 화면 곳곳을 자유롭게</li>
-          <li>테두리 따라 걷기에서도 서로 다른 지점과 방향으로</li>
+          <li>테두리 따라 걷기에서는 리더를 따라 한 줄로</li>
+          <li>스페이스바 한 번에 선택한 친구들이 함께 점프</li>
           <li>선택한 마릿수는 다음 실행에도 그대로 유지</li>
         </ul>
       </div>
-      <div class="multi-companion-demo" aria-label="화면 곳곳에서 독립적으로 움직이는 다섯 마리의 카피바라">
-        <span class="demo-label">5 PAWS ON SCREEN</span>
+      <div class="multi-companion-demo" data-companion-demo aria-label="화면 곳곳에서 독립적으로 움직이는 다섯 마리의 카피바라">
+        <span class="demo-label" data-companion-label>5 PAWS ON SCREEN</span>
         <span class="demo-track" aria-hidden="true"></span>
         <img class="multi-pet pet-one" src="./character-assets/capybara-walk.png" alt="">
         <img class="multi-pet pet-two" src="./character-assets/capybara.png" alt="">
         <img class="multi-pet pet-three" src="./character-assets/capybara-walk.png" alt="">
         <img class="multi-pet pet-four" src="./character-assets/capybara.png" alt="">
         <img class="multi-pet pet-five" src="./character-assets/capybara-walk.png" alt="">
-        <p>각자의 자리에서, 각자의 걸음으로</p>
+        <p data-companion-status aria-live="polite">다섯 마리가 각자의 자리에서 걷는 중</p>
+      </div>
+      <div class="multi-jump-showcase" aria-labelledby="multi-jump-title">
+        <div class="multi-jump-heading">
+          <p class="eyebrow">Jump together</p>
+          <h3 id="multi-jump-title">다섯 친구가 함께 뛰어오르는 순간</h3>
+          <p>카피바라부터 마법 친구들까지, 선택한 캐릭터 수만큼 저마다의 점프 동작으로 반응해요.</p>
+        </div>
+        <div class="multi-jump-gallery">
+          <figure>
+            <img src="./marketing/capybara-multi-jump.jpg" alt="다섯 마리 카피바라가 구름 위에서 다양한 자세로 함께 점프하는 모습" loading="lazy">
+            <figcaption>카피바라 · 느긋하지만 힘찬 점프</figcaption>
+          </figure>
+          <figure>
+            <img src="./marketing/middle-aged-magical-girl-multi-jump.jpg" alt="다섯 명의 중년마법소녀가 구름 위에서 다양한 자세로 함께 점프하는 모습" loading="lazy">
+            <figcaption>중년마법소녀 · 다섯 배로 화려한 변신</figcaption>
+          </figure>
+          <figure>
+            <img src="./marketing/macao-joma-multi-jump.jpg" alt="다섯 쌍의 마카오와 조마가 구름 위에서 발레 동작으로 함께 점프하는 모습" loading="lazy">
+            <figcaption>마카오&amp;조마 · 둘이어서 더 특별한 도약</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -201,7 +225,7 @@
     <section class="items-section" id="items" aria-labelledby="items-title">
       <div class="items-heading">
         <div><p class="eyebrow">A surprise for every friend</p><h2 id="items-title">이번에는 어떤<br>아이템이 나올까요?</h2></div>
-        <div><p>메뉴 막대의 <strong>아이템 골라보기</strong>에서 지금 함께 걷는 캐릭터에게 맞는 전용 아이템을 뽑을 수 있어요. 지원하는 친구는 선글라스도 자유롭게 쓰고 벗을 수 있어요.</p><p class="event-period">캐릭터 전용 아이템 + 선글라스</p></div>
+        <div><p>메뉴 막대의 <strong>아이템 골라보기</strong>에서 지금 함께 걷는 캐릭터에게 맞는 전용 아이템을 뽑을 수 있어요. 이제 모든 친구가 선글라스도 자유롭게 쓰고 벗을 수 있어요.</p><p class="event-period">캐릭터 전용 아이템 + 모두를 위한 선글라스</p></div>
       </div>
       <div class="item-draw-showcase" aria-label="캐릭터별 전용 아이템 소개">
         <div class="item-draw-prompt">
@@ -221,7 +245,7 @@
           <article><img src="./character-assets/hamster.png" alt="햄스터"><div><strong>햄스터</strong><span>🌻 해바라기씨</span></div></article>
           <article><img src="./character-assets/magic-girl.png" alt="중년마법소녀"><div><strong>중년마법소녀</strong><span>🪄 마법봉</span></div></article>
           <article><img src="./character-assets/neutral-witch.png" alt="마카오와 조마"><div><strong>마카오&amp;조마</strong><span>🪄 마법봉</span></div></article>
-          <article><img src="./character-assets/burger.png" alt="버거"><div><strong>버거</strong><span>🪖 밀리터리 캡</span></div></article>
+          <article><img src="./character-assets/burger.png" alt="버거"><div><strong>버거</strong><span>🔫 장착형 기관총</span></div></article>
         </div>
       </div>
       <div class="wearable-showcase" data-wearable-showcase>
@@ -244,7 +268,7 @@
         <div class="wearable-copy">
           <p class="eyebrow">Dress up your TinyPaws</p>
           <h3>한 번 눌러 입히고,<br>한 번 더 눌러 벗겨요.</h3>
-          <p>선글라스는 전용 아이템과 별개로 언제든 켜고 끌 수 있어요. 선글라스를 지원하는 캐릭터의 얼굴에 맞춰 자연스럽게 움직여요.</p>
+          <p>선글라스는 전용 아이템과 별개로 언제든 켜고 끌 수 있어요. 열 명의 모든 친구 얼굴과 동작에 맞춰 자연스럽게 움직여요.</p>
           <div class="wearable-controls" aria-label="착용 아이템 미리보기 설정">
             <button type="button" data-accessory-toggle="sunglasses" aria-pressed="true"><span aria-hidden="true">😎</span><span><strong>선글라스</strong><small>착용 중</small></span></button>
           </div>
@@ -261,6 +285,7 @@
     <section class="updates-section" aria-labelledby="updates-title">
       <div class="section-heading"><div><p class="eyebrow">Fresh from TinyPaws</p><h2 id="updates-title">최근 업데이트</h2></div><a class="text-link" href="./release-notes.html">모든 버전 기록 보기 →</a></div>
       <div class="update-list">
+        <a href="./release-notes/1.6.4.html"><span>v1.6.4</span><strong>친구들의 점프와 아이템 개선</strong><b>→</b></a>
         <a href="./release-notes/1.6.3.html"><span>v1.6.3</span><strong>여러 친구와 테두리 행렬 걷기</strong><b>→</b></a>
         <a href="./release-notes/1.6.2.html"><span>v1.6.2</span><strong>마법 캐릭터와 전용 아이템 추가</strong><b>→</b></a>
         <a href="./release-notes/1.6.1.html"><span>v1.6.1</span><strong>버거 달리기 동작 개선</strong><b>→</b></a>
@@ -317,6 +342,6 @@
 
     <footer><nav aria-label="하단 메뉴"><a href="#support-creator">개발자 후원</a><a href="./support.html">지원</a><a href="./privacy.html">개인정보처리방침</a><a href="./release-notes.html">버전 기록</a></nav><p>TinyPaws · macOS 데스크톱 펫</p></footer>
   </main>
-  <script src="./character-showcase.js?v=1.6.3-character-count"></script>
+  <script src="./character-showcase.js?v=1.6.4-interactive-count"></script>
 </body>
 </html>

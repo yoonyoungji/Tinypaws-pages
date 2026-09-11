@@ -72,6 +72,33 @@ const characterGroups = {
   }
 };
 
+const companionCountButtons = [...document.querySelectorAll("[data-companion-count]")];
+const companionDemo = document.querySelector("[data-companion-demo]");
+
+const updateCompanionCount = (count) => {
+  if (!companionDemo || ![1, 3, 5].includes(count)) return;
+
+  const pets = [...companionDemo.querySelectorAll(".multi-pet")];
+  pets.forEach((pet, index) => {
+    pet.hidden = index >= count;
+  });
+
+  companionCountButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(Number(button.dataset.companionCount) === count));
+  });
+
+  const countLabel = count === 1 ? "한 마리" : `${count}마리`;
+  const englishLabel = companionDemo.querySelector("[data-companion-label]");
+  const status = companionDemo.querySelector("[data-companion-status]");
+  if (englishLabel) englishLabel.textContent = `${count} ${count === 1 ? "PAW" : "PAWS"} ON SCREEN`;
+  if (status) status.textContent = `${countLabel}가 각자의 자리에서 걷는 중`;
+  companionDemo.setAttribute("aria-label", `화면에서 독립적으로 움직이는 카피바라 ${countLabel}`);
+};
+
+companionCountButtons.forEach((button) => {
+  button.addEventListener("click", () => updateCompanionCount(Number(button.dataset.companionCount)));
+});
+
 const characterDialog = document.getElementById("character-dialog");
 const dialogImage = document.getElementById("character-dialog-image");
 const dialogTitle = document.getElementById("character-dialog-title");
