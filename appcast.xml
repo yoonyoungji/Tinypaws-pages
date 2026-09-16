@@ -9,6 +9,20 @@
     <description>TinyPaws direct distribution updates</description>
     <language>en</language>
     <item>
+      <title>Version 1.6.10</title>
+      <pubDate>Wed, 16 Sep 2026 10:20:53 +0900</pubDate>
+      <link>https://www.gettinypaws.com/</link>
+      <sparkle:version>80</sparkle:version>
+      <sparkle:shortVersionString>1.6.10</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.6.10.html</sparkle:releaseNotesLink>
+      <enclosure
+        url="https://www.gettinypaws.com/downloads/TinyPaws-1.6.10.zip"
+        type="application/octet-stream"
+        sparkle:edSignature="pNgTM+OcNtulflLQZYYDR0ckfaakBAyz/pqm5L0cCINUW1kAGpi099tyD2/3e7x/0zGJlMrdOZIKKyHKyqfvDA=="
+        length="57218487" />
+    </item>
+<item>
       <title>Version 1.6.9</title>
       <pubDate>Tue, 15 Sep 2026 13:57:11 +0900</pubDate>
       <link>https://www.gettinypaws.com/</link>
