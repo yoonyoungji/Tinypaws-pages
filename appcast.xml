@@ -9,6 +9,20 @@
     <description>TinyPaws direct distribution updates</description>
     <language>en</language>
     <item>
+      <title>Version 1.7.5</title>
+      <pubDate>Fri, 23 Oct 2026 05:58:06 +0000</pubDate>
+      <link>https://www.gettinypaws.com/</link>
+      <sparkle:version>85</sparkle:version>
+      <sparkle:shortVersionString>1.7.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.7.5.html</sparkle:releaseNotesLink>
+      <enclosure
+        url="https://github.com/yoonyoungji/Tinypaws-pages/releases/download/v1.7.5/TinyPaws.zip"
+        type="application/octet-stream"
+        sparkle:edSignature="1MQgGvU/X9ZmjtTzzMoBR+QWs6UmVECWSeHT2SFpCSaS2cFHN5qnDsc68u39Gf+p5+0FMQc+5HztIQ9JemZNCA=="
+        length="121479413" />
+    </item>
+<item>
       <title>Version 1.7.4</title>
       <pubDate>Fri, 23 Oct 2026 05:20:30 +0000</pubDate>
       <link>https://www.gettinypaws.com/</link>
