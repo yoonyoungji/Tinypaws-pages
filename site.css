@@ -48,6 +48,15 @@ body {
 .tinypaws-character-cursor-active,
 .tinypaws-character-cursor-active * { cursor: none !important; }
 
+/* Keep every interactive target easy to locate and click. The companion image
+   never receives pointer events, but controls retain the system hand cursor. */
+.tinypaws-character-cursor-active a,
+.tinypaws-character-cursor-active button,
+.tinypaws-character-cursor-active input,
+.tinypaws-character-cursor-active select,
+.tinypaws-character-cursor-active textarea,
+.tinypaws-character-cursor-active [role="button"] { cursor: pointer !important; }
+
 a { color: var(--accent-strong); }
 
 .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 64px; }

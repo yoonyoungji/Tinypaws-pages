@@ -19,10 +19,7 @@
   const initCharacterCursor = () => {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
-    const characters = [
-      "kkeomeoksari", "capybara", "cat", "russian-blue", "hedgehog",
-      "poodle", "hamster", "magic-girl", "neutral-witch", "burger"
-    ];
+    const characters = ["kkeomeoksari", "capybara", "cat", "hedgehog", "burger"];
     const character = characters[Math.floor(Math.random() * characters.length)];
     const cursor = document.createElement("img");
     cursor.className = "tinypaws-character-cursor";
