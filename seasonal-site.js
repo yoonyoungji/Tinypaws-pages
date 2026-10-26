@@ -6,15 +6,17 @@
   // see the non-seasonal design flash during the event.
   if (isHalloweenActive()) document.documentElement.classList.add("halloween-site");
 
-  window.TinyPawsSeasonalSite = {
-    apply() {
-      if (!isHalloweenActive()) return;
-      document.querySelectorAll("[data-halloween-text]").forEach((element) => {
-        element.textContent = element.dataset.halloweenText;
-      });
-      document.querySelectorAll("[data-halloween-html]").forEach((element) => {
-        element.innerHTML = element.dataset.halloweenHtml;
-      });
-    }
+  const apply = () => {
+    if (!isHalloweenActive()) return;
+    document.querySelectorAll("[data-halloween-text]").forEach((element) => {
+      element.textContent = element.dataset.halloweenText;
+    });
+    document.querySelectorAll("[data-halloween-html]").forEach((element) => {
+      element.innerHTML = element.dataset.halloweenHtml;
+    });
   };
+
+  window.TinyPawsSeasonalSite = { apply };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", apply, { once: true });
+  else apply();
 })();

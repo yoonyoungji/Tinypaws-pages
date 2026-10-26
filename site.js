@@ -90,7 +90,7 @@ function paymentModal(p, common) {
 function supportPage(c) {
   const p = c.support;
   const faqs = p.faqItems.map(([question, answer]) => `<div class="faq-item"><h3>${esc(question)}</h3><p class="muted">${esc(answer)}</p></div>`).join("");
-  return `${header(c.common)}<section class="hero"><p class="eyebrow">${esc(p.eyebrow)}</p><h1>${esc(p.heading)}</h1><p class="lead">${esc(p.lead)}</p><div class="version-badge">✦ ${esc(c.common.latest)}</div>${nav(c.common)}</section><section class="grid">${card(c.common.email, `<p><a class="btn secondary" href="mailto:tinypawskr.official@gmail.com">tinypawskr.official@gmail.com</a></p><p class="muted">${esc(c.common.developer)}<br>${esc(c.common.response)}</p>`)}${card(p.overview, list(p.overviewItems))}${card(p.permissions, `<p class="muted">${esc(p.permissionsLead)}</p>`)}${card(p.compatibility, list(p.compatibilityItems))}${card(p.faq, faqs, true)}</section>`;
+  return `${header(c.common)}<section class="hero"><p class="eyebrow">${esc(p.eyebrow)}</p><h1>${esc(p.heading)}</h1><p class="lead">${esc(p.lead)}</p><div class="version-badge">✦ ${esc(c.common.latest)}</div>${nav(c.common)}</section><section class="grid">${card(c.common.email, `<p><a class="btn secondary" href="mailto:tinypawskr.official@gmail.com">tinypawskr.official@gmail.com</a></p><p class="muted">${esc(c.common.developer)}<br>${esc(c.common.response)}</p>`)}${card(p.overview, list(p.overviewItems))}${card(p.permissions, `<p class="muted">${esc(p.permissionsLead)}</p>`)}${card(p.compatibility, list(p.compatibilityItems))}${card(p.faq, faqs, true)}</section>${paymentModal(c.index, c.common)}`;
 }
 
 function privacyPage(c) {
