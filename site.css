@@ -25,6 +25,29 @@ body {
     linear-gradient(180deg, #fffaf4 0%, var(--bg) 100%);
 }
 
+/* A desktop-only companion cursor, selected randomly for each visit. */
+.tinypaws-character-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 112px;
+  height: 112px;
+  object-fit: contain;
+  object-position: center bottom;
+  pointer-events: none;
+  opacity: 0;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 7px 6px rgba(74, 44, 26, .18));
+  transform: translate3d(-999px, -999px, 0);
+  transition: opacity .12s ease;
+  translate: -50% -88%;
+}
+
+.tinypaws-character-cursor.is-visible { opacity: 1; }
+.tinypaws-character-cursor-active,
+.tinypaws-character-cursor-active * { cursor: none !important; }
+
 a { color: var(--accent-strong); }
 
 .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 64px; }

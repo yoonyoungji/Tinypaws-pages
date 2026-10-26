@@ -16,7 +16,41 @@
     });
   };
 
+  const initCharacterCursor = () => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    const characters = [
+      "kkeomeoksari", "capybara", "cat", "russian-blue", "hedgehog",
+      "poodle", "hamster", "magic-girl", "neutral-witch", "burger"
+    ];
+    const character = characters[Math.floor(Math.random() * characters.length)];
+    const cursor = document.createElement("img");
+    cursor.className = "tinypaws-character-cursor";
+    cursor.src = `./character-assets/${character}.png`;
+    cursor.alt = "";
+    cursor.setAttribute("aria-hidden", "true");
+    document.body.append(cursor);
+
+    const moveCursor = (event) => {
+      cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+      cursor.classList.add("is-visible");
+    };
+
+    document.documentElement.classList.add("tinypaws-character-cursor-active");
+    document.addEventListener("mousemove", moveCursor);
+    document.addEventListener("mouseover", moveCursor);
+    document.addEventListener("mouseleave", () => cursor.classList.remove("is-visible"));
+    window.addEventListener("blur", () => cursor.classList.remove("is-visible"));
+  };
+
   window.TinyPawsSeasonalSite = { apply };
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", apply, { once: true });
-  else apply();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      apply();
+      initCharacterCursor();
+    }, { once: true });
+  } else {
+    apply();
+    initCharacterCursor();
+  }
 })();
