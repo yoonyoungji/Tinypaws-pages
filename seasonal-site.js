@@ -1,5 +1,6 @@
 (() => {
   const halloweenEndsAt = Date.UTC(2026, 9, 31, 15); // 2026-11-01 00:00 KST
+  const latestDownloadUrl = "https://github.com/yoonyoungji/Tinypaws-pages/releases/latest/download/TinyPaws.dmg";
   const isHalloweenActive = () => Date.now() < halloweenEndsAt;
 
   // Apply the seasonal class before the stylesheet loads, so visitors do not
@@ -40,14 +41,22 @@
     window.addEventListener("blur", () => cursor.classList.remove("is-visible"));
   };
 
+  const updateDownloadLinks = () => {
+    document.querySelectorAll('a[href="./downloads/TinyPaws.dmg"]').forEach((link) => {
+      link.href = latestDownloadUrl;
+    });
+  };
+
   window.TinyPawsSeasonalSite = { apply };
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => {
       apply();
       initCharacterCursor();
+      updateDownloadLinks();
     }, { once: true });
   } else {
     apply();
     initCharacterCursor();
+    updateDownloadLinks();
   }
 })();
