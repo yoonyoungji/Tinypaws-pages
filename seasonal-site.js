@@ -42,7 +42,7 @@
   };
 
   const updateDownloadLinks = () => {
-    document.querySelectorAll('a[href="./downloads/TinyPaws.dmg"]').forEach((link) => {
+    document.querySelectorAll('a[href="https://github.com/yoonyoungji/Tinypaws-pages/releases/download/v1.8.0/TinyPaws.dmg"]').forEach((link) => {
       link.href = latestDownloadUrl;
     });
   };
