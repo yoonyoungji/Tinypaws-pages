@@ -576,3 +576,43 @@ html.halloween-site [data-halloween-only].halloween-image-banner { display: grid
   .halloween-site .home-hero { padding: 32px 22px 28px; border-radius: 24px; }
   .halloween-site .home-update { padding: 28px 22px; border-radius: 24px; }
 }
+
+/* Christmas seasonal home theme (seasonal-site.js, Dec 1–26 KST; preview with ?season=christmas) */
+[data-christmas-only] { display: none; }
+html.christmas-site [data-christmas-only] { display: grid; }
+.christmas-site .home-hero { position: relative; overflow: hidden; padding: 54px 42px 108px; border-radius: 28px; background: linear-gradient(#18203a, #27325a 70%, #3a4677); box-shadow: 0 30px 70px rgba(16, 20, 44, .3); }
+.christmas-site .home-hero-copy, .christmas-site .home-hero-visual { position: relative; z-index: 2; }
+.christmas-site .home-hero h1 { color: #f4f1ff; word-break: keep-all; }
+.christmas-site .home-hero .eyebrow { color: #f2c14e; }
+.christmas-site .hero-title-row { margin-bottom: 44px; }
+.christmas-site .title-walker-trail { right: auto; bottom: -27px; left: 0; }
+.christmas-site .home-hero .lead, .christmas-site .home-hero .trust-list { color: #c9cdea; }
+.christmas-site .home-hero .version-badge { border-color: rgba(201, 205, 234, .3); color: #f4f1ff; background: rgba(255, 255, 255, .08); }
+.christmas-site .home-hero .btn.primary, .christmas-site .header-download { background: #c8432f; }
+.christmas-site .home-hero-visual { border-color: rgba(201, 205, 234, .25); }
+.christmas-site .title-walker-trail .title-walker:nth-child(2n) img:nth-child(odd) { content: url("./website-assets/christmas/cat-walk-1.png"); }.christmas-site .title-walker-trail .title-walker:nth-child(2n) img:nth-child(even) { content: url("./website-assets/christmas/cat-walk-2.png"); }
+.christmas-site .title-walker-trail .title-walker:nth-child(3) img:nth-child(odd) { content: url("./website-assets/christmas/hedgehog-walk-1.png"); }.christmas-site .title-walker-trail .title-walker:nth-child(3) img:nth-child(even) { content: url("./website-assets/christmas/hedgehog-walk-2.png"); }
+.snow-canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; }
+.snow-ground { position: absolute; right: 0; bottom: 0; left: 0; z-index: 1; height: 60px; border-radius: 50% 50% 0 0 / 20px 20px 0 0; background: #f3f5ff; }
+.snow-walker { position: absolute; bottom: 32px; left: 0; z-index: 3; width: 70px; pointer-events: none; }
+.snow-walker img { display: block; width: 100%; }
+.snow-print { position: absolute; z-index: 2; width: 7px; height: 5px; border-radius: 50%; background: #c9cfe8; transition: opacity 3s; }
+.snow-toggle { position: absolute; right: 18px; bottom: 14px; z-index: 3; padding: 5px 12px; border: 1px solid #c9cfe8; border-radius: 99px; color: #3a4677; background: #fff; font: inherit; font-size: .76rem; font-weight: 700; cursor: pointer; }
+.snow-toggle:focus-visible { outline: 2px solid #f2c14e; outline-offset: 2px; }
+.stocking-goal { --fill: 0; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 20px; margin-top: 28px; padding: 20px 24px; border: 1px solid rgba(200, 67, 47, .22); border-radius: 22px; background: #fff; }
+.stocking-goal svg { width: 58px; height: auto; }
+.stocking-fill { transform: scaleY(var(--fill)); transform-box: fill-box; transform-origin: bottom; transition: transform 1.4s ease-out; }
+.stocking-goal .eyebrow { margin: 0 0 4px; color: #2f5b44; }
+.stocking-goal strong { display: block; font-size: 1.2rem; }
+.stocking-goal strong b { color: #c8432f; font-variant-numeric: tabular-nums; }
+.stocking-goal p:last-child { margin: 2px 0 0; color: var(--muted); font-size: .88rem; }
+.christmas-site .supporter-pill { border-color: transparent; color: #fff; background: #2f5b44; }
+.christmas-site .supporter-pill:nth-child(3n+1) { background: #c8432f; }
+.christmas-site .supporter-pill:nth-child(3n+2) { color: #2d241e; background: #e9b43a; }
+.christmas-site .supporter-rank { background: rgba(255, 255, 255, .22); }
+@media (max-width: 760px) {
+  .christmas-site .home-hero { padding: 32px 22px 100px; border-radius: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stocking-fill { transition: none; }
+}

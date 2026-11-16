@@ -1,62 +1,147 @@
 (() => {
-  const halloweenEndsAt = Date.UTC(2026, 9, 31, 15); // 2026-11-01 00:00 KST
-  const latestDownloadUrl = "https://github.com/yoonyoungji/Tinypaws-pages/releases/latest/download/TinyPaws.dmg";
-  const isHalloweenActive = () => Date.now() < halloweenEndsAt;
+  const christmasStartsAt = Date.UTC(2026, 10, 30, 15); // 2026-12-01 00:00 KST
+  const christmasEndsAt = Date.UTC(2026, 11, 26, 15); // 2026-12-27 00:00 KST
+  const now = Date.now();
+  const preview = new URLSearchParams(location.search).get("season") === "christmas";
+  if (!preview && (now < christmasStartsAt || now >= christmasEndsAt)) return;
 
   // Apply the seasonal class before the stylesheet loads, so visitors do not
   // see the non-seasonal design flash during the event.
-  if (isHalloweenActive()) document.documentElement.classList.add("halloween-site");
+  document.documentElement.classList.add("christmas-site");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const apply = () => {
-    if (!isHalloweenActive()) return;
-    document.querySelectorAll("[data-halloween-text]").forEach((element) => {
-      element.textContent = element.dataset.halloweenText;
+  const swapCopy = () => {
+    document.querySelectorAll("[data-christmas-text]").forEach((element) => {
+      element.textContent = element.dataset.christmasText;
     });
-    document.querySelectorAll("[data-halloween-html]").forEach((element) => {
-      element.innerHTML = element.dataset.halloweenHtml;
+    document.querySelectorAll("[data-christmas-html]").forEach((element) => {
+      element.innerHTML = element.dataset.christmasHtml;
     });
   };
 
-  const initCharacterCursor = () => {
-    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  // Character sprites → costume versions from scripts/make_christmas_web_assets.py.
+  const costumeFor = (src) => src
+    .replace(/\.\/character-assets\/capybara-walk\.png$/, "./website-assets/christmas/capybara-walk-1.png")
+    .replace(/\.\/character-assets\/([a-z-]+)\.png$/, (match, slug) => (/-(walk|jump)$/.test(slug) ? match : `./website-assets/christmas/${slug}.png`))
+    .replace(/\.\/website-assets\/walk\/([a-z-]+)-walk-(\d)\.png$/, (match, slug, frame) => `./website-assets/christmas/${slug}-walk-${(Number(frame) % 2) + 1}.png`);
+  const dressCharacters = () => {
+    document.querySelectorAll("img[src]").forEach((image) => {
+      const src = image.getAttribute("src");
+      const costume = costumeFor(src);
+      if (costume !== src) image.setAttribute("src", costume);
+    });
+  };
 
-    const characters = ["kkeomeoksari", "capybara", "cat", "hedgehog", "burger"];
-    const character = characters[Math.floor(Math.random() * characters.length)];
-    const cursor = document.createElement("img");
-    cursor.className = "tinypaws-character-cursor";
-    cursor.src = `./character-assets/${character}.png`;
-    cursor.alt = "";
-    cursor.setAttribute("aria-hidden", "true");
-    document.body.append(cursor);
+  const fillStocking = () => {
+    const goal = document.querySelector("[data-stocking-cups]");
+    if (!goal) return;
+    const cups = Number(goal.dataset.stockingCups) || 0;
+    const target = Number(goal.dataset.stockingGoal) || 100;
+    goal.querySelectorAll("[data-stocking-count]").forEach((element) => { element.textContent = cups; });
+    goal.querySelectorAll("[data-stocking-goal-label]").forEach((element) => { element.textContent = target; });
+    // Wait a frame so the fill animates in from empty.
+    requestAnimationFrame(() => goal.style.setProperty("--fill", Math.min(cups / target, 1)));
+  };
 
-    const moveCursor = (event) => {
-      cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
-      cursor.classList.add("is-visible");
+  const snowHero = () => {
+    const hero = document.querySelector(".home-hero");
+    if (!hero) return;
+
+    const canvas = document.createElement("canvas");
+    canvas.className = "snow-canvas";
+    canvas.setAttribute("aria-hidden", "true");
+    const ground = document.createElement("div");
+    ground.className = "snow-ground";
+    const walker = document.createElement("div");
+    walker.className = "snow-walker";
+    walker.setAttribute("aria-hidden", "true");
+    walker.innerHTML = '<img src="./website-assets/christmas/capybara-walk-1.png" alt="">';
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "snow-toggle";
+    hero.append(canvas, ground, walker, toggle);
+
+    const context = canvas.getContext("2d");
+    const walkFrame = walker.querySelector("img");
+    let width = 0;
+    let height = 0;
+    const resize = () => {
+      const ratio = window.devicePixelRatio || 1;
+      width = hero.clientWidth;
+      height = hero.clientHeight;
+      canvas.width = width * ratio;
+      canvas.height = height * ratio;
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    };
+    resize();
+    new ResizeObserver(resize).observe(hero);
+
+    const flakes = Array.from({ length: 90 }, () => ({
+      x: Math.random() * width, y: Math.random() * height,
+      r: 1 + Math.random() * 2.4, speed: .3 + Math.random() * .8, phase: Math.random() * 6,
+    }));
+    const drawFlakes = () => {
+      context.clearRect(0, 0, width, height);
+      context.fillStyle = "rgba(255, 255, 255, .85)";
+      flakes.forEach((flake) => {
+        context.beginPath();
+        context.arc(flake.x, flake.y, flake.r, 0, Math.PI * 2);
+        context.fill();
+      });
     };
 
-    document.documentElement.classList.add("tinypaws-character-cursor-active");
-    document.addEventListener("mousemove", moveCursor);
-    document.addEventListener("mouseover", moveCursor);
-    document.addEventListener("mouseleave", () => cursor.classList.remove("is-visible"));
-    window.addEventListener("blur", () => cursor.classList.remove("is-visible"));
-  };
+    let running = !reduceMotion;
+    let x = width * .72;
+    let tick = 0;
+    walker.style.transform = `translateX(${x}px)`;
 
-  const updateDownloadLinks = () => {
-    document.querySelectorAll('a[href="https://github.com/yoonyoungji/Tinypaws-pages/releases/download/v1.8.0/TinyPaws.dmg"]').forEach((link) => {
-      link.href = latestDownloadUrl;
+    const setToggle = () => {
+      toggle.textContent = running ? "눈 멈추기" : "눈 내리기";
+      toggle.setAttribute("aria-pressed", String(running));
+    };
+    toggle.addEventListener("click", () => {
+      running = !running;
+      setToggle();
+      if (running) requestAnimationFrame(step);
     });
+    setToggle();
+    drawFlakes();
+
+    function step() {
+      if (!running) return;
+      tick += 1;
+      flakes.forEach((flake) => {
+        flake.y += flake.speed;
+        flake.x += Math.sin((flake.y + flake.phase * 40) / 40) * .4;
+        if (flake.y > height) { flake.y = -4; flake.x = Math.random() * width; }
+      });
+      drawFlakes();
+
+      if (tick % 10 === 0) walkFrame.src = `./website-assets/christmas/capybara-walk-${((tick / 10) % 2) + 1}.png`;
+      x -= .7;
+      if (x < -90) x = width + 10;
+      walker.style.transform = `translateX(${x}px)`;
+
+      if (tick % 26 === 0) {
+        const print = document.createElement("span");
+        print.className = "snow-print";
+        print.style.left = `${x + 50}px`;
+        print.style.bottom = `${tick % 52 ? 26 : 30}px`;
+        hero.append(print);
+        setTimeout(() => { print.style.opacity = "0"; }, 1500);
+        setTimeout(() => print.remove(), 4600);
+      }
+      requestAnimationFrame(step);
+    }
+    if (running) requestAnimationFrame(step);
   };
 
-  window.TinyPawsSeasonalSite = { apply };
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => {
-      apply();
-      initCharacterCursor();
-      updateDownloadLinks();
-    }, { once: true });
-  } else {
-    apply();
-    initCharacterCursor();
-    updateDownloadLinks();
-  }
+  const apply = () => {
+    swapCopy();
+    dressCharacters();
+    fillStocking();
+    snowHero();
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", apply, { once: true });
+  else apply();
 })();

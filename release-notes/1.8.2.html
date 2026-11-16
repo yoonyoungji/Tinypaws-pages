@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyPaws 1.8.2 Release Notes</title>
+  <style>[data-locale]{display:none}[data-locale].is-visible{display:block}</style>
+</head>
+<body>
+  <section data-locale="ko">
+    <h1>TinyPaws 1.8.2</h1>
+    <ul><li>캐릭터들에게 크리스마스 코스튬이 생겼어요.</li><li>고릴라와 수염 난 여자 캐릭터가 빠졌어요.</li><li>설정 메뉴를 다듬었어요.</li></ul>
+  </section>
+  <section data-locale="en">
+    <h1>TinyPaws 1.8.2</h1>
+    <ul><li>Added Christmas costumes for characters.</li><li>Removed the gorilla and bearded woman characters.</li><li>Refined the settings menu.</li></ul>
+  </section>
+  <script>
+    const locale = navigator.language || "en";
+    const selectedLocale = locale.toLowerCase().startsWith("ko") ? "ko" : "en";
+    document.querySelector('[data-locale="' + selectedLocale + '"]').classList.add("is-visible");
+  </script>
+</body>
+</html>

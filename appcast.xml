@@ -9,6 +9,20 @@
     <description>TinyPaws direct distribution updates</description>
     <language>en</language>
     <item>
+      <title>Version 1.8.2</title>
+      <pubDate>Mon, 16 Nov 2026 16:25:54 +0900</pubDate>
+      <link>https://www.gettinypaws.com/</link>
+      <sparkle:version>93</sparkle:version>
+      <sparkle:shortVersionString>1.8.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://www.gettinypaws.com/release-notes/1.8.2.html</sparkle:releaseNotesLink>
+      <enclosure
+        url="https://github.com/yoonyoungji/Tinypaws-pages/releases/download/v1.8.2/TinyPaws.zip"
+        type="application/octet-stream"
+        sparkle:edSignature="gJ7elF517rIjcnafROy9Fim9uaBdbZVNmeYavLGacMVq2KbY4iNBpvFNgVJLAMebB4cMbp83Nw+BifAiy/uwAQ=="
+        length="79873937" />
+    </item>
+<item>
       <title>Version 1.8.1</title>
       <pubDate>Mon, 02 Nov 2026 23:56:21 +0000</pubDate>
       <link>https://www.gettinypaws.com/</link>
