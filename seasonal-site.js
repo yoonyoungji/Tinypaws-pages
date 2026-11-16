@@ -1,5 +1,5 @@
 (() => {
-  const christmasStartsAt = Date.UTC(2026, 10, 30, 15); // 2026-12-01 00:00 KST
+  const christmasStartsAt = Date.UTC(2026, 10, 16, 15); // 2026-11-17 00:00 KST
   const christmasEndsAt = Date.UTC(2026, 11, 26, 15); // 2026-12-27 00:00 KST
   const now = Date.now();
   const preview = new URLSearchParams(location.search).get("season") === "christmas";
