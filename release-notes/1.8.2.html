@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TinyPaws 1.8.2 Release Notes</title>
-  <style>[data-locale]{display:none}[data-locale].is-visible{display:block}</style>
+  <style>.js [data-locale]{display:none}.js [data-locale].is-visible{display:block}</style>
 </head>
 <body>
   <section data-locale="ko">
@@ -16,6 +16,7 @@
     <ul><li>Added Christmas costumes for characters.</li><li>Removed the gorilla and bearded woman characters.</li><li>Refined the settings menu.</li></ul>
   </section>
   <script>
+    document.documentElement.classList.add("js");
     const locale = navigator.language || "en";
     const selectedLocale = locale.toLowerCase().startsWith("ko") ? "ko" : "en";
     document.querySelector('[data-locale="' + selectedLocale + '"]').classList.add("is-visible");
