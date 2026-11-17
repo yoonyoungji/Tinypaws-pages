@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyPaws 1.8.4 Release Notes</title>
+  <style>.js [data-locale]{display:none}.js [data-locale].is-visible{display:block}</style>
+</head>
+<body>
+  <section data-locale="ko">
+    <h1>TinyPaws 1.8.4</h1>
+    <ul><li>안정성과 사용성을 개선했어요.</li></ul>
+  </section>
+  <section data-locale="en">
+    <h1>TinyPaws 1.8.4</h1>
+    <ul><li>Improved stability and polish.</li></ul>
+  </section>
+  <script>
+    document.documentElement.classList.add("js");
+    const locale = navigator.language || "en";
+    const selectedLocale = locale.toLowerCase().startsWith("ko") ? "ko" : "en";
+    document.querySelector('[data-locale="' + selectedLocale + '"]').classList.add("is-visible");
+  </script>
+</body>
+</html>
