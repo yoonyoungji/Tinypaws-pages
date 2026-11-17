@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyPaws 1.8.3 Release Notes</title>
+  <style>.js [data-locale]{display:none}.js [data-locale].is-visible{display:block}</style>
+</head>
+<body>
+  <section data-locale="ko">
+    <h1>TinyPaws 1.8.3</h1>
+    <ul><li>설정에 '안 움직이기'가 생겼어요. 켜면 친구들이 제자리에서 편하게 쉬어요.</li><li>쉬는 동안에는 캐릭터를 클릭해도 화면 작업을 방해하지 않아요.</li></ul>
+  </section>
+  <section data-locale="en">
+    <h1>TinyPaws 1.8.3</h1>
+    <ul><li>Added a Keep Still setting that lets your companions rest in place.</li><li>Resting companions let clicks pass through so they never get in your way.</li></ul>
+  </section>
+  <script>
+    document.documentElement.classList.add("js");
+    const locale = navigator.language || "en";
+    const selectedLocale = locale.toLowerCase().startsWith("ko") ? "ko" : "en";
+    document.querySelector('[data-locale="' + selectedLocale + '"]').classList.add("is-visible");
+  </script>
+</body>
+</html>
