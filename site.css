@@ -616,3 +616,35 @@ html.christmas-site [data-christmas-only] { display: grid; }
 @media (prefers-reduced-motion: reduce) {
   .stocking-fill { transition: none; }
 }
+
+/* Seolbim (Korean New Year) seasonal home theme — preview with ?season=seolbim */
+.seolbim-site .home-hero { position: relative; overflow: hidden; padding: 54px 42px 118px; border-radius: 28px; background: linear-gradient(170deg, #22234a 0%, #4b2f5c 45%, #b8586a 78%, #f2a66b 100%); box-shadow: 0 30px 70px rgba(43, 26, 60, .3); }
+.seolbim-site .home-hero-copy, .seolbim-site .home-hero-visual { position: relative; z-index: 2; }
+.seolbim-site .home-hero h1 { color: #fff6ea; word-break: keep-all; }
+.seolbim-site .home-hero .eyebrow { color: #ffd27a; }
+.seolbim-site .hero-title-row { margin-bottom: 44px; }
+.seolbim-site .title-walker-trail { right: auto; bottom: -27px; left: 0; }
+.seolbim-site .home-hero .lead, .seolbim-site .home-hero .trust-list { color: #f1d9dc; }
+.seolbim-site .home-hero .version-badge { border-color: rgba(255, 230, 210, .3); color: #fff6ea; background: rgba(255, 255, 255, .1); }
+.seolbim-site .home-hero .btn.primary, .seolbim-site .header-download { color: #fff; background: #c2344a; }
+.seolbim-site .home-hero-visual { border-color: rgba(255, 230, 210, .3); }
+.seolbim-site .title-walker-trail .title-walker:nth-child(2n) img:nth-child(odd) { content: url("./website-assets/seolbim/cat-walk-1.png"); }.seolbim-site .title-walker-trail .title-walker:nth-child(2n) img:nth-child(even) { content: url("./website-assets/seolbim/cat-walk-2.png"); }
+.seolbim-site .title-walker-trail .title-walker:nth-child(3) img:nth-child(odd) { content: url("./website-assets/seolbim/hedgehog-walk-1.png"); }.seolbim-site .title-walker-trail .title-walker:nth-child(3) img:nth-child(even) { content: url("./website-assets/seolbim/hedgehog-walk-2.png"); }
+.seolbim-scene { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.seolbim-sun { position: absolute; top: -40px; left: 44%; width: 150px; height: 150px; border-radius: 50%; background: radial-gradient(circle, #ffe3a3 0 45%, rgba(255, 196, 120, .45) 46% 60%, transparent 61%); }
+/* 색동 stripes as the ground */
+.seolbim-band { position: absolute; right: 0; bottom: 0; left: 0; height: 52px; background: repeating-linear-gradient(90deg, #c2344a 0 28px, #f0a33a 28px 56px, #f6e27a 56px 84px, #3f9a6b 84px 112px, #3c6fb8 112px 140px, #8c4fa3 140px 168px, #fff3e6 168px 196px); box-shadow: inset 0 6px 0 rgba(0, 0, 0, .12); }
+.seolbim-parade { position: absolute; bottom: 40px; left: 0; display: flex; gap: 6px; animation: seolbim-parade 26s linear infinite; }
+.seolbim-parade img { display: block; width: 64px; height: auto; transform: scaleX(-1); }
+@keyframes seolbim-parade { from { transform: translateX(-240px); } to { transform: translateX(min(100vw, 1180px)); } }
+.seolbim-site .supporter-pill { border-color: transparent; color: #fff; background: #3c6fb8; }
+.seolbim-site .supporter-pill:nth-child(3n+1) { background: #c2344a; }
+.seolbim-site .supporter-pill:nth-child(3n+2) { color: #2d241e; background: #f0a33a; }
+.seolbim-site .supporter-rank { background: rgba(255, 255, 255, .22); }
+@media (max-width: 760px) {
+  .seolbim-site .home-hero { padding: 32px 22px 108px; border-radius: 24px; }
+  .seolbim-sun { top: -30px; right: -20px; left: auto; width: 110px; height: 110px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .seolbim-parade { left: 24px; animation: none; }
+}

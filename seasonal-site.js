@@ -1,8 +1,13 @@
 (() => {
   const christmasStartsAt = Date.UTC(2026, 10, 16, 15); // 2026-11-17 00:00 KST
   const christmasEndsAt = Date.UTC(2026, 11, 26, 15); // 2026-12-27 00:00 KST
+  // Matches SeasonalCostume in the app: 2027-01-01 to 2027-02-10 00:00 KST (exclusive).
+  const seolbimStartsAt = Date.UTC(2026, 11, 31, 15);
+  const seolbimEndsAt = Date.UTC(2027, 1, 9, 15);
   const now = Date.now();
-  const preview = new URLSearchParams(location.search).get("season") === "christmas";
+  const previewSeason = new URLSearchParams(location.search).get("season");
+  if (previewSeason === "seolbim" || (!previewSeason && now >= seolbimStartsAt && now < seolbimEndsAt)) return applySeolbim();
+  const preview = previewSeason === "christmas";
   if (!preview && (now < christmasStartsAt || now >= christmasEndsAt)) return;
 
   // Apply the seasonal class before the stylesheet loads, so visitors do not
@@ -144,4 +149,37 @@
   };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", apply, { once: true });
   else apply();
+
+  function applySeolbim() {
+    document.documentElement.classList.add("seolbim-site");
+    const apply = () => {
+      document.querySelectorAll("[data-seolbim-text]").forEach((element) => { element.textContent = element.dataset.seolbimText; });
+      document.querySelectorAll("[data-seolbim-html]").forEach((element) => { element.innerHTML = element.dataset.seolbimHtml; });
+      document.querySelectorAll("img[src]").forEach((image) => {
+        const src = image.getAttribute("src");
+        const dressed = src
+          .replace(/\.\/character-assets\/capybara-walk\.png$/, "./website-assets/seolbim/capybara-walk-1.png")
+          .replace(/\.\/character-assets\/([a-z-]+)\.png$/, (match, slug) => (/-(walk|jump)$/.test(slug) ? match : `./website-assets/seolbim/${slug}.png`))
+          .replace(/\.\/website-assets\/walk\/([a-z-]+)-walk-(\d)\.png$/, (match, slug, frame) => `./website-assets/seolbim/${slug}-walk-${(Number(frame) % 2) + 1}.png`);
+        if (dressed !== src) image.setAttribute("src", dressed);
+      });
+      const hero = document.querySelector(".home-hero");
+      if (!hero) return;
+      const scene = document.createElement("div");
+      scene.className = "seolbim-scene";
+      scene.setAttribute("aria-hidden", "true");
+      scene.innerHTML = '<span class="seolbim-sun"></span><span class="seolbim-band"></span>'
+        + '<span class="seolbim-parade"><img src="./website-assets/seolbim/cat-walk-1.png" alt=""><img src="./website-assets/seolbim/capybara-walk-1.png" alt=""><img src="./website-assets/seolbim/hedgehog-walk-1.png" alt=""></span>';
+      hero.append(scene);
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const frames = scene.querySelectorAll(".seolbim-parade img");
+      let frame = 1;
+      setInterval(() => {
+        frame = frame === 1 ? 2 : 1;
+        frames.forEach((image) => { image.src = image.src.replace(/-walk-\d\.png$/, `-walk-${frame}.png`); });
+      }, 220);
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", apply, { once: true });
+    else apply();
+  }
 })();

@@ -112,7 +112,8 @@ const showCharacterProfile = (slug, group = null) => {
   const profile = characterProfiles[slug];
   if (!profile || !characterDialog) return;
 
-  dialogImage.src = `./character-intros/${slug}.png`;
+  const costumeDir = document.documentElement.classList.contains("seolbim-site") ? "seolbim/" : "";
+  dialogImage.src = `./character-intros/${costumeDir}${slug}.png`;
   dialogImage.alt = `${profile.name}의 기본, 산책, 점프 모습을 담은 TinyPaws 친구 소개 이미지`;
   dialogTitle.textContent = profile.name;
   dialogTagline.textContent = profile.tagline;
