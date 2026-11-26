@@ -6,7 +6,9 @@
   const seolbimEndsAt = Date.UTC(2027, 1, 9, 15);
   const now = Date.now();
   const previewSeason = new URLSearchParams(location.search).get("season");
-  if (previewSeason === "seolbim" || (!previewSeason && now >= seolbimStartsAt && now < seolbimEndsAt)) return applySeolbim();
+  // Seolbim stays secret until launch: its ?season preview only works on a local server.
+  const canPreviewSeolbim = now >= seolbimStartsAt || ["localhost", "127.0.0.1"].includes(location.hostname);
+  if ((previewSeason === "seolbim" && canPreviewSeolbim) || (!previewSeason && now >= seolbimStartsAt && now < seolbimEndsAt)) return applySeolbim();
   const preview = previewSeason === "christmas";
   if (!preview && (now < christmasStartsAt || now >= christmasEndsAt)) return;
 
