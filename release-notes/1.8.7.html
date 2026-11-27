@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyPaws 1.8.7 Release Notes</title>
+  <style>.js [data-locale]{display:none}.js [data-locale].is-visible{display:block}</style>
+</head>
+<body>
+  <section data-locale="ko">
+    <h1>TinyPaws 1.8.7</h1>
+    <ul><li>'마우스가 있는 모니터로 이동'을 스위치 대신 '이동' 버튼으로 바꿨어요. 누르면 친구들이 바로 그 모니터로 옮겨 와요.</li><li>설정 메뉴의 디자인을 다듬었어요.</li></ul>
+  </section>
+  <section data-locale="en">
+    <h1>TinyPaws 1.8.7</h1>
+    <ul><li>Move to Mouse Display is now a Move button instead of a switch: press it and your companions hop to that display.</li><li>Polished the settings menu design.</li></ul>
+  </section>
+  <script>
+    document.documentElement.classList.add("js");
+    const locale = navigator.language || "en";
+    const selectedLocale = locale.toLowerCase().startsWith("ko") ? "ko" : "en";
+    document.querySelector('[data-locale="' + selectedLocale + '"]').classList.add("is-visible");
+  </script>
+</body>
+</html>
