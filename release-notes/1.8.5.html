@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyPaws 1.8.5 Release Notes</title>
+  <style>.js [data-locale]{display:none}.js [data-locale].is-visible{display:block}</style>
+</head>
+<body>
+  <section data-locale="ko">
+    <h1>TinyPaws 1.8.5</h1>
+    <ul><li>'안 움직이기'와 '마우스가 있는 모니터로 이동'을 켜고 끄는 스위치로 바꿨어요.</li><li>'마우스가 있는 모니터로 이동'을 켜 두면 마우스를 옮길 때마다 친구들이 그 모니터로 따라와요.</li><li>꼭 필요한 업데이트가 있을 때 앱 안에서 바로 설치할 수 있어요.</li><li>안정성과 사용성을 개선했어요.</li></ul>
+  </section>
+  <section data-locale="en">
+    <h1>TinyPaws 1.8.5</h1>
+    <ul><li>Keep Still and Move to Mouse Display are now on/off switches.</li><li>With Move to Mouse Display on, your companions follow the mouse to whichever display it is on.</li><li>Required updates can now be installed right inside the app.</li><li>Improved stability and polish.</li></ul>
+  </section>
+  <script>
+    document.documentElement.classList.add("js");
+    const locale = navigator.language || "en";
+    const selectedLocale = locale.toLowerCase().startsWith("ko") ? "ko" : "en";
+    document.querySelector('[data-locale="' + selectedLocale + '"]').classList.add("is-visible");
+  </script>
+</body>
+</html>
