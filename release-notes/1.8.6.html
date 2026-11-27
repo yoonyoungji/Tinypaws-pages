@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyPaws 1.8.6 Release Notes</title>
+  <style>.js [data-locale]{display:none}.js [data-locale].is-visible{display:block}</style>
+</head>
+<body>
+  <section data-locale="ko">
+    <h1>TinyPaws 1.8.6</h1>
+    <ul><li>새 버전이 나오면 자동으로 받아 두었다가, 짧게 알려 드린 뒤 바로 업데이트해요.</li><li>'마우스가 있는 모니터로 이동' 스위치를 켜면 친구들이 한 번에 그 모니터로 옮겨 와요.</li><li>입력 모니터링 권한을 더 쉽게 허용할 수 있도록 개선했어요.</li></ul>
+  </section>
+  <section data-locale="en">
+    <h1>TinyPaws 1.8.6</h1>
+    <ul><li>New versions now download automatically and install right after a short notice.</li><li>Turning on Move to Mouse Display brings your companions to that display in one go.</li><li>Made it easier to grant Input Monitoring permission.</li></ul>
+  </section>
+  <script>
+    document.documentElement.classList.add("js");
+    const locale = navigator.language || "en";
+    const selectedLocale = locale.toLowerCase().startsWith("ko") ? "ko" : "en";
+    document.querySelector('[data-locale="' + selectedLocale + '"]').classList.add("is-visible");
+  </script>
+</body>
+</html>
